@@ -8,5 +8,6 @@ public class CampusConnectApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(CampusConnectApplication.class, args);
+		System.out.println("hello world");
 	}
 }

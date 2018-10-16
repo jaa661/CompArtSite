@@ -1,0 +1,19 @@
+Spell check and image resizer
+
+Created by
+|-------------------------------|
+| Jacob Abbott		    (jaa661)|
+| Alexander Bedrossian	(aab641)|
+|-------------------------------|
+for App Sec Fall 2018
+
+This project is written in php and tested on MAMP 
+to run, place file into localhost directory on mamp,
+and start up the server. 
+The options are available at 
+
+http://localhost:8888/webapp.php
+
+and either option can be selected.
+choose a file to upload and hit the upload file button
+for the desired affect.
