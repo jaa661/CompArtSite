@@ -1,0 +1,33 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <style>
+	     body{ font: 14px sans-serif; }
+        .box{ width: 600px; padding: 20px; border: 3px solid green;}
+		.error{
+			color: red;
+		}
+		.input{
+			margin: 5px;
+		}
+	</style>
+</head>
+<body>
+<h2>Login</h2>
+<form class="box" action="post">
+<div>
+    <label>Username</label>
+    <input type="text" name="username" class="input" value="username">
+</div>
+<div>
+    <label>Password</label>
+    <input type="password" name="password" class="input">
+</div>
+<div>
+    <input type="submit" value="Login">
+</div>
+<p>Don't have an account? <a href="register">Sign up now</a>.</p>
+</form>
+</body>

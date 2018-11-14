@@ -1,4 +1,8 @@
 package Design.CampusConnect.repo;
 
-public class GroupRepo {
+import Design.CampusConnect.entity.Groups;
+import org.springframework.data.repository.CrudRepository;
+
+public interface GroupRepo extends CrudRepository<Groups, Integer> {
+
 }

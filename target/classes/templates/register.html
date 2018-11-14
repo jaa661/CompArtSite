@@ -1,0 +1,43 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign Up</title>
+    <style type="text/css">
+        body{ font: 14px sans-serif; }
+        .box{ width: 600px; padding: 20px; border: 3px solid green;}
+		.error{
+			color: red;
+		}
+		.input{
+			margin: 5px;
+		}
+    </style>
+</head>
+<body>
+<div class="box">
+    <h3>Register</h3>
+    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+    <div>
+        <label>Username</label>
+        <input type="text" name="username" class="input" value="<?php echo $username; ?>">
+        <span class="error"><?php echo $username_err; ?></span>
+    </div>
+    <div>
+        <label>Password</label>
+        <input type="password" name="password" class="input" value="<?php echo $password; ?>">
+        <span class="error"><?php echo $password_err; ?></span>
+    </div>
+    <div>
+        <label>Confirm Password</label>
+        <input type="password" name="confirm_password" class="input" value="<?php echo $confirm_password; ?>">
+        <span class="error"><?php echo $confirm_password_err; ?></span>
+    </div>
+    <div>
+        <input type="submit" value="Submit">
+    </div>
+    <p>Already have an account? <a href="login">Login here</a>.</p>
+    </form>
+</div>
+</body>
+</html>
