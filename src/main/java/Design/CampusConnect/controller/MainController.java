@@ -1,8 +1,7 @@
 package Design.CampusConnect.controller;
 
-import Design.CampusConnect.entity.Groups;
 import Design.CampusConnect.entity.Post;
-import Design.CampusConnect.entity.Students;
+import Design.CampusConnect.entity.Student;
 import Design.CampusConnect.repo.GroupRepo;
 import Design.CampusConnect.repo.PostRepo;
 import Design.CampusConnect.repo.StudentRepo;
@@ -33,7 +32,7 @@ public class MainController {
 //        // @ResponseBody means the returned String is the response, not a view name
 //        // @RequestParam means it is a parameter from the GET or POST request
 //
-//        Students n = new Students();
+//        Student n = new Student();
 //        n.setName(name);
 //        n.setEmail(email);
 //        studentRepository.save(n);
@@ -41,7 +40,7 @@ public class MainController {
 //    }
 
     @RequestMapping(value = "/student/add", method = RequestMethod.POST,consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
-    Students newStudent(Students newStudent) {
+    Student newStudent(Student newStudent) {
         return studentRepository.save(newStudent);
 
     }
@@ -54,14 +53,14 @@ public class MainController {
 
     @GetMapping(path="/all")
     public @ResponseBody
-    Iterable<Students> getAllUsers() {
+    Iterable<Student> getAllUsers() {
         // This returns a JSON or XML with the users
         return studentRepository.findAll();
     }
 
     @GetMapping(path="/find")
     public @ResponseBody
-    Iterable<Students> getUser(@RequestParam Iterable<Integer> id) {
+    Iterable<Student> getUser(@RequestParam Iterable<Integer> id) {
         // This returns a JSON with specific  user
         return studentRepository.findAllById(id);
     }

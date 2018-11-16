@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-public class Groups {
+public class Group {
 
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)

@@ -1,23 +1,25 @@
 package Design.CampusConnect.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.ArrayList;
-import java.util.List;
+import java.util.Set;
 
 @Entity
-public class Students {
+public class Student {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     private Integer id;
+
+    private String username;
+
+    private String password;
+
 
     private String name;
 
     private String email;
 
-    private ArrayList<Groups> groups = new ArrayList();
+    private ArrayList<Group> groups = new ArrayList();
 
     public Integer getId() {
         return id;
@@ -43,11 +45,28 @@ public class Students {
         this.email = email;
     }
 
-    public ArrayList<Groups> getGroups() {
+    public ArrayList<Group> getGroups() {
         return groups;
     }
 
-    public void setGroups(ArrayList<Groups> groups) {
+    public void setGroups(ArrayList<Group> groups) {
         this.groups = groups;
     }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
 }

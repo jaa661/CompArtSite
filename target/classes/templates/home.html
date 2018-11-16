@@ -1,5 +1,6 @@
 
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 <head>
     <meta charset="UTF-8">
     <title>Welcome</title>
@@ -21,31 +22,21 @@
 <body>
 <div class="box">
     <div class="page-header">
-        <h1>Hi, <i><?php echo htmlspecialchars($_SESSION["username"]); ?></i>. Welcome to the front end.</h1>
+        <h1 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h1>
     </div>
 
-    <form action="fileUpload.php" method="post" enctype="multipart/form-data">
-        Upload a PNG File:
-        <input type="file" name="file" accept=".png" id="fileToUpload" class="browser">
-
-        <br></br>
-        Resize Image to Width:
-        <input type="int" name="x" value="300">px
-        and Height:
-        <input type="int" name="y" value="300">px
-        <br></br>
-        <input type="submit" name="submit" value="Upload File Now">
-    </form>
-    <br></br>
-    <form action="spellCheckUpload.php" method="post" enctype="multipart/form-data">
-        Upload a TXT file to spellcheck:
-        <input type="file" name="file" accept=".txt" id="fileToUpload" class="browser">
-        <br></br>
-        <input type="submit" name="submit" value="Upload File Now" >
-    </form>
     <p>
-    <p>Today is <?php echo date('l jS \of F Y h:i:s A'); ?>.</p>
-    <a href="logout.php" class="btn btn-danger">Sign Out of Your Account</a>
-    </p>
+    <form th:action="@{/logout}" method="post">
+        <input type="submit" value="Sign Out"/>
+    </form>    </p>
+    <p>
+
+    <form th:action="@{/login}" method="post">
+        <input type="submit" value="Sign in"/>
+    </form>    </p>
+
+    <form th:action="@{/adduser}" method="post">
+        <input type="submit" value="Add User"/>
+    </form>    </p>
 </div>
 </body>

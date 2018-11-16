@@ -8,11 +8,12 @@
 
 <p th:text="'please add your user'" />
 
-<form method="POST" action="/api/student/add">
+<form method="POST" th:action="@{/api/student/add}">
     <h2>Please sign in</h2>
     <input  type="text" required name="name" placeholder="Name">
+    <input  type="text" required name="username" placeholder="username">
     <input  type="text" required name="email" placeholder="Email">
-    <input  type="text" required name="email" placeholder="Email">
+    <input  type="text" required name="password" placeholder="password">
     <label class="checkbox"></label>
     <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
 </form>
