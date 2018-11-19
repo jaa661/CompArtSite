@@ -25,7 +25,7 @@ public class WebController {
 
     @RequestMapping("/greeting")
     public String greeting(@RequestParam(name="name", required=false, defaultValue="World") String name, Model model) {
-        model.addAttribute("name", name);
+        model.addAttribute("username", name);
         return "home";
     }
 
@@ -46,8 +46,8 @@ public class WebController {
     }
 
     @RequestMapping("/Profile")
-    public String profile(Principal pricipal) {
-        System.out.println(pricipal.getName());
+    public String profile(Principal pricipal, Model model) {
+        model.addAttribute("username", pricipal.getName());
         System.out.println("hitting prof");
         return "Profile";
     }
@@ -80,9 +80,6 @@ public class WebController {
         System.out.println("new student");
         if (!result.hasErrors()) {
             System.out.println("attempting to create user account with no errors");
-            registered = createUserAccount(accountDto, result);
-        }else{
-            System.out.println("attempting to create user account recklessly");
             registered = createUserAccount(accountDto, result);
         }
         if (registered == null) {

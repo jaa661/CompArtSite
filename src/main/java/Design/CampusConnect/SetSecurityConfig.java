@@ -18,7 +18,6 @@ import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 
-import javax.sql.DataSource;
 
 //@Configuration
 @EnableWebSecurity
@@ -34,30 +33,11 @@ public class SetSecurityConfig extends WebSecurityConfigurerAdapter {
         auth.userDetailsService(userDetailsService);
     }
 
-//    @Override
-//    protected void configure(AuthenticationManagerBuilder auth)
-//            throws Exception {
-//        auth.authenticationProvider(authenticationProvider());
-//    }
-
-//    @Bean
-//    public DaoAuthenticationProvider authenticationProvider() {
-//        DaoAuthenticationProvider authProvider
-//                = new DaoAuthenticationProvider();
-//        authProvider.setUserDetailsService(userDetailsService);
-//        //authProvider.setPasswordEncoder(encoder());
-//        return authProvider;
-//    }
 
     @Bean
-    public PasswordEncoder encoder() {
-        return (NoOpPasswordEncoder) NoOpPasswordEncoder.getInstance();    }
-
-//    @Override
-//    protected void configure(AuthenticationManagerBuilder auth)
-//            throws Exception {
-//        auth.userDetailsService(userDetailsService);
-//    }
+    public PasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
+    }
 
         @Override
     protected void configure(HttpSecurity http) throws Exception {
@@ -65,6 +45,7 @@ public class SetSecurityConfig extends WebSecurityConfigurerAdapter {
                 .csrf().disable()
                 .authorizeRequests()
                 .antMatchers("/", "/home", "/register", "/Profile").permitAll()
+                .antMatchers("/Profile").authenticated()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
@@ -76,41 +57,4 @@ public class SetSecurityConfig extends WebSecurityConfigurerAdapter {
 
         }
 
-//    @Override
-//    public void configure(WebSecurity web) throws Exception {
-//        web.ignoring().antMatchers("/registration");
-//    }
-
-//    @Bean
-//    public CustomBasicAuthenticationEntryPoint getBasicAuthEntryPoint(){
-//        return new CustomBasicAuthenticationEntryPoint();
-//    }
-
-//    @Override
-//    protected void configure(HttpSecurity http) throws Exception {
-//        http
-//                .authorizeRequests()
-//                .antMatchers("/", "/home", "/register").permitAll()
-//                .anyRequest().authenticated()
-//                .and()
-//                .formLogin()
-//                .loginPage("/login")
-//                .permitAll()
-//                .and()
-//                .logout()
-//                .permitAll();
-//    }
-//
-//    @Bean
-//    @Override
-//    public UserDetailsService userDetailsService() {
-//        UserDetails user =
-//                User.withDefaultPasswordEncoder()
-//                        .username("user")
-//                        .password("password")
-//                        .roles("USER")
-//                        .build();
-//
-//        return new InMemoryUserDetailsManager(user);
-//    }
 }

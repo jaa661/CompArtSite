@@ -20,8 +20,9 @@ public class UserService implements IUserService {
     @Autowired
     private StudentRepo repository;
 
-    public static NoOpPasswordEncoder passwordEncoder() {
-        return (NoOpPasswordEncoder) NoOpPasswordEncoder.getInstance();
+    @Bean
+    public PasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
     }
     @Autowired
     private RoleRepo roleRepository;
@@ -38,7 +39,7 @@ public class UserService implements IUserService {
     @Override
     public Student registerNewUserAccount(final UserDto accountDto) {
 //        if (emailExist(accountDto.getEmail())) {
-////            throw new UserAlreadyExistException("There is an account with that email adress: " + accountDto.getEmail());
+////            throw new UserAlreadyExistException("There is an account with that email address: " + accountDto.getEmail());
 ////        }
           //Student user = new Student(accountDto.getFirstName(),accountDto.getLastName(),accountDto.getPassword(),accountDto.getEmail());
         Student user = new Student();
@@ -46,7 +47,10 @@ public class UserService implements IUserService {
         user.setFirstName(accountDto.getFirstName());
         user.setLastName(accountDto.getLastName());
         user.setUsername(accountDto.getUserName());
+        System.out.println(accountDto.getPassword());
         user.setPassword(passwordEncoder().encode(accountDto.getPassword()));
+        System.out.println(passwordEncoder().encode(accountDto.getPassword()));
+
         user.setEmail(accountDto.getEmail());
 //        //user.setRoles(Arrays.asList(roleRepository.findByRole("USER")));
 
