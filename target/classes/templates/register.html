@@ -1,6 +1,6 @@
-
-<html lang="en">
-<head>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"><head>
     <meta charset="UTF-8">
     <title>Sign Up</title>
     <style type="text/css">
@@ -17,26 +17,36 @@
 <body>
 <div class="box">
     <h3>Register</h3>
-    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+    <form autocomplete="off" th:action="@{/register}" method="post" >
     <div>
-        <label>Username</label>
-        <input type="text" name="username" class="input" value="<?php echo $username; ?>">
-        <span class="error"><?php echo $username_err; ?></span>
+        <label>first name</label>
+        <input type="text" name="firstName" autocomplete="off" class="input" >
+        <span class="error"></span>
     </div>
+    <div>
+        <label>last name</label>
+        <input type="text" name="LastName" autocomplete="off" class="input" >
+        <span class="error"></span>
+    </div>
+    <div>
+        <label>Email</label>
+        <input type="text" name="email" autocomplete="off" class="input" >
+        <span class="error"></span>
+    </div>
+        <div>
+            <label>username</label>
+            <input type="text" name="userName" autocomplete="off" class="input" >
+            <span class="error"></span>
+        </div>
     <div>
         <label>Password</label>
-        <input type="password" name="password" class="input" value="<?php echo $password; ?>">
-        <span class="error"><?php echo $password_err; ?></span>
-    </div>
-    <div>
-        <label>Confirm Password</label>
-        <input type="password" name="confirm_password" class="input" value="<?php echo $confirm_password; ?>">
-        <span class="error"><?php echo $confirm_password_err; ?></span>
+        <input type="password" name="password" autocomplete="off" class="input" >
+        <span class="error"></span>
     </div>
     <div>
         <input type="submit" value="Submit">
     </div>
-    <p>Already have an account? <a href="login">Login here</a>.</p>
+    <p>Already have an account? <a href="login.php">Login here</a>.</p>
     </form>
 </div>
 </body>

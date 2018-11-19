@@ -2,15 +2,32 @@ package Design.CampusConnect.entity;
 
 import javax.persistence.*;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 
 @Entity
 public class Student {
+    public Student() {
+    }
+
+    public Student(String firstName, String lastName, String password, String email) {
+        this.username = "";
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.password = password;
+        this.name = "";
+        this.email = email;
+        this.groups = new ArrayList<>();
+    }
+
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     private Integer id;
 
     private String username;
+    private String firstName;
+    private String lastName;
+
 
     private String password;
 
@@ -21,12 +38,9 @@ public class Student {
 
     private ArrayList<Group> groups = new ArrayList();
 
+
     public Integer getId() {
         return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
     }
 
     public String getName() {
@@ -69,4 +83,34 @@ public class Student {
         this.password = password;
     }
 
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "id=" + id +
+                ", username='" + username + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", password='" + password + '\'' +
+                ", name='" + name + '\'' +
+                ", email='" + email + '\'' +
+                ", groups=" + groups +
+                '}';
+    }
 }
