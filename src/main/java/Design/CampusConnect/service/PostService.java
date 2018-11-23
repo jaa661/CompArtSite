@@ -4,6 +4,7 @@ import Design.CampusConnect.entity.Post;
 import Design.CampusConnect.repo.PostRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import java.util.ArrayList;
 
 @Service
 public class PostService {
@@ -21,14 +22,20 @@ public class PostService {
         System.out.println(post);
         return repository.save(post);
     }
-    public Post makePost(String content, int poster, int group) {
+    public Post makePost(String content, int posterId, int groupId) {
         Post post = new Post();
 
         post.setContent(content);
-        post.setPostedBy(poster);
-        post.setPostedIn(group);
+        post.setPostedBy(posterId);
+        post.setPostedIn(groupId);
 
         System.out.println(post);
         return repository.save(post);
+    }
+
+    public Iterable<Post> getPostsInGroup(int groupId){
+
+        return repository.findAll();
+
     }
 }
