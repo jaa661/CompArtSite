@@ -19,9 +19,8 @@ import java.security.Principal;
 
 @Controller
 @RequestMapping("")
-public class WebController {
+public class TestViewController {
     @Autowired UserService service;
-
 
     @RequestMapping("/greeting")
     public String greeting(@RequestParam(name="name", required=false, defaultValue="World") String name, Model model) {
