@@ -1,4 +1,4 @@
-package Design.CampusConnect.entity;
+package Design.CampusConnect.Pojos;
 
 import Design.CampusConnect.Annotations.PasswordMatches;
 

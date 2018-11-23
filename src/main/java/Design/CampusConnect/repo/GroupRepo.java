@@ -3,6 +3,11 @@ package Design.CampusConnect.repo;
 import Design.CampusConnect.entity.Group;
 import org.springframework.data.repository.CrudRepository;
 
+import java.util.Optional;
+
 public interface GroupRepo extends CrudRepository<Group, Integer> {
+
+    Group findById(int id);
+    Group findByName(String name);
 
 }

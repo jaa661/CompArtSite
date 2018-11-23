@@ -22,6 +22,11 @@
         <input type="submit" value="register"/>
     </form>    </p>
 
+    <form th:action="@{/api/group/add}" method="post">
+        <div><label> Group Name : <input type="text" name="name"/> </label></div>
+        <input type = "hidden" name = "username" value = "${username}" />
+        <div><input type="submit" value="Sign In"/></div>
+    </form>
 
 </div>
 </body>

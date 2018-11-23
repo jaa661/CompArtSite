@@ -3,7 +3,7 @@ package Design.CampusConnect.controller;
 
 import Design.CampusConnect.Error.UserAlreadyExistException;
 import Design.CampusConnect.entity.Student;
-import Design.CampusConnect.entity.UserDto;
+import Design.CampusConnect.Pojos.UserDto;
 import Design.CampusConnect.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

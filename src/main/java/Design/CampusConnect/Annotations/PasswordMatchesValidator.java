@@ -1,6 +1,6 @@
 package Design.CampusConnect.Annotations;
 
-import Design.CampusConnect.entity.UserDto;
+import Design.CampusConnect.Pojos.UserDto;
 
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;

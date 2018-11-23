@@ -36,8 +36,7 @@ public class Student {
 
     private String email;
 
-    private ArrayList<Group> groups = new ArrayList();
-
+    private ArrayList<Integer> groups = new ArrayList();
 
     public Integer getId() {
         return id;
@@ -59,11 +58,15 @@ public class Student {
         this.email = email;
     }
 
-    public ArrayList<Group> getGroups() {
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public ArrayList<Integer> getGroups() {
         return groups;
     }
 
-    public void setGroups(ArrayList<Group> groups) {
+    public void setGroups(ArrayList<Integer> groups) {
         this.groups = groups;
     }
 
