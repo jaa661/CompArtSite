@@ -10,7 +10,7 @@ import java.util.ArrayList;
 public class PostService {
 
     @Autowired
-    private PostRepo repository;
+    private PostRepo postRepository;
 
     public Post makePost(final Post newPost) {
         Post post = new Post();
@@ -20,7 +20,7 @@ public class PostService {
         post.setPostedIn(newPost.getPostedIn());
 
         System.out.println(post);
-        return repository.save(post);
+        return postRepository.save(post);
     }
     public Post makePost(String content, int posterId, int groupId) {
         Post post = new Post();
@@ -30,12 +30,20 @@ public class PostService {
         post.setPostedIn(groupId);
 
         System.out.println(post);
-        return repository.save(post);
+        return postRepository.save(post);
     }
 
-    public Iterable<Post> getPostsInGroup(int groupId){
+    public Iterable<Post> getAllPosts(){
 
-        return repository.findAll();
+        System.out.println("Fetching all posts");
+        return postRepository.findAll();
 
+    }
+
+    public Iterable<Post> getPostsByGroupId(int groupId){
+
+        System.out.println("Fetching all posts in a given groupId");
+        return  postRepository.findByPostedIn(groupId);
+       // return postRepository.findAllByPostedIn(groupId);
     }
 }

@@ -31,7 +31,7 @@ public class GroupService {
         return repository.save(group);
     }
 
-    public Group createGroup(final Student creator, final Group newGroup) {
+    public Group createGroup(final Group newGroup, final Student creator) {
         Group group = new Group();
         System.out.println("creating new group created by: " + creator.getUsername());
 
@@ -78,5 +78,10 @@ public class GroupService {
         studentrepository.save(toUpdate);
         System.out.println("user: " + toUpdate.getUsername() + " joined: " + myNewGroup.getName());
     }
+
+//    public void studentPostToGroupByID(int studentId, int groupId, String textPost){
+//
+//
+//    }
 
 }

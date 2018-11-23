@@ -14,11 +14,9 @@ public class Group {
 
     private String name;
 
-    //private ArrayList<Post> posts = new ArrayList();
+    //private ArrayList<Post> postsInGroup = new ArrayList();
 
 
-
-    ///////
 
 
     public Integer getId() {
