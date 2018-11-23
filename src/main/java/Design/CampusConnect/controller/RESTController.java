@@ -12,7 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
-@RestController    // This means that this class is a Controller
+@RestController
 @RequestMapping(path="/api") // This means URL's start with /demo (after Application path)
 public class RESTController {
     @Autowired // This means to get the bean called userRepository
@@ -64,14 +64,14 @@ public class RESTController {
         GroupService.studentJoinGroup(newMemberId, groupid);
     }
 
-    @RequestMapping(value = "post/all", method= RequestMethod.GET,consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
+    @RequestMapping(value = "/post/all", method= RequestMethod.GET,consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
     @ResponseBody
     Iterable<Post> getAllPosts(){
         // returns JSON of all posts
         return PostService.getAllPosts();
     }
 
-    @RequestMapping(value = "post/inGroup/{groupId}", method= RequestMethod.GET,consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
+    @RequestMapping(value = "/post/inGroup/{groupId}", method= RequestMethod.GET,consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
     @ResponseBody
     Iterable<Post> getPostsByGroupId(@PathVariable int groupId){
         // returns JSON of all posts in groupID

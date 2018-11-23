@@ -24,13 +24,14 @@ public class Student {
     @GeneratedValue(strategy= GenerationType.AUTO)
     private Integer id;
 
+    @Column(unique = true)
     private String username;
+
     private String firstName;
+
     private String lastName;
 
-
     private String password;
-
 
     private String name;
 

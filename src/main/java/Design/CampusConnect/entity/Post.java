@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@NamedQuery(name = "Post.findByPostedIn", query = "SELECT p FROM Post p WHERE p.postedIn = ?1")
+//@NamedQuery(name = "Post.findByPostedIn", query = "SELECT p FROM Post p WHERE p.postedIn = ?1")
 @Table(name = "post", schema = "campus_connect")
 public class Post {
 
