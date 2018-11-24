@@ -53,6 +53,9 @@ public class GroupService {
         System.out.println("creating new group created by: " + toUpdate.getUsername());
 
         group.setName(groupName);
+        Set<Integer> studentsInGroup = new HashSet<>();
+        studentsInGroup.add(creatorId);
+        group.setStudentsInGroup(studentsInGroup);
         repository.save(group);
         toUpdate.getGroups().add(group.getId());
         studentrepository.save(toUpdate);
