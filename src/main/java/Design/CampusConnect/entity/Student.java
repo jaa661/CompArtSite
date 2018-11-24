@@ -39,7 +39,7 @@ public class Student {
 
     private String email;
 
-    @ElementCollection(targetClass=Integer.class)
+    @ElementCollection(fetch = FetchType.EAGER, targetClass=Integer.class)
     private Set<Integer> groups = new HashSet<>();
 
 
