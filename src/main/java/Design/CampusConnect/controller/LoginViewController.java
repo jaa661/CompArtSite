@@ -24,7 +24,7 @@ public class LoginViewController {
     UserService service;
 
     @RequestMapping(value = "/login", method = RequestMethod.GET)
-    public String get() {
+    public String showLogin() {
         System.out.println("hitting GET login");
         return "login.html";
     }
