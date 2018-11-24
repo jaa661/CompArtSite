@@ -28,47 +28,5 @@ public class LoginViewController {
         return "login";
     }
 
-    @RequestMapping(value="/register", method = RequestMethod.GET)
-    public ModelAndView showRegistrationPage(ModelAndView modelAndView, Student user){
-        System.out.println("hitting GET Register");
-        modelAndView.addObject("user", user);
-        modelAndView.setViewName("register");
-        return modelAndView;
-    }
 
-
-    @RequestMapping(value = "/register", method = RequestMethod.POST)
-    public ModelAndView registerUserAccount(
-
-            @ModelAttribute("user") @Valid UserDto accountDto,
-            BindingResult result,
-            WebRequest request,
-            Errors errors) {
-        System.out.println("hitting Post Register");
-
-        Student registered = new Student();
-        System.out.println("new student");
-        if (!result.hasErrors()) {
-            System.out.println("attempting to create user account with no errors");
-            registered = createUserAccount(accountDto, result);
-        }
-        if (registered == null) {
-            result.rejectValue("email", "message.regError");
-        }
-        if (result.hasErrors()) {
-            return new ModelAndView("register", "user", accountDto);
-        }
-        else {
-            return new ModelAndView("profile", "user", accountDto);
-        }
-    }
-    private Student createUserAccount(UserDto accountDto, BindingResult result) {
-        Student registered = null;
-        try {
-            registered = service.registerNewUserAccount(accountDto);
-        } catch (UserAlreadyExistException e) {
-            return null;
-        }
-        return registered;
-    }
 }
