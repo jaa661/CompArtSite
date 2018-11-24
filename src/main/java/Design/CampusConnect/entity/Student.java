@@ -2,6 +2,7 @@ package Design.CampusConnect.entity;
 
 import javax.persistence.*;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -17,7 +18,8 @@ public class Student {
         this.password = password;
         this.name = "";
         this.email = email;
-        this.groups = new ArrayList<>();
+//        this.groups = new ArrayList<>();
+        this.groups = new HashSet<>();
     }
 
     @Id
@@ -37,7 +39,18 @@ public class Student {
 
     private String email;
 
-    private ArrayList<Integer> groups = new ArrayList();
+    @ElementCollection(targetClass=Integer.class)
+    private Set<Integer> groups = new HashSet<>();
+
+
+    public Set<Integer> getGroups() {
+        return groups;
+    }
+
+    public void setGroups(Set<Integer> groups) {
+        this.groups = groups;
+    }
+
 
     public Integer getId() {
         return id;
@@ -63,13 +76,7 @@ public class Student {
         this.id = id;
     }
 
-    public ArrayList<Integer> getGroups() {
-        return groups;
-    }
 
-    public void setGroups(ArrayList<Integer> groups) {
-        this.groups = groups;
-    }
 
     public String getUsername() {
         return username;

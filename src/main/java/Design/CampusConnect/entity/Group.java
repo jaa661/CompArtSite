@@ -2,7 +2,8 @@ package Design.CampusConnect.entity;
 
 import javax.persistence.*;
 import java.util.ArrayList;
-import java.util.List;
+import java.util.Set;
+import java.util.HashSet;
 
 @Entity
 @Table(name = "groups")
@@ -14,7 +15,12 @@ public class Group {
 
     private String name;
 
-    private ArrayList<Integer> studentsInGroup = new ArrayList<>();
+
+    @Column(name = "students_in_group")
+    @ElementCollection(targetClass=Integer.class)
+    private Set<Integer> studentsInGroup = new HashSet<>();
+
+//    private ArrayList<Integer> studentsInGroup = new ArrayList<>();
 
     // Getters
     public Integer getId() {
@@ -27,14 +33,17 @@ public class Group {
         return name;
     }
 
-    public ArrayList<Integer> getStudentsInGroup() {
+    public Set<Integer> getStudentsInGroup() {
         return studentsInGroup;
     }
-
-    // Setters
-    public void setStudentsInGroup(ArrayList<Integer> studentsInGroup) {
-        this.studentsInGroup = studentsInGroup;
-    }
+//    public ArrayList<Integer> getStudentsInGroup() {
+//        return studentsInGroup;
+//    }
+//
+//    // Setters
+//    public void setStudentsInGroup(ArrayList<Integer> studentsInGroup) {
+//        this.studentsInGroup = studentsInGroup;
+//    }
 
     public void setId(Integer id) {
         this.id = id;
@@ -43,5 +52,9 @@ public class Group {
     public void setName(String name) {
 
         this.name = name;
+    }
+
+    public void setStudentsInGroup(Set<Integer> studentsInGroup) {
+        this.studentsInGroup = studentsInGroup;
     }
 }

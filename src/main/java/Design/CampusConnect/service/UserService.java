@@ -1,5 +1,6 @@
 package Design.CampusConnect.service;
 
+
 import Design.CampusConnect.entity.Student;
 import Design.CampusConnect.Pojos.UserDto;
 import Design.CampusConnect.repo.RoleRepo;
@@ -11,6 +12,8 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Set;
+import java.util.HashSet;
 
 @Service
 public class UserService implements IUserService {
@@ -44,7 +47,8 @@ public class UserService implements IUserService {
         user.setFirstName(accountDto.getFirstName());
         user.setLastName(accountDto.getLastName());
         user.setUsername(accountDto.getUserName());
-        ArrayList<Integer> groups = new ArrayList();
+//        ArrayList<Integer> groups = new ArrayList();
+        Set<Integer> groups = new HashSet<>();
         groups.add(0);
         user.setGroups(groups);
         System.out.println(accountDto.getPassword());

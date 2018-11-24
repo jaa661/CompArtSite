@@ -8,6 +8,8 @@ import Design.CampusConnect.repo.PostRepo;
 import Design.CampusConnect.repo.StudentRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import java.util.Set;
+import java.util.HashSet;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
@@ -70,14 +72,14 @@ public class GroupService {
         studentToUpdate.getGroups().add(groupId);
         studentrepository.save(studentToUpdate);
 
-        ArrayList<Integer> groups = groupToUpdate.getStudentsInGroup();
+        Set<Integer> groups = groupToUpdate.getStudentsInGroup();
         if(groups == null){
-            groups = new ArrayList<>();
+            groups = new HashSet<>();
             groups.add(newMemberId);
         }else{
             groups.add(newMemberId);
         }
-
+        System.out.println(groups);
         groupToUpdate.setStudentsInGroup(groups);
         repository.save(groupToUpdate);
 
@@ -111,7 +113,8 @@ public class GroupService {
     }
 
 
-    ///public void getStudentsInGroupByName(String groupName);
+
+//     public void getStudentsInGroupByName(String groupName);
 
 
 
