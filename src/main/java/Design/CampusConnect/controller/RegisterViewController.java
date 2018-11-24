@@ -25,7 +25,9 @@ public class RegisterViewController {
     @RequestMapping(value="/register", method = RequestMethod.GET)
     public ModelAndView showRegistrationPage(ModelAndView modelAndView, Student user){
         System.out.println("hitting GET Register");
+        // Why would register already have a set user? Or is this just initializing the user struct? - Alex
         modelAndView.addObject("user", user);
+        System.out.println("user: " + user);
         modelAndView.setViewName("register");
         return modelAndView;
     }
