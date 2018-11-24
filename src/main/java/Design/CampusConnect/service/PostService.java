@@ -44,6 +44,11 @@ public class PostService {
 
         System.out.println("Fetching all posts in a given groupId");
         return  postRepository.findByPostedIn(groupId);
-       // return postRepository.findAllByPostedIn(groupId);
+    }
+
+    public Iterable<Post> getPostsByStudentId(int studentId){
+
+        System.out.println("Fetching all posts in a given studentId");
+        return postRepository.findByPostedBy(studentId);
     }
 }

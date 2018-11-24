@@ -14,24 +14,34 @@ public class Group {
 
     private String name;
 
-    //private ArrayList<Post> postsInGroup = new ArrayList();
+    private ArrayList<Integer> studentsInGroup = new ArrayList<>();
 
-
-
-
+    // Getters
     public Integer getId() {
+
         return id;
+    }
+
+    public String getName() {
+
+        return name;
+    }
+
+    public ArrayList<Integer> getStudentsInGroup() {
+        return studentsInGroup;
+    }
+
+    // Setters
+    public void setStudentsInGroup(ArrayList<Integer> studentsInGroup) {
+        this.studentsInGroup = studentsInGroup;
     }
 
     public void setId(Integer id) {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
-    }
-
     public void setName(String name) {
+
         this.name = name;
     }
 }

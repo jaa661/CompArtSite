@@ -11,7 +11,10 @@ public interface PostRepo extends JpaRepository<Post, Integer> {
 
 
     // PostedIn is the groupId the Post is posted in
-    @Query("select t from Post t where t.postedIn =:groupId")
+    @Query("SELECT p FROM Post p WHERE p.postedIn = :groupId")
     List<Post> findByPostedIn(@Param("groupId") int groupId);
 
+    // PostedBy is the StudentId the Post is posted by
+    @Query("SELECT p FROM Post p WHERE p.postedBy = :studentId")
+    List<Post> findByPostedBy(@Param("studentId") int studentId);
 }

@@ -64,6 +64,11 @@ public class RESTController {
         GroupService.studentJoinGroup(newMemberId, groupid);
     }
 
+    @RequestMapping(value = "/group/studentList/{groupId}", method = RequestMethod.GET,consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
+    Iterable<Student> getStudentsInGroupById(@PathVariable int groupId) {
+        return GroupService.getStudentsInGroupById(groupId);
+    }
+
     @RequestMapping(value = "/post/all", method= RequestMethod.GET,consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
     @ResponseBody
     Iterable<Post> getAllPosts(){
@@ -76,6 +81,13 @@ public class RESTController {
     Iterable<Post> getPostsByGroupId(@PathVariable int groupId){
         // returns JSON of all posts in groupID
         return PostService.getPostsByGroupId(groupId);
+    }
+
+    @RequestMapping(value = "/post/byStudent/{studentId}", method= RequestMethod.GET,consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
+    @ResponseBody
+    Iterable<Post> getPostsByStudentId(@PathVariable int studentId){
+        // returns JSON of all posts by studentId
+        return PostService.getPostsByStudentId(studentId);
     }
 
     @GetMapping(path="/all")

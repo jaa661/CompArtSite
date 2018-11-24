@@ -9,6 +9,7 @@ import Design.CampusConnect.repo.StudentRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 @Service
@@ -58,14 +59,29 @@ public class GroupService {
         return group;
     }
 
-    public void studentJoinGroup(int newMemeberId, int groupId) {
-        Student toUpdate = studentrepository.findById(newMemeberId);
-        System.out.println(toUpdate);
-        System.out.println("user: " + toUpdate.getUsername() + " is attempting to join group");
-        toUpdate.getGroups().add(groupId);
-        studentrepository.save(toUpdate);
-        Group myNewGroup = repository.findById(groupId);
-        System.out.println("user: " + toUpdate.getUsername() + " joined: " + myNewGroup.getName());
+    public void studentJoinGroup(int newMemberId, int groupId) {
+        Student studentToUpdate = studentrepository.findById(newMemberId);
+        Group groupToUpdate = repository.findById(groupId);
+
+        System.out.println(studentToUpdate);
+        System.out.println("user: " + studentToUpdate.getUsername()
+                + " is attempting to join group " + groupToUpdate.getName());
+
+        studentToUpdate.getGroups().add(groupId);
+        studentrepository.save(studentToUpdate);
+
+        ArrayList<Integer> groups = groupToUpdate.getStudentsInGroup();
+        if(groups == null){
+            groups = new ArrayList<>();
+            groups.add(newMemberId);
+        }else{
+            groups.add(newMemberId);
+        }
+
+        groupToUpdate.setStudentsInGroup(groups);
+        repository.save(groupToUpdate);
+
+        System.out.println("user: " + studentToUpdate.getUsername() + " joined: " + groupToUpdate.getName());
     }
 
     public void studentJoinGroup(int newMemeberId, String groupName) {
@@ -79,9 +95,26 @@ public class GroupService {
         System.out.println("user: " + toUpdate.getUsername() + " joined: " + myNewGroup.getName());
     }
 
-//    public void studentPostToGroupByID(int studentId, int groupId, String textPost){
-//
-//
-//    }
+    public Iterable<Student> getStudentsInGroupById(int groupId){
+        Group group = repository.findById(groupId);
+        System.out.println("Getting members of: " + group.getName());
+        Iterable<Integer> studentListIds = group.getStudentsInGroup();
+        ArrayList<Student> students = new ArrayList<>();
+        for(Integer studentId:studentListIds){
+            Student student = studentrepository.findById(studentId.intValue());
+            students.add(student);
+        }
+
+        System.out.println("Members are: " + studentListIds);
+
+        return students;
+    }
+
+
+    ///public void getStudentsInGroupByName(String groupName);
+
+
+
+//    public void studentPostToGroupByID(int studentId, int groupId, String textPost);
 
 }
