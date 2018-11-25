@@ -44,7 +44,8 @@ public class SetSecurityConfig extends WebSecurityConfigurerAdapter {
         http
                 .csrf().disable()
                 .authorizeRequests()
-                .antMatchers("/", "/home", "/register", "/api/**").permitAll()
+                // Please remove the "/**" when in release mode.
+                .antMatchers( "/", "/**", "/home", "/register", "/api/**").permitAll()
                 .antMatchers("/Profile").authenticated()
                 .anyRequest().authenticated()
                 .and()
