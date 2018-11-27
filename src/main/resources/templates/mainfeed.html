@@ -25,6 +25,13 @@
         li a:hover {
             background-color: #111;
         }
+        #postbox {
+            border-radius: 25px;
+            border: 2px solid #73AD21;
+            padding: 20px;
+            width: 200px;
+            height: 150px;
+        }
     </style>
 </head>
 <body>
@@ -37,12 +44,10 @@
 </ul>
 
 <p th:text="'Feed'" />
-<table>
-    <tr th:each="post : ${feed}">
-        <td th:text="${post.postedBy}">1</td>
-        <td><a href="#" th:text="${post.postedIn}">Title ...</a></td>
-        <td th:text="${post.content}">Text ...</td>
-    </tr>
-</table>
+    <div th:each="post : ${feed}" id="postbox">
+        <p><a th:href="@{'/user/' + ${post.postedBy}}" th:text="${post.postedBy}">User ...</a></p>
+        <p><a th:href="@{'/group/' + ${post.postedIn}}" th:text="${post.postedIn}">view</a></p>
+        <p th:text="${post.content}">Text ...</p>
+    </div>
 </body>
 </html>
