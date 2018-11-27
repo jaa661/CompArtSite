@@ -55,7 +55,7 @@ public class RegisterViewController {
             return new ModelAndView("register", "user", accountDto);
         }
         else {
-            return new ModelAndView("profile", "user", accountDto);
+            return new ModelAndView("login", "user", accountDto);
         }
     }
     private Student createUserAccount(UserDto accountDto, BindingResult result) {
