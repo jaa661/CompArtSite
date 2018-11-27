@@ -1,6 +1,7 @@
 package Design.CampusConnect.service;
 
 import Design.CampusConnect.entity.Post;
+import Design.CampusConnect.repo.GroupRepo;
 import Design.CampusConnect.repo.PostRepo;
 import Design.CampusConnect.repo.StudentRepo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +16,8 @@ public class PostService {
 
     @Autowired
     private StudentRepo studentRepository;
+    @Autowired
+    private GroupRepo groupRepository;
 
     public Post makePost(final Post newPost) {
         Post post = new Post();
@@ -30,6 +33,7 @@ public class PostService {
         Post post = new Post();
 
         post.setPostedByUser(studentRepository.findById(posterId));
+        post.setPostedInGroup(groupRepository.findById(groupId));
         post.setContent(content);
         post.setPostedBy(posterId);
         post.setPostedIn(groupId);

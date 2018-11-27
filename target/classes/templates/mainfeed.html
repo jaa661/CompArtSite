@@ -55,8 +55,8 @@
 
 <p th:text="'Feed'" />
     <div th:each="post : ${feed}" id="postbox">
-        <p><a th:href="@{'/user/' + ${post.postedBy}}" th:text="${post.postedBy}">User ...</a></p>
-        <p><a th:href="@{'/group/' + ${post.postedIn}}" th:text="${post.postedIn}">view</a></p>
+        <p><a th:href="@{'/user/' + ${post.postedBy}}" th:text="${post.postedByUser.username}">User ...</a></p>
+        <p><a th:href="@{'/group/' + ${post.postedIn}}" th:text="${post.postedInGroup.name}">view</a></p>
         <p th:text="${post.content}">Text ...</p>
     </div>
 </body>

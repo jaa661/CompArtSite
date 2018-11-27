@@ -20,6 +20,9 @@ public class Post {
 
     private Integer postedIn;
 
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private Group postedInGroup;
+
     private String content;
 
 
@@ -61,5 +64,13 @@ public class Post {
 
     public void setPostedByUser(Student postedByUser) {
         this.postedByUser = postedByUser;
+    }
+
+    public Group getPostedInGroup() {
+        return postedInGroup;
+    }
+
+    public void setPostedInGroup(Group postedInGroup) {
+        this.postedInGroup = postedInGroup;
     }
 }

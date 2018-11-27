@@ -24,6 +24,11 @@ public class GroupService {
     @Autowired
     private StudentRepo studentrepository;
 
+
+    public Group findById(int Id) {
+        return repository.findById(Id);
+    }
+
     public Group createGroup(final Group newGroup) {
         Group group = new Group();
         System.out.println("creating new group with no original User");
