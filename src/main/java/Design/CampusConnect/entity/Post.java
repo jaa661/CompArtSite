@@ -1,11 +1,6 @@
 package Design.CampusConnect.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
-import javax.persistence.NamedQuery;
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,6 +14,9 @@ public class Post {
     private Integer id;
 
     private Integer postedBy;
+
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private Student postedByUser;
 
     private Integer postedIn;
 
@@ -55,5 +53,13 @@ public class Post {
 
     public void setContent(String content) {
         this.content = content;
+    }
+
+    public Student getPostedByUser() {
+        return postedByUser;
+    }
+
+    public void setPostedByUser(Student postedByUser) {
+        this.postedByUser = postedByUser;
     }
 }

@@ -62,4 +62,7 @@ public class UserService implements IUserService {
         repository.save(user);
         return user;
     }
+    public Student findByName(String name) {
+        return repository.findByUsername(name);
+    }
 }

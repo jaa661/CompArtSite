@@ -7,6 +7,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.security.Principal;
+
 @Controller
 public class FeedController {
 
@@ -17,7 +19,8 @@ public class FeedController {
     UserService Userservice;
 
     @RequestMapping(value = "/feed")
-    public String messages(Model model) {
+    public String messages(Model model, Principal principal) {
+        model.addAttribute("user", Userservice.findByName(principal.getName()));
         model.addAttribute("feed", service.getAllPosts());
         return "mainfeed";
     }

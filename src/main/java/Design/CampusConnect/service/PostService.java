@@ -2,6 +2,7 @@ package Design.CampusConnect.service;
 
 import Design.CampusConnect.entity.Post;
 import Design.CampusConnect.repo.PostRepo;
+import Design.CampusConnect.repo.StudentRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.ArrayList;
@@ -11,6 +12,9 @@ public class PostService {
 
     @Autowired
     private PostRepo postRepository;
+
+    @Autowired
+    private StudentRepo studentRepository;
 
     public Post makePost(final Post newPost) {
         Post post = new Post();
@@ -25,6 +29,7 @@ public class PostService {
     public Post makePost(String content, int posterId, int groupId) {
         Post post = new Post();
 
+        post.setPostedByUser(studentRepository.findById(posterId));
         post.setContent(content);
         post.setPostedBy(posterId);
         post.setPostedIn(groupId);
