@@ -99,7 +99,7 @@ public class CampusConnectApplication {
 		SpringApplication.run(CampusConnectApplication.class, args);
 		System.out.println("hello world");
 
-		WebSocketClient simpleWebSocketClient = new StandardWebSocketClient();
+		/*WebSocketClient simpleWebSocketClient = new StandardWebSocketClient();
 		List<Transport> transports = new ArrayList<>(1);
 		transports.add(new WebSocketTransport(simpleWebSocketClient));
 
@@ -125,7 +125,7 @@ public class CampusConnectApplication {
 			}
 		}catch (Exception e){
 			System.out.println("I Error'd allover myself: " + e.getMessage());
-		}
+		}*/
 
 
 

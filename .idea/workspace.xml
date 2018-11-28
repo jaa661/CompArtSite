@@ -2,9 +2,50 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fd399fdf-eefa-4699-a82d-1d5a7d2f9098" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/Design/CampusConnect/controller/HomeViewController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Design/CampusConnect/controller/ProfileViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Campus-Connect.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Campus-Connect.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Design/CampusConnect/CampusConnectApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Design/CampusConnect/CampusConnectApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Design/CampusConnect/SetSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Design/CampusConnect/SetSecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Design/CampusConnect/controller/LoginViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Design/CampusConnect/controller/LoginViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Design/CampusConnect/controller/TestViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Design/CampusConnect/controller/TestViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Design/CampusConnect/Annotations/PasswordMatchesValidator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Design/CampusConnect/Annotations/PasswordMatchesValidator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Design/CampusConnect/CampusConnectApplication$MyStompSessionHandler$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Design/CampusConnect/CampusConnectApplication$MyStompSessionHandler$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Design/CampusConnect/CampusConnectApplication$MyStompSessionHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Design/CampusConnect/CampusConnectApplication$MyStompSessionHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Design/CampusConnect/CampusConnectApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Design/CampusConnect/CampusConnectApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Design/CampusConnect/ChatClient/ClientMessage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Design/CampusConnect/ChatClient/ClientMessage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Design/CampusConnect/ChatClient/ServerMessage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Design/CampusConnect/ChatClient/ServerMessage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Design/CampusConnect/ChatServer/ChatController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Design/CampusConnect/ChatServer/ChatController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Design/CampusConnect/ChatServer/Message.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Design/CampusConnect/ChatServer/Message.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Design/CampusConnect/ChatServer/OutputMessage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Design/CampusConnect/ChatServer/OutputMessage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Design/CampusConnect/ChatServer/WebSocketConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Design/CampusConnect/ChatServer/WebSocketConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Design/CampusConnect/Error/UserAlreadyExistException.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Design/CampusConnect/Error/UserAlreadyExistException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Design/CampusConnect/MyUserDetailsService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Design/CampusConnect/MyUserDetailsService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Design/CampusConnect/MyUserPrincipal.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Design/CampusConnect/MyUserPrincipal.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Design/CampusConnect/Pojos/UserDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Design/CampusConnect/Pojos/UserDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Design/CampusConnect/SetSecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Design/CampusConnect/SetSecurityConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Design/CampusConnect/controller/ErrorController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Design/CampusConnect/controller/ErrorController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Design/CampusConnect/controller/FeedController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Design/CampusConnect/controller/FeedController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Design/CampusConnect/controller/GroupController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Design/CampusConnect/controller/GroupController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Design/CampusConnect/controller/LoginViewController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Design/CampusConnect/controller/LoginViewController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Design/CampusConnect/controller/RESTController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Design/CampusConnect/controller/RESTController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Design/CampusConnect/controller/RegisterViewController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Design/CampusConnect/controller/RegisterViewController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Design/CampusConnect/controller/TestViewController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Design/CampusConnect/controller/TestViewController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Design/CampusConnect/entity/Group.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Design/CampusConnect/entity/Group.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Design/CampusConnect/entity/Post.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Design/CampusConnect/entity/Post.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Design/CampusConnect/entity/Role.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Design/CampusConnect/entity/Role.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Design/CampusConnect/entity/Student.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Design/CampusConnect/entity/Student.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Design/CampusConnect/repo/GroupRepo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Design/CampusConnect/repo/GroupRepo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Design/CampusConnect/repo/PostRepo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Design/CampusConnect/repo/PostRepo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Design/CampusConnect/repo/RoleRepo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Design/CampusConnect/repo/RoleRepo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Design/CampusConnect/repo/StudentRepo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Design/CampusConnect/repo/StudentRepo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Design/CampusConnect/service/GroupService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Design/CampusConnect/service/GroupService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Design/CampusConnect/service/IUserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Design/CampusConnect/service/IUserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Design/CampusConnect/service/PostService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Design/CampusConnect/service/PostService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Design/CampusConnect/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Design/CampusConnect/service/UserService.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -17,180 +58,13 @@
     <option name="autoscrollToSource" value="true" />
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="true" />
   </component>
-  <component name="FUSProjectUsageTrigger">
-    <session id="295077099">
-      <usages-collector id="statistics.file.extensions.open">
-        <counts>
-          <entry key="html" value="1" />
-          <entry key="java" value="24" />
-          <entry key="xml" value="1" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.open">
-        <counts>
-          <entry key="HTML" value="1" />
-          <entry key="JAVA" value="24" />
-          <entry key="XML" value="1" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.edit">
-        <counts>
-          <entry key="html" value="8" />
-          <entry key="java" value="69" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-          <entry key="HTML" value="8" />
-          <entry key="JAVA" value="69" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.lifecycle.project">
-        <counts>
-          <entry key="project.closed" value="2" />
-          <entry key="project.open.time.1" value="1" />
-          <entry key="project.open.time.7" value="1" />
-          <entry key="project.opened" value="2" />
-        </counts>
-      </usages-collector>
-    </session>
-    <session id="-2126643452">
-      <usages-collector id="statistics.file.extensions.edit">
-        <counts>
-          <entry key="java" value="1553" />
-          <entry key="txt" value="17" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-          <entry key="JAVA" value="1553" />
-          <entry key="PLAIN_TEXT" value="17" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.open">
-        <counts>
-          <entry key="java" value="12" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.open">
-        <counts>
-          <entry key="JAVA" value="12" />
-        </counts>
-      </usages-collector>
-    </session>
-    <session id="-1062309420">
-      <usages-collector id="statistics.lifecycle.project">
-        <counts>
-          <entry key="project.open.time.1" value="1" />
-          <entry key="project.opened" value="1" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.edit">
-        <counts>
-          <entry key="html" value="22" />
-          <entry key="java" value="506" />
-          <entry key="txt" value="108" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-          <entry key="HTML" value="22" />
-          <entry key="JAVA" value="506" />
-          <entry key="PLAIN_TEXT" value="108" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.open">
-        <counts>
-          <entry key="class" value="1" />
-          <entry key="html" value="4" />
-          <entry key="java" value="5" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.open">
-        <counts>
-          <entry key="CLASS" value="1" />
-          <entry key="HTML" value="4" />
-          <entry key="JAVA" value="5" />
-        </counts>
-      </usages-collector>
-    </session>
-  </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Design/CampusConnect/service/GroupService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-259">
-              <caret line="78" column="7" selection-start-line="78" selection-start-column="7" selection-end-line="78" selection-end-column="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Design/CampusConnect/controller/RegisterViewController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-341">
-              <caret line="22" column="24" lean-forward="true" selection-start-line="22" selection-start-column="24" selection-end-line="22" selection-end-column="24" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Design/CampusConnect/controller/LoginViewController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Design/CampusConnect/controller/ErrorController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-179">
-              <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/login.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="18" column="36" selection-start-line="18" selection-start-column="36" selection-end-line="18" selection-end-column="36" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Design/CampusConnect/MyUserPrincipal.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Design/CampusConnect/SetSecurityConfig.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="177">
-              <caret line="32" column="26" lean-forward="true" selection-start-line="32" selection-start-column="26" selection-end-line="32" selection-end-column="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Design/CampusConnect/MyUserDetailsService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+            <state relative-caret-position="363">
+              <caret line="23" column="14" lean-forward="true" selection-start-line="23" selection-start-column="14" selection-end-line="23" selection-end-column="14" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -199,10 +73,73 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Design/CampusConnect/entity/Student.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Design/CampusConnect/SetSecurityConfig.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="129">
-              <caret line="34" selection-start-line="34" selection-end-line="34" />
+            <state relative-caret-position="493">
+              <caret line="47" column="44" selection-start-line="47" selection-start-column="44" selection-end-line="47" selection-end-column="44" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Design/CampusConnect/ChatServer/OutputMessage.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="6">
+              <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Design/CampusConnect/ChatServer/Message.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Design/CampusConnect/ChatServer/ChatController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="15" column="27" selection-start-line="15" selection-start-column="27" selection-end-line="15" selection-end-column="27" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Design/CampusConnect/controller/ChatViewController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Design/CampusConnect/ChatServer/WebSocketConfig.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="391">
+              <caret line="27" column="35" lean-forward="true" selection-start-line="27" selection-start-column="35" selection-end-line="27" selection-end-column="35" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/META-INF/resources/chatcode.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="580">
+              <caret line="38" column="41" selection-start-line="38" selection-start-column="41" selection-end-line="38" selection-end-column="41" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Design/CampusConnect/CampusConnectApplication.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="261">
+              <caret line="120" column="42" lean-forward="true" selection-start-line="120" selection-start-column="42" selection-end-line="120" selection-end-column="42" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -211,13 +148,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Design/CampusConnect/service/UserService.java">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/login.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-88">
-              <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="187">
+              <caret line="11" column="6" lean-forward="true" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -240,6 +174,9 @@
       <find>accountDto</find>
       <find>newPost</find>
       <find>showRegistrationPage</find>
+      <find>greeting</find>
+      <find>hitting GET login</find>
+      <find>login</find>
     </findStrings>
     <replaceStrings>
       <replace>Student</replace>
@@ -254,12 +191,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/Design/CampusConnect/entity/Users.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Design/CampusConnect/repo/UserRepo.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Design/CampusConnect/entity/Groups.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Design/CampusConnect/entity/Students.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/Login.html" />
         <option value="$PROJECT_DIR$/src/main/java/Design/CampusConnect/CustomUserDetailsService.java" />
         <option value="$PROJECT_DIR$/src/main/java/Design/CampusConnect/Privilege.java" />
         <option value="$PROJECT_DIR$/src/main/java/Design/CampusConnect/CustomUserPrincipal.java" />
@@ -279,13 +210,11 @@
         <option value="$PROJECT_DIR$/src/main/resources/templates/errorPage.html" />
         <option value="$PROJECT_DIR$/src/main/java/Design/CampusConnect/controller/ErrorController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/error.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/src/main/java/Design/CampusConnect/MyUserPrincipal.java" />
         <option value="$PROJECT_DIR$/src/main/java/Design/CampusConnect/MyUserDetailsService.java" />
         <option value="$PROJECT_DIR$/src/main/java/Design/CampusConnect/entity/UserDto.java" />
         <option value="$PROJECT_DIR$/src/main/java/Design/CampusConnect/controller/WebController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/register.html" />
-        <option value="$PROJECT_DIR$/src/main/java/Design/CampusConnect/SetSecurityConfig.java" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/Profile.html" />
         <option value="$PROJECT_DIR$/src/main/java/Design/CampusConnect/Pojos/UserDto.java" />
         <option value="$PROJECT_DIR$/src/main/java/Design/CampusConnect/service/UserService.java" />
@@ -301,10 +230,18 @@
         <option value="$PROJECT_DIR$/src/main/java/Design/CampusConnect/controller/RESTController.java" />
         <option value="$PROJECT_DIR$/src/main/java/Design/CampusConnect/service/GroupService.java" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/home.html" />
-        <option value="$PROJECT_DIR$/src/main/java/Design/CampusConnect/controller/TestViewController.java" />
         <option value="$PROJECT_DIR$/src/main/java/Design/CampusConnect/controller/RegisterViewController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Design/CampusConnect/controller/LoginViewController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/login.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
+        <option value="$PROJECT_DIR$/src/main/java/Design/CampusConnect/controller/ProfileViewController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Design/CampusConnect/controller/TestViewController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Design/CampusConnect/CampusConnectApplication.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Design/CampusConnect/controller/HomeViewController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Design/CampusConnect/controller/LoginViewController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Design/CampusConnect/SetSecurityConfig.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Design/CampusConnect/ChatServer/WebSocketConfig.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Design/CampusConnect/ChatServer/ChatController.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/META-INF/resources/chatcode.js" />
       </list>
     </option>
   </component>
@@ -315,11 +252,10 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="x" value="15" />
-    <option name="y" value="23" />
-    <option name="width" value="1400" />
-    <option name="height" value="785" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="1913" />
+    <option name="width" value="1934" />
+    <option name="height" value="1047" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -328,7 +264,7 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
-      <pane id="AndroidView" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -369,6 +305,33 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="CampusConnect" type="462c0819:PsiDirectoryNode" />
+              <item name="Annotations" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Campus-Connect" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Campus-Connect" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="CampusConnect" type="462c0819:PsiDirectoryNode" />
+              <item name="ChatClient" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Campus-Connect" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Campus-Connect" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="CampusConnect" type="462c0819:PsiDirectoryNode" />
+              <item name="ChatServer" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Campus-Connect" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Campus-Connect" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="CampusConnect" type="462c0819:PsiDirectoryNode" />
               <item name="controller" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -387,7 +350,7 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="CampusConnect" type="462c0819:PsiDirectoryNode" />
-              <item name="repo" type="462c0819:PsiDirectoryNode" />
+              <item name="Error" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Campus-Connect" type="b2602c69:ProjectViewProjectNode" />
@@ -396,13 +359,30 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="CampusConnect" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="Pojos" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Campus-Connect" type="b2602c69:ProjectViewProjectNode" />
               <item name="Campus-Connect" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="CampusConnect" type="462c0819:PsiDirectoryNode" />
+              <item name="repo" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Campus-Connect" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Campus-Connect" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Campus-Connect" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Campus-Connect" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -417,15 +397,14 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///Users/alex/IdeaProjects/Campus-Connect/src/main/java/Design/CampusConnect/controller/LoginViewController.java" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543078812355" />
-    <property name="project.structure.last.edited" value="Project" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543373300729" />
+    <property name="project.structure.last.edited" value="SDKs" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />
   </component>
   <component name="RunDashboard">
@@ -451,6 +430,8 @@
       </method>
     </configuration>
     <configuration name="run boy" type="Application" factoryName="Application" singleton="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="1.8" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="Design.CampusConnect.CampusConnectApplication" />
       <module name="Campus-Connect" />
       <method v="2">
@@ -491,10 +472,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="15" y="23" width="1400" height="785" extended-state="0" />
+    <frame x="1913" y="0" width="1934" height="1047" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2496318" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15901814" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -502,16 +483,16 @@
       <window_info id="Capture Tool" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32650602" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4985694" visible="true" weight="0.32900432" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32603937" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4985694" visible="true" weight="0.2713348" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3997114" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32932165" />
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.50143063" side_tool="true" weight="0.32289156" />
       <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.4985694" weight="0.32891566" />
-      <window_info anchor="bottom" id="Messages" order="10" weight="0.3255102" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.3249453" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -520,10 +501,8 @@
       <window_info anchor="right" id="Theme Preview" order="5" />
       <window_info anchor="right" id="Palette&#9;" order="6" />
       <window_info anchor="right" id="Maven Projects" order="7" />
+      <window_info anchor="right" id="Maven" order="8" />
     </layout>
-  </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="added more stuff" />
@@ -537,80 +516,10 @@
         <state relative-caret-position="-1054" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Design/CampusConnect/CampusConnectApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="8" column="31" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Design/CampusConnect/Annotations/PasswordMatches.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="12" column="18" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Design/CampusConnect/Annotations/PasswordMatchesValidator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Design/CampusConnect/entity/Role.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1425">
           <caret line="95" column="49" selection-start-line="95" selection-start-column="49" selection-end-line="95" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Design/CampusConnect/entity/Post.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-13">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Design/CampusConnect/repo/PostRepo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Design/CampusConnect/entity/Group.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="218">
-          <caret line="20" column="26" selection-start-line="20" selection-end-line="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Design/CampusConnect/repo/GroupRepo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="13" column="21" selection-start-line="13" selection-start-column="21" selection-end-line="13" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Design/CampusConnect/repo/StudentRepo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="13" column="20" selection-start-line="13" selection-start-column="12" selection-end-line="13" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Design/CampusConnect/repo/RoleRepo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
         </state>
       </provider>
     </entry>
@@ -621,20 +530,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-beans/5.0.9.RELEASE/spring-beans-5.0.9.RELEASE.jar!/org/springframework/beans/factory/annotation/Autowired.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="9" column="18" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/register.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="237">
-          <caret line="25" column="9" lean-forward="true" selection-start-line="25" selection-start-column="9" selection-end-line="25" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-beans/5.0.9.RELEASE/spring-beans-5.0.9.RELEASE.jar!/org/springframework/beans/factory/annotation/Autowired.class" />
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/AddUserForm.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
@@ -642,17 +538,181 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="22" column="17" lean-forward="true" selection-start-line="22" selection-start-column="17" selection-end-line="22" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Design/CampusConnect/service/GroupService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1088">
+          <caret line="78" selection-start-line="78" selection-end-line="78" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Design/CampusConnect/controller/ErrorController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Design/CampusConnect/service/UserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/chatroom.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-153" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Design/CampusConnect/ChatClient/ServerMessage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="16">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Design/CampusConnect/ChatClient/ClientMessage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Design/CampusConnect/controller/FeedController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="21" column="14" lean-forward="true" selection-start-line="21" selection-start-column="14" selection-end-line="21" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Design/CampusConnect/controller/RegisterViewController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="101">
+          <caret line="22" column="24" selection-start-line="22" selection-start-column="24" selection-end-line="22" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Design/CampusConnect/entity/Student.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="19" column="27" lean-forward="true" selection-start-line="19" selection-start-column="27" selection-end-line="19" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Design/CampusConnect/entity/Role.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Design/CampusConnect/entity/Post.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="39">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Design/CampusConnect/entity/Group.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="20" column="26" selection-start-line="20" selection-end-line="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Design/CampusConnect/Annotations/PasswordMatches.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="12" column="18" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Design/CampusConnect/Annotations/PasswordMatchesValidator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/PostMessageToGroup.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/register.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="22" lean-forward="true" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="40" lean-forward="true" selection-start-line="2" selection-start-column="40" selection-end-line="2" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Design/CampusConnect/Pojos/UserDto.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
+        <state relative-caret-position="-1">
           <caret line="24" column="31" lean-forward="true" selection-start-line="24" selection-start-column="31" selection-end-line="24" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Design/CampusConnect/Error/UserAlreadyExistException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="19" selection-start-line="3" selection-start-column="19" selection-end-line="3" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Design/CampusConnect/repo/StudentRepo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="13" column="20" selection-start-line="13" selection-start-column="12" selection-end-line="13" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Design/CampusConnect/repo/RoleRepo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Design/CampusConnect/repo/PostRepo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Design/CampusConnect/repo/GroupRepo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="13" column="21" selection-start-line="13" selection-start-column="21" selection-end-line="13" selection-end-column="21" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Design/CampusConnect/controller/RESTController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="975">
-          <caret line="75" column="41" selection-start-line="75" selection-start-column="41" selection-end-line="75" selection-end-column="41" />
+        <state relative-caret-position="-306">
+          <caret line="43" column="25" lean-forward="true" selection-start-line="43" selection-start-column="25" selection-end-line="43" selection-end-column="25" />
           <folding>
             <element signature="e#1961#1962#0" expanded="true" />
             <element signature="e#2018#2019#0" expanded="true" />
@@ -666,58 +726,57 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Design/CampusConnect/controller/TestViewController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/Design/CampusConnect/MyUserPrincipal.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="41" column="43" lean-forward="true" selection-start-line="41" selection-start-column="43" selection-end-line="41" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/home.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="22" column="17" lean-forward="true" selection-start-line="22" selection-start-column="17" selection-end-line="22" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Design/CampusConnect/service/GroupService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-259">
-          <caret line="78" column="7" selection-start-line="78" selection-start-column="7" selection-end-line="78" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Design/CampusConnect/controller/RegisterViewController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-341">
-          <caret line="22" column="24" lean-forward="true" selection-start-line="22" selection-start-column="24" selection-end-line="22" selection-end-column="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Design/CampusConnect/controller/ErrorController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-179">
+        <state relative-caret-position="-86">
           <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Design/CampusConnect/controller/LoginViewController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/Design/CampusConnect/MyUserDetailsService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
+        <state relative-caret-position="255">
+          <caret line="15" column="63" selection-start-line="15" selection-start-column="45" selection-end-line="15" selection-end-column="63" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Design/CampusConnect/service/UserService.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/Design/CampusConnect/controller/ProfileViewController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-88">
-          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+        <state relative-caret-position="323">
+          <caret line="23" column="5" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Design/CampusConnect/controller/TestViewController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="19" lean-forward="true" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Design/CampusConnect/controller/HomeViewController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="11" lean-forward="true" selection-start-line="15" selection-start-column="11" selection-end-line="15" selection-end-column="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Design/CampusConnect/CampusConnectApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="261">
+          <caret line="120" column="42" lean-forward="true" selection-start-line="120" selection-start-column="42" selection-end-line="120" selection-end-column="42" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -726,42 +785,67 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/login.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="36" selection-start-line="18" selection-start-column="36" selection-end-line="18" selection-end-column="36" />
+        <state relative-caret-position="187">
+          <caret line="11" column="6" lean-forward="true" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Design/CampusConnect/MyUserPrincipal.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/Design/CampusConnect/controller/LoginViewController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        <state relative-caret-position="363">
+          <caret line="23" column="14" lean-forward="true" selection-start-line="23" selection-start-column="14" selection-end-line="23" selection-end-column="14" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Design/CampusConnect/ChatServer/OutputMessage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Design/CampusConnect/ChatServer/Message.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Design/CampusConnect/controller/ChatViewController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Design/CampusConnect/ChatServer/ChatController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="15" column="27" selection-start-line="15" selection-start-column="27" selection-end-line="15" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Design/CampusConnect/ChatServer/WebSocketConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="27" column="35" lean-forward="true" selection-start-line="27" selection-start-column="35" selection-end-line="27" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/META-INF/resources/chatcode.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="580">
+          <caret line="38" column="41" selection-start-line="38" selection-start-column="41" selection-end-line="38" selection-end-column="41" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Design/CampusConnect/SetSecurityConfig.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
-          <caret line="32" column="26" lean-forward="true" selection-start-line="32" selection-start-column="26" selection-end-line="32" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Design/CampusConnect/MyUserDetailsService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Design/CampusConnect/entity/Student.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="129">
-          <caret line="34" selection-start-line="34" selection-end-line="34" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="493">
+          <caret line="47" column="44" selection-start-line="47" selection-start-column="44" selection-end-line="47" selection-end-column="44" />
         </state>
       </provider>
     </entry>
@@ -805,7 +889,7 @@
       </state>
       <state key="JdkListConfigurable.UI">
         <settings>
-          <last-edited>10</last-edited>
+          <last-edited>1.8</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
