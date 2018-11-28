@@ -7,13 +7,17 @@ package Design.CampusConnect.ChatClient;
  */
 public class ClientMessage
 {
+
+
+    private String to;
     private String from;
     private String text;
 
     public ClientMessage() {}
 
-    public ClientMessage(String from,String text)
+    public ClientMessage(String to, String from,String text)
     {
+        this.to = to;
         this.from = from;
         this.text = text;
     }
@@ -36,5 +40,13 @@ public class ClientMessage
     public void setText(String text)
     {
         this.text = text;
+    }
+
+    public String getTo() {
+        return to;
+    }
+
+    public void setTo(String to) {
+        this.to = to;
     }
 }

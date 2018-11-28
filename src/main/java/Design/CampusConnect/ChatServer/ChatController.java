@@ -2,6 +2,7 @@ package Design.CampusConnect.ChatServer;
 
 import org.springframework.messaging.handler.annotation.DestinationVariable;
 import org.springframework.messaging.handler.annotation.MessageMapping;
+import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.messaging.handler.annotation.SendTo;
 import org.springframework.stereotype.Controller;
 
@@ -13,11 +14,12 @@ import org.springframework.stereotype.Controller;
 @Controller
 public class ChatController 
 {
-    @MessageMapping("/chat/{topic}")
-    @SendTo("/topic/messages")
-    public OutputMessage send(@DestinationVariable("topic") String topic,
-                              Message message) throws Exception
+    @MessageMapping("/chat/{roomId}")
+    @SendTo("/roomId/messages")
+    public OutputMessage handleMessage(@DestinationVariable("roomId") String roomId, OutputMessage message) throws Exception
     {
-	return new OutputMessage(message.getFrom(), message.getText(), topic);
+        System.out.println("Message received for room: " + roomId);
+
+	    return new OutputMessage(message.getFrom(), message.getMessage(), roomId);
     }
 }

@@ -59,7 +59,7 @@ public class CampusConnectApplication {
 
 		private void sendJsonMessage(StompSession session)
 		{
-			ClientMessage msg = new ClientMessage(userId,
+			ClientMessage msg = new ClientMessage(null, userId,
 					"hello from spring");
 			session.send("/app/chat/java", msg);
 		}

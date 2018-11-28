@@ -3,6 +3,17 @@
 
     var client;
 
+
+    $(function() {
+        client = Stomp.over(new SockJS('/socket'));
+                client.connect({}, function (frame) {
+                    setConnected(true);
+                    client.subscribe('/roomId/messages', function (message) {
+                    showMessage(JSON.parse(message.body));
+                    });
+                });
+    });
+
     function showMessage(mesg)
     {
 	$('#messages').append('<tr>' +
@@ -36,13 +47,7 @@
     $('#connect,#disconnect,#text').prop('disabled', true);
 
     $('#connect').click(function() {
-	client = Stomp.over(new SockJS('/chat'));
-	client.connect({}, function (frame) {
-	    setConnected(true);
-	    client.subscribe('/topic/messages', function (message) {
-		showMessage(JSON.parse(message.body));
-	    });
-	});
+
     });
 
     $('#disconnect').click(function() {
@@ -53,11 +58,12 @@
 	client = null;
     });
 
+
     $('#send').click(function() {
 	var topic = $('#topic').val();
 	client.send("/app/chat/" + topic, {}, JSON.stringify({
-	    from: $("#from").val(),
-	    text: $('#text').val(),
+	    from: usrnme,
+	    message: $('#text').val(),
 	}));
 	$('#text').val("");
     });

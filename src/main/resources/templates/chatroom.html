@@ -46,6 +46,7 @@
     <li><a href="/feed">Feed</a></li>
     <li><a href="/ws">Chat</a></li>
 </ul>
+<input type="hidden" id="jsonBom" value='${username}'/>
 <div id="main-content" class="container">
     <div class="row">
         <div class="col-md-12 space-bottom10">
@@ -108,3 +109,11 @@
 </div>
 </body>
 </html>
+<script th:inline="javascript">
+/*<![CDATA[*/
+
+    var usrnme = /*[[${username}]]*/ 'default';
+    console.log(usrnme);
+
+/*]]>*/
+</script>

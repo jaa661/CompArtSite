@@ -15,6 +15,9 @@
     <div><label> Password: <input type="password" name="password"/> </label></div>
     <div><input type="submit" value="Sign In"/></div>
 </form>
+<form th:action="@{/register}" method="post">
+    <input type="submit" value="Register"/>
+</form>
 <form th:action="@{/home}" method="post">
     <input type="submit" value="Home"/>
 </form>
