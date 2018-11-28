@@ -1,7 +1,6 @@
 package Design.CampusConnect;
 
-import Design.CampusConnect.ChatClient.ClientMessage;
-import Design.CampusConnect.ChatClient.ServerMessage;
+import Design.CampusConnect.ChatServer.Message;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -57,12 +56,11 @@ public class CampusConnectApplication {
 			}
 		}
 
-		private void sendJsonMessage(StompSession session)
+		/*private void sendJsonMessage(StompSession session)
 		{
-			ClientMessage msg = new ClientMessage(null, userId,
-					"hello from spring");
+			Message msg = new Message(1, userId, "hello from spring", null);
 			session.send("/app/chat/java", msg);
-		}
+		}*/
 
 		private void subscribeTopic(String topic,StompSession session)
 		{
@@ -70,7 +68,7 @@ public class CampusConnectApplication {
 
 				@Override
 				public Type getPayloadType(StompHeaders headers) {
-					return ServerMessage.class;
+					return Message.class;
 				}
 
 				@Override
@@ -90,7 +88,7 @@ public class CampusConnectApplication {
 			showHeaders(connectedHeaders);
 
 			subscribeTopic("/topic/messages", session);
-			sendJsonMessage(session);
+			//sendJsonMessage(session);
 		}
 
 	}

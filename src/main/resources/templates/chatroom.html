@@ -52,31 +52,22 @@
         <div class="col-md-12 space-bottom10">
             <form class="form-inline">
                 <div class="form-group">
-                    <label for="from">Name?</label>
-                    <input type="text" id="from" class="form-control"
-                           placeholder="enter your name...">
+                    <label for="chatid">Chatroom ID:</label>
+                    <input type="text" id="chatid" class="form-control"
+                           placeholder="enter your chatroom id">
                 </div>
-                <button id="connect"
+                <button id="enterClick"
                         class="btn btn-default"
-                        type="submit">Connect</button>
-                <button id="disconnect"
+                        type="submit">enter</button>
+                <button id="leaveClick"
                         class="btn btn-default"
                         type="submit"
-                        disabled="disabled">Disconnect</button>
+                        disabled="disabled">leave</button>
             </form>
         </div>
     </div>
     <div class="row space-bottom10">
         <form>
-            <div class="col-md-2">
-                <select name="topic"
-                        id="topic"
-                        class="form-control">
-                    <option>Lifestyle</option>
-                    <option>Travel</option>
-                    <option>Career</option>
-                </select>
-            </div>
             <div class="col-md-6">
                 <input type="text"
                        id="text"
@@ -95,10 +86,9 @@
             <table id="conversation" class="table table-striped">
                 <thead>
                 <tr>
-                    <th width="10%">From</th>
-                    <th width="15%">Topic</th>
+                    <th width="20%">From</th>
                     <th width="60%">Message</th>
-                    <th width="10%">Time</th>
+                    <th width="20%">Time</th>
                 </tr>
                 </thead>
                 <tbody id="messages">
@@ -113,7 +103,7 @@
 /*<![CDATA[*/
 
     var usrnme = /*[[${username}]]*/ 'default';
-    console.log(usrnme);
+   //console.log(usrnme);
 
 /*]]>*/
 </script>

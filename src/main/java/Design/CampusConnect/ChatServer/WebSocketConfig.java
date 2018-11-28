@@ -1,6 +1,7 @@
 package Design.CampusConnect.ChatServer;
 
 import org.springframework.context.annotation.Configuration;
+import org.springframework.messaging.simp.config.ChannelRegistration;
 import org.springframework.messaging.simp.config.MessageBrokerRegistry;
 import org.springframework.web.socket.config.annotation.AbstractWebSocketMessageBrokerConfigurer;
 import org.springframework.web.socket.config.annotation.EnableWebSocketMessageBroker;
@@ -27,4 +28,5 @@ public class WebSocketConfig extends AbstractWebSocketMessageBrokerConfigurer
     {
         registry.addEndpoint("/socket").setAllowedOrigins("*").withSockJS();
     }
+
 }

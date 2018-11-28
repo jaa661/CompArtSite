@@ -46,7 +46,7 @@ public class SetSecurityConfig extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 // Please remove the "/**" when in release mode.
                 .antMatchers( "/register", "/api/**").permitAll()
-                .antMatchers("/profile", "/socket", "/chat/**", "/app/**", "/topic/**", "/home").authenticated()
+                .antMatchers("/profile", "/socket", "/chat/**", "/app/**", "/topic/**", "/feed", "/home").authenticated()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
