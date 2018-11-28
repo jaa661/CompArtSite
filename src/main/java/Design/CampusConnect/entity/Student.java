@@ -16,7 +16,6 @@ public class Student {
         this.firstName = firstName;
         this.lastName = lastName;
         this.password = password;
-        this.name = "";
         this.email = email;
 //        this.groups = new ArrayList<>();
         this.groups = new HashSet<>();
@@ -34,8 +33,6 @@ public class Student {
     private String lastName;
 
     private String password;
-
-    private String name;
 
     private String email;
 
@@ -56,13 +53,6 @@ public class Student {
         return id;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
 
     public String getEmail() {
         return email;
@@ -119,7 +109,6 @@ public class Student {
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", password='" + password + '\'' +
-                ", name='" + name + '\'' +
                 ", email='" + email + '\'' +
                 ", groups=" + groups +
                 '}';
