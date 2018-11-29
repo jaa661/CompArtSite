@@ -75,10 +75,10 @@
         <input type="submit" value="Register"/>
     </form>    </p>
 
-    <form th:action="@{/group/add}" method="post">
+    <form th:action="@{/api/group/add}" method="post" enctype="application/x-www-form-urlencoded" >
         Create  a new group
-        <div><label> Group Name : <input type="text" name="name"/> </label></div>
-        <input type = "hidden" name = "creatorId" value = "${userId}" />
+        <input type = "hidden" name = "creatorId" th:value = "${userId}" />
+        <div><label> Group Name : <input type="text" name="groupName" value="New"/> </label></div>
         <div><input type="submit" value="Create" /></div>
     </form>
 
