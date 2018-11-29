@@ -65,4 +65,8 @@ public class UserService implements IUserService {
     public Student findByName(String name) {
         return repository.findByUsername(name);
     }
+    public Student findById(int Id) {
+        return repository.findById(Id);
+    }
+
 }
