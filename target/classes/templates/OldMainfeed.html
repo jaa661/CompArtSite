@@ -1,0 +1,63 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:form="http://www.w3.org/1999/xhtml">
+<head>
+    <style>
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+        }
+
+        li {
+            float: left;
+        }
+
+        li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        li a:hover {
+            background-color: #111;
+        }
+        #postbox {
+            border-radius: 25px;
+            border: 2px solid #73AD21;
+            padding: 20px;
+            width: 200px;
+            height: 150px;
+        }
+    </style>
+</head>
+<body>
+
+<ul>
+    <li><a class="active" href="/home">Home</a></li>
+    <li><a href="/Profile">Profile</a></li>
+    <li><a href="/feed">Feed</a></li>
+    <li><a href="/ws">Chat</a></li>
+</ul>
+
+<div id="postbox">
+    <p>Post Something ...</p>
+    <form th:action="@{/api/post/add}" method="post">
+        <input type = "hidden" name = "poster" th:value = "${user.id}" />
+        <input type = "hidden" name = "group" value = "9" />
+        <input type = "text" name = "content" />
+        <div><input type="submit" value="Post"/></div>
+    </form>
+</div>
+
+<p th:text="'Feed'" />
+<div th:each="post : ${feed}" id="postbox">
+    <p><a th:href="@{'/user/' + ${post.postedBy}}" th:text="${post.postedByUser.username}">User ...</a></p>
+    <p><a th:href="@{'/group/' + ${post.postedIn}}" th:text="${post.postedInGroup.name}">view</a></p>
+    <p th:text="${post.content}">Text ...</p>
+</div>
+</body>
+</html>

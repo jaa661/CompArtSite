@@ -20,4 +20,9 @@ public class HomeViewController {
         System.out.println("hitting home");
         return "home";
     }
+    @RequestMapping("/")
+    public String index() {
+        System.out.println("hitting index");
+        return "home";
+    }
 }
