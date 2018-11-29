@@ -40,6 +40,27 @@
 
     </div>
 
+    <p th:text="'Groups that you can are a part of'"/>
+    <div th:each="aGroup: ${myGroups}">
+        <p><a  th:href="@{'/group/list/' + ${aGroup.id}}" th:text="${aGroup.name}"> Group
+        </a></p>
+    </div>
+
+    </p>
+
+    <p th:text="'Groups that you can join'"/>
+        <div th:each="aGroup: ${allGroups}">
+            <form th:action="@{/group/join}", method="post">
+            <p><a  th:href="@{'/group/list/' + ${aGroup.id}}" th:text="${aGroup.name}"> Group
+                <input type = "hidden" name = "username" value = "${username}" />
+                <input type="submit" value="Join"/>
+            </a></p>
+            </form>
+
+        </div>
+
+    </p>
+
     <p>
     <form th:action="@{/logout}" method="post">
         <input type="submit" value="Sign Out"/>
@@ -54,10 +75,11 @@
         <input type="submit" value="register"/>
     </form>    </p>
 
-    <form th:action="@{/api/group/add}" method="post">
+    <form th:action="@{/group/add}" method="post">
+        Create  a new group
         <div><label> Group Name : <input type="text" name="name"/> </label></div>
-        <input type = "hidden" name = "username" value = "${username}" />
-        <div><input type="submit" value="Sign In"/></div>
+        <input type = "hidden" name = "creatorId" value = "${userId}" />
+        <div><input type="submit" value="Create" href="/Profile"/></div>
     </form>
 
 </div>

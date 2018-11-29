@@ -121,6 +121,7 @@ public class GroupService {
     }
 
     public Iterable<Group> getAllGroups(){
+
         return repository.findAll();
     }
 

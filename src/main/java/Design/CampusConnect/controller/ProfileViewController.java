@@ -18,17 +18,20 @@ public class ProfileViewController {
     @Autowired
     GroupService groupService;
     @Autowired
-    UserService Userservice;
+    UserService userService;
 
     @RequestMapping("/Profile")
     public String profile(Principal principal, Model model) {
         model.addAttribute("username", principal.getName());
-//        model.addAttribute("userId", principal.getUser().);
-        System.out.println("hitting prof");
+        Student student = userService.findByName(principal.getName());
+        System.out.println(groupService.getGroupsStudentBelongsToById(student.getId()));
+        model.addAttribute("userId", student.getId());
+        System.out.println(student.getId());
+
         model.addAttribute("allGroups", groupService.getAllGroups());
-        Student s = Userservice.findByName(principal.getName());
-        System.out.println(groupService.getGroupsStudentBelongsToById(s.getId()));
-        model.addAttribute("myGroups", groupService.getGroupsStudentBelongsToById(s.getId()));
+
+        model.addAttribute("myGroups", groupService.getGroupsStudentBelongsToById(student.getId()));
+        System.out.println("hitting prof");
         return "Profile";
     }
 
