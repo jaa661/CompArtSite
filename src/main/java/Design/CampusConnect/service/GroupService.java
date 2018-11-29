@@ -120,7 +120,24 @@ public class GroupService {
         return students;
     }
 
+    public Iterable<Group> getAllGroups(){
+        return repository.findAll();
+    }
 
+    public Iterable<Group> getGroupsStudentBelongsToById(int studentId){
+        Student student = studentrepository.findById(studentId);
+        Iterable<Integer> studentGroupsIds = student.getGroups();
+        ArrayList<Group> groups = new ArrayList<>();
+        for(Integer groupId:studentGroupsIds){
+            Group group = repository.findById(groupId.intValue());
+            if (group != null){
+                groups.add(group);
+            }
+
+        }
+        System.out.println("Groups student has are: " + studentGroupsIds);
+        return groups;
+    }
 
 //     public void getStudentsInGroupByName(String groupName);
 

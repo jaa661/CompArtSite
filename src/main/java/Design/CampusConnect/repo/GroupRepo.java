@@ -10,6 +10,7 @@ public interface GroupRepo extends CrudRepository<Group, Integer> {
 
     Group findById(int id);
     Group findByName(String name);
+    Iterable<Group> findAll();
 
 //    Iterable<Student> findStudentsInGroupById(int groupId){
 //

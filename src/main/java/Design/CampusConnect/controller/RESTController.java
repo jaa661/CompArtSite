@@ -69,6 +69,8 @@ public class RESTController {
         return GroupService.getStudentsInGroupById(groupId);
     }
 
+
+
     @RequestMapping(value = "/post/all", method= RequestMethod.GET,consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
     @ResponseBody
     Iterable<Post> getAllPosts(){

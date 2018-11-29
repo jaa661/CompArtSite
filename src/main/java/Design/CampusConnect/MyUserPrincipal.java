@@ -34,6 +34,13 @@ public class MyUserPrincipal implements UserDetails {
         return this.user.getUsername();
     }
 
+    public Integer getId(){
+        if(this.user == null){
+            return 0;
+        }
+        return this.user.getId();
+    }
+
     @Override
     public boolean isAccountNonExpired() {
         //return this.user.isAccountNonExpired();
