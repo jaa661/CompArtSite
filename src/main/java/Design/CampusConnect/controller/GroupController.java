@@ -12,6 +12,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.security.Principal;
 
@@ -34,27 +35,32 @@ public class GroupController {
         return "groupPage";
     }
 
-    @RequestMapping("/user/groups")
+    @RequestMapping(value = "/user/groups")
     public String manageGroups(Principal principal, Model model) {
         model.addAttribute("user", UserService.findByName(principal.getName()));
         model.addAttribute("username", principal.getName());
         Student student = UserService.findByName(principal.getName());
         System.out.println(GroupService.getGroupsStudentBelongsToById(student.getId()));
-        model.addAttribute("userId", student.getId());
+//        model.addAttribute("userId", student.getId());
         System.out.println(student.getId());
 
         model.addAttribute("allGroups", GroupService.getAllGroups());
-
         model.addAttribute("myGroups", GroupService.getGroupsStudentBelongsToById(student.getId()));
-        System.out.println("hitting prof");
+        System.out.println("hitting manage groups");
         return "ManageGroups";
     }
 
-    @RequestMapping(value = "/group/add") //method = RequestMethod.POST,consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
+    @RequestMapping(value = "/group/add")
     String newGroup(int creatorId, String groupName, Model model, Principal principal) {
         GroupService.studentCreateGroup(creatorId, groupName);
-        return manageGroups(principal, model);
+        return "redirect:/user/groups"; //manageGroups(principal, model);
     }
 
+    @RequestMapping(value = "/group/join", method = RequestMethod.POST) //  method = RequestMethod.POST,consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
+    String joinGroup(int newMemberId, int groupId, RedirectAttributes redirectAttributes) {
+        GroupService.studentJoinGroup(newMemberId, groupId);
+        redirectAttributes.addAttribute("groupId", groupId);
+        return "redirect:/group/list/{groupId}";
+    }
 
 }

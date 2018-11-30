@@ -25,8 +25,8 @@ public class FeedController {
     @Autowired
     GroupService Groupservice;
 
-    @Autowired
-    PostService postservice;
+//    @Autowired
+//    PostService postservice;
 
     @RequestMapping(value = "/feed")
     public String sidebyside(Model model, Principal principal) {
@@ -45,7 +45,7 @@ public class FeedController {
     }
     @RequestMapping(value = "/post/add")
     String addpost(String content, int poster, int group, Model model, Principal principal) {
-        postservice.makePost(content, poster, group);
+        service.makePost(content, poster, group);
         return sidebyside(model, principal);
     }
 

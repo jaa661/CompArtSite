@@ -156,7 +156,7 @@
 
         <form th:action="@{/group/add}" method="post" enctype="application/x-www-form-urlencoded" >
             Create  a new group
-            <input type = "hidden" name = "creatorId" th:value = "${userId}" />
+            <input type = "hidden" name = "creatorId" th:value = "${user.id}" />
             <div><label> Group Name : <input type="text" name="groupName" /> </label></div>
             <div><input type="submit" value="Create" /></div>
         </form>
@@ -169,17 +169,17 @@
 
     </p>
 
-    <p th:text="'Groups that you can join'"/>
+    <p th:text="'All groups'"/>
     <div th:each="aGroup: ${allGroups}">
-        <form th:action="@{/group/join}", method="post">
-            <p><a  th:href="@{'/group/list/' + ${aGroup.id}}" th:text="${aGroup.name}"> Group
-                <input type = "hidden" name = "username" value = "${username}" />
-                <input type="submit" value="Join"/>
-            </a></p>
+        <form th:action="@{/group/join}", method="post" enctype="application/x-www-form-urlencoded">
+            <a th:href="@{'/group/list/' + ${aGroup.id}}" th:text="${aGroup.name}"> Group
+            </a>
+            <input type = "hidden" name="newMemberId" th:value="57" />
+            <input type = "hidden" name="groupId" th:value="81" />
+            <input type="submit" value="Join"/>
         </form>
 
     </div>
-
     </p>
 
 
