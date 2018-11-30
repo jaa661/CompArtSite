@@ -27,9 +27,7 @@ public class ProfileViewController {
         System.out.println(groupService.getGroupsStudentBelongsToById(student.getId()));
         model.addAttribute("userId", student.getId());
         System.out.println(student.getId());
-
         model.addAttribute("allGroups", groupService.getAllGroups());
-
         model.addAttribute("myGroups", groupService.getGroupsStudentBelongsToById(student.getId()));
         System.out.println("hitting prof");
         return "Profile";
