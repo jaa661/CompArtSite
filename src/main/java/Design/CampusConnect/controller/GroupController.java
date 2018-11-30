@@ -31,6 +31,9 @@ public class GroupController {
     public String messages(Principal principal, Model model, @PathVariable int groupId) {
         model.addAttribute("user", UserService.findByName(principal.getName()));
         model.addAttribute("feed", PostService.getPostsByGroupId(groupId));
+        model.addAttribute("groupName", GroupService.GetNameById(groupId));
+        model.addAttribute("groupId", groupId);
+
         return "groupPage";
     }
 
