@@ -63,6 +63,8 @@ public class UserService implements IUserService {
         return user;
     }
     public Student findByName(String name) {
+        System.out.println("looking for "+ name);
+        System.out.println(repository.findByUsername(name));
         return repository.findByUsername(name);
     }
     public Student findById(int Id) {

@@ -12,5 +12,4 @@ public interface StudentRepo extends CrudRepository<Student, Integer> {
     Student findByUsername(String username);
     Student findByEmail(String email);
     Student findById(int id);
-
 }

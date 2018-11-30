@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.security.Principal;
 
@@ -25,8 +26,6 @@ public class FeedController {
     @Autowired
     GroupService Groupservice;
 
-//    @Autowired
-//    PostService postservice;
 
     @RequestMapping(value = "/feed")
     public String sidebyside(Model model, Principal principal) {
@@ -45,8 +44,18 @@ public class FeedController {
     }
     @RequestMapping(value = "/post/add")
     String addpost(String content, int poster, int group, Model model, Principal principal) {
+        System.out.println(content + poster );
         service.makePost(content, poster, group);
+
         return sidebyside(model, principal);
+    }
+
+    @RequestMapping(value = "/group/post/add")
+    String addPostToGroup(String content, int poster, int group, Model model, Principal principal, RedirectAttributes redirectAttributes) {
+        System.out.println(content + poster );
+        service.makePost(content, poster, group);
+        redirectAttributes.addAttribute("groupId",group );
+        return "redirect:/group/list/{groupId}";
     }
 
 }
