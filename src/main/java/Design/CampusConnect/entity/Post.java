@@ -7,7 +7,7 @@ import java.util.List;
 @Entity
 //@NamedQuery(name = "Post.findByPostedIn", query = "SELECT p FROM Post p WHERE p.postedIn = ?1")
 @Table(name = "post", schema = "campus_connect")
-public class Post {
+public class Post implements Comparable<Post>{
 
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
@@ -72,5 +72,14 @@ public class Post {
 
     public void setPostedInGroup(Group postedInGroup) {
         this.postedInGroup = postedInGroup;
+    }
+    @Override
+    public int compareTo(Post other) {
+        if(other.getId()<=this.id) {
+            return -1;
+        }
+        else{
+            return 1;
+        }
     }
 }
