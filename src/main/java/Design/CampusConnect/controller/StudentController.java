@@ -1,5 +1,8 @@
 package Design.CampusConnect.controller;
 
+import Design.CampusConnect.entity.Student;
+import Design.CampusConnect.service.GroupService;
+import Design.CampusConnect.service.PostService;
 import Design.CampusConnect.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -13,13 +16,23 @@ import java.security.Principal;
 public class StudentController {
 
     @Autowired
-    UserService service;
+    UserService userService;
+
+    @Autowired
+    GroupService groupService;
+
+    @Autowired
+    PostService postService;
 
     @RequestMapping("/user/{studentId}")
     public String profile(Principal principal, Model model, @PathVariable int studentId) {
-        model.addAttribute("user", service.findById(studentId));
-        model.addAttribute("username", service.findById(studentId).getUsername());
+
         System.out.println("hitting user "+studentId);
+        model.addAttribute("user", userService.findById(studentId));
+        model.addAttribute("username", userService.findById(studentId).getUsername());
+
+        model.addAttribute("myGroups", groupService.getGroupsStudentBelongsToById(studentId));
+        model.addAttribute("myPosts", postService.getPostsByStudentId(studentId));
         return "Profile";
     }
 

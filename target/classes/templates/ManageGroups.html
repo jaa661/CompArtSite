@@ -139,16 +139,14 @@
     <a class="active" href="/home">Home</a>
     <a href="/Profile">Profile</a>
     <a href="/feed">Feed</a>
-    <a href="/ws">Chat</a>
+    <a href="/logout">Sign out</a>
 </div>
 
 <div class="sidenav">
     <a th:href="@{'/user/' + ${user.id}}" th:text="${user.username}"></a>
     <a th:href="@{'/user/groups'}">Groups</a>
-    <a href="#">Clients</a>
-    <a href="#">Contact</a>
+    <a th:href="@{'/messages'}">Messages</a>
 </div>
-
 <div class="main">
 
     <div class="row">

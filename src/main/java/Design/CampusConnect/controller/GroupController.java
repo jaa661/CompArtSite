@@ -44,10 +44,8 @@ public class GroupController {
         model.addAttribute("username", principal.getName());
         Student student = UserService.findByName(principal.getName());
         System.out.println(GroupService.getGroupsStudentBelongsToById(student.getId()));
-//        model.addAttribute("userId", student.getId());
-        System.out.println(student.getId());
 
-        model.addAttribute("allGroups", GroupService.getAllGroups());
+        model.addAttribute("allGroups", GroupService.getAllGroupsUserIsNotIn(student.getId()));
         model.addAttribute("myGroups", GroupService.getGroupsStudentBelongsToById(student.getId()));
         System.out.println("hitting manage groups");
         return "ManageGroups";

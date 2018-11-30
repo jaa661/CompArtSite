@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.util.Date;
 
 @Entity
-public class Message {
+public class Message implements Comparable<Message>{
 
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
@@ -79,5 +79,15 @@ public class Message {
 
     public void setSentTId(int sentToId) {
         this.sentTId = sentToId;
+    }
+
+    @Override
+    public int compareTo(Message other) {
+        if(other.getId()<=this.id) {
+            return 1;
+        }
+        else{
+            return -1;
+        }
     }
 }
