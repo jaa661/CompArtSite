@@ -31,7 +31,7 @@ public class GroupController {
     public String messages(Principal principal, Model model, @PathVariable int groupId) {
         model.addAttribute("user", UserService.findByName(principal.getName()));
         model.addAttribute("feed", PostService.getPostsByGroupId(groupId));
-        return "mainfeed";
+        return "groupPage";
     }
 
     @RequestMapping("/user/groups")
