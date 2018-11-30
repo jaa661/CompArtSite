@@ -22,4 +22,12 @@ public class StudentController {
         System.out.println("hitting user "+studentId);
         return "Profile";
     }
+
+    @RequestMapping("/user/groups")
+    public String mygroups(Principal principal, Model model, @PathVariable int studentId) {
+        model.addAttribute("user", service.findById(studentId));
+        model.addAttribute("username", service.findById(studentId).getUsername());
+        System.out.println("hitting user "+studentId);
+        return "Profile";
+    }
 }
