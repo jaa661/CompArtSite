@@ -169,9 +169,9 @@
         <div class="column">
             <div id="postbox">
                 <p>Post Something ...</p>
-                <form th:action="@{/post/add}" method="post">
-                    <input type = "hidden" name = "poster" th:value = "${user.id}" />
-                    <input type = "hidden" name = "group" value = "9" />
+                <form th:action="@{/message/add}" method="post">
+                    <input type = "hidden" name = "sender" th:value = "${user.username}" />
+                    <input type = "text" name = "sendee" />
                     <input type = "text" name = "content" />
                     <br>
                     <input type="submit" value="post"/>
@@ -179,10 +179,9 @@
             </div>
 
             <p th:text="'Feed'" />
-            <div th:each="post : ${feed}" id="postbox">
-                <p><a th:href="@{'/user/' + ${post.postedBy}}" th:text="${post.postedByUser.username}">User ...</a></p>
-                <p><a th:href="@{'/group/list/' + ${post.postedIn}}" th:text="${post.postedInGroup.name}">view</a></p>
-                <p th:text="${post.content}">Text ...</p>
+            <div th:each="msg : ${messages}" id="postbox">
+                <p><a th:href="@{'/user/' + ${msg.sentTo.id}}" th:text="${msg.sentTo.username}">User ...</a></p>
+                <p th:text="${msg.content}">Text ...</p>
             </div>
         </div>
         <!-- Third COlUMN -->
