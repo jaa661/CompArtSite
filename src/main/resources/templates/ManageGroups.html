@@ -133,6 +133,7 @@
     .sidenav {padding-top: 15px;}
     .sidenav a {font-size: 18px;}
 }
+
 </style>
 <body>
 <div class="topnav">
@@ -153,48 +154,46 @@
 
     <div class="row">
         <!-- First COlUMN. -->
+        <div class="column">
 
-        <form th:action="@{/group/add}" method="post" enctype="application/x-www-form-urlencoded" >
-            Create  a new group
-            <input type = "hidden" name = "creatorId" th:value = "${user.id}" />
-            <div><label> Group Name : <input type="text" name="groupName" /> </label></div>
-            <div><input type="submit" value="Create" /></div>
-        </form>
+            <form th:action="@{/group/add}" method="post" enctype="application/x-www-form-urlencoded">
+                Create a new group
+                <input type="hidden" name="creatorId" th:value="${user.id}"/>
+                <div><label> Group Name : <input type="text" name="groupName"/> </label></div>
+                <div><input type="submit" value="Create"/></div>
+            </form>
 
-    <p th:text="'Groups that you can are a part of'"/>
-    <div th:each="aGroup: ${myGroups}">
-        <p><a  th:href="@{'/group/list/' + ${aGroup.id}}" th:text="${aGroup.name}"> Group
-        </a></p>
-    </div>
+            <p th:text="'Groups that you are a part of'"/>
+            <div th:each="aGroup: ${myGroups}">
+                <p><a th:href="@{'/group/list/' + ${aGroup.id}}" th:text="${aGroup.name}"> Group
+                </a></p>
+            </div>
 
-    </p>
+            </p>
+        </div>
 
-    <p th:text="'All groups'"/>
-    <div th:each="aGroup: ${allGroups}">
-        <form th:action="@{/group/join}", method="post" enctype="application/x-www-form-urlencoded">
-            <a th:href="@{'/group/list/' + ${aGroup.id}}" th:text="${aGroup.name}"> Group
-            </a>
-            <input type = "hidden" name="newMemberId" th:value="57" />
-            <input type = "hidden" name="groupId" th:value="81" />
-            <input type="submit" value="Join"/>
-        </form>
+        <div class="column">
 
-    </div>
-    </p>
+            <p th:text="'All groups'"/>
+            <div th:each="aGroup: ${allGroups}">
+                <form th:action="@{/group/join}" , method="post" enctype="application/x-www-form-urlencoded">
+                    <a th:href="@{'/group/list/' + ${aGroup.id}}" th:text="${aGroup.name}"> Group
+                    </a>
+                    <input type="hidden" name="newMemberId" th:value="${user.id}"/>
+                    <input type="hidden" name="groupId" th:value="${aGroup.id}"/>
+                    <input type="submit" value="Join"/>
+                </form>
 
-
-
-
-
-
-    <p>
-    <form th:action="@{/logout}" method="post">
-        <input type="submit" value="Sign Out"/>
-    </form>    </p>
+            </div>
+            </p>
+        </div>
 
         <p>
-
-
+        <form th:action="@{/logout}" method="post">
+            <input type="submit" value="Sign Out"/>
+        </form>
+        </p>
+        <p>
     </div>
 </div>
 </body>
@@ -206,4 +205,5 @@
    //console.log(usrnme);
 
 /*]]>*/
+
 </script>

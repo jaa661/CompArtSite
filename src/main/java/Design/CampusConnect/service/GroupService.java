@@ -8,6 +8,8 @@ import Design.CampusConnect.repo.PostRepo;
 import Design.CampusConnect.repo.StudentRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.Iterator;
 import java.util.Set;
 import java.util.HashSet;
 
@@ -122,6 +124,22 @@ public class GroupService {
         System.out.println("Members are: " + studentListIds);
 
         return students;
+    }
+
+    public Iterable<Group> getAllGroupsUserIsNotIn(int studentId){
+        Iterable<Group> allGroups = repository.findAll();
+        Iterable<Group> studentGroups = getGroupsStudentBelongsToById(studentId);
+        Set<Group> studentGroupsSet = new HashSet<>();
+        for (Group g: studentGroups){
+            studentGroupsSet.add(g);
+        }
+        ArrayList<Group> groupsStudentNotIn = new ArrayList<>();
+        for (Group g: allGroups){
+            if(!studentGroupsSet.contains(g)){
+                groupsStudentNotIn.add(g);
+            }
+        }
+        return groupsStudentNotIn;
     }
 
     public Iterable<Group> getAllGroups(){

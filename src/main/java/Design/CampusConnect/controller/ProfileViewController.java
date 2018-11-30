@@ -3,6 +3,7 @@ package Design.CampusConnect.controller;
 import Design.CampusConnect.entity.Group;
 import Design.CampusConnect.entity.Student;
 import Design.CampusConnect.service.GroupService;
+import Design.CampusConnect.service.PostService;
 import Design.CampusConnect.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
@@ -19,16 +20,17 @@ public class ProfileViewController {
     GroupService groupService;
     @Autowired
     UserService userService;
+    @Autowired
+    PostService postService;
 
     @RequestMapping("/Profile")
     public String profile(Principal principal, Model model) {
+        model.addAttribute("user", userService.findByName(principal.getName()));
         model.addAttribute("username", principal.getName());
         Student student = userService.findByName(principal.getName());
         System.out.println(groupService.getGroupsStudentBelongsToById(student.getId()));
-        model.addAttribute("userId", student.getId());
-        System.out.println(student.getId());
-        model.addAttribute("allGroups", groupService.getAllGroups());
         model.addAttribute("myGroups", groupService.getGroupsStudentBelongsToById(student.getId()));
+        model.addAttribute("myPosts", postService.getPostsByStudentId(student.getId()));
         System.out.println("hitting prof");
         return "Profile";
     }
