@@ -22,6 +22,7 @@ public class ProfileViewController {
 
     @RequestMapping("/Profile")
     public String profile(Principal principal, Model model) {
+        model.addAttribute("user", userService.findByName(principal.getName()));
         model.addAttribute("username", principal.getName());
         Student student = userService.findByName(principal.getName());
         System.out.println(groupService.getGroupsStudentBelongsToById(student.getId()));
