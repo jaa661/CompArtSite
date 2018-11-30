@@ -60,13 +60,13 @@
         #postbox {
             border-radius: 25px;
             border: 2px solid #73AD21;
-            <!--padding: 20px;-->
-            width: 100%;
+            padding: 20px;
+            width: 200px;
             height: 150px;
         }
         .row {
             top: 100px;
-            left: 120px;
+            left: 140px;
             width:100%;
             height:100%;
 
@@ -75,7 +75,7 @@
             float: left;
             width: 40%;
             top: 48px;
-            left: 0px;
+            left: 150px;
             border: 3px solid green;
 
            }
@@ -143,7 +143,7 @@
 </div>
 
 <div class="sidenav">
-    <a th:href="@{'/user/' + ${user.id}}" th:text="${group.name}"></a>
+    <a th:href="@{'/user/' + ${user.id}}" th:text="${user.username}"></a>
     <a th:href="@{'/user/groups'}">Groups</a>
     <a href="#">Clients</a>
     <a href="#">Contact</a>
@@ -154,43 +154,47 @@
     <div class="row">
         <!-- First COlUMN. -->
 
+        <form th:action="@{/group/add}" method="post" enctype="application/x-www-form-urlencoded" >
+            Create  a new group
+            <input type = "hidden" name = "creatorId" th:value = "${userId}" />
+            <div><label> Group Name : <input type="text" name="groupName" /> </label></div>
+            <div><input type="submit" value="Create" /></div>
+        </form>
 
-        <!--<div class="column">-->
-        <!--<div class="card">-->
-        <!--<h3 th:text="${user.username}"></h3>-->
-        <!--<div class="fakeimg">Image</div><br>-->
-        <!--<div class="fakeimg">Image</div><br>-->
-        <!--<div class="fakeimg">Image</div>-->
-        <!--</div>-->
-        <!--</div>-->
-        <!--&lt;!&ndash; SECOND COLUMN &ndash;&gt;-->
+    <p th:text="'Groups that you can are a part of'"/>
+    <div th:each="aGroup: ${myGroups}">
+        <p><a  th:href="@{'/group/list/' + ${aGroup.id}}" th:text="${aGroup.name}"> Group
+        </a></p>
+    </div>
 
+    </p>
 
-        <div class="column">
-            <div id="postbox">
-                <p>Post Something ...</p>
-                <form th:action="@{/post/add}" method="post">
-                    <input type = "hidden" name = "poster" th:value = "${user.id}" />
-                    <input type = "hidden" name = "group" value = "9" />
-                    <input type = "text" name = "content" />
-                    <br>
-                    <input type="submit" value="post"/>
-                </form>
-            </div>
+    <p th:text="'Groups that you can join'"/>
+    <div th:each="aGroup: ${allGroups}">
+        <form th:action="@{/group/join}", method="post">
+            <p><a  th:href="@{'/group/list/' + ${aGroup.id}}" th:text="${aGroup.name}"> Group
+                <input type = "hidden" name = "username" value = "${username}" />
+                <input type="submit" value="Join"/>
+            </a></p>
+        </form>
 
-            <p th:text="'Feed'" />
-            <div th:each="post : ${feed}" id="postbox">
-                <p><a th:href="@{'/user/' + ${post.postedBy}}" th:text="${post.postedByUser.username}">User ...</a></p>
-                <p><a th:href="@{'/group/list/' + ${post.postedIn}}" th:text="${post.postedInGroup.name}">view</a></p>
-                <p th:text="${post.content}">Text ...</p>
-            </div>
-        </div>
-        <!-- Third COlUMN -->
+    </div>
+
+    </p>
 
 
-        <div class="column">
-            <p>column for chat</p>
-        </div>
+
+
+
+
+    <p>
+    <form th:action="@{/logout}" method="post">
+        <input type="submit" value="Sign Out"/>
+    </form>    </p>
+
+        <p>
+
+
     </div>
 </div>
 </body>

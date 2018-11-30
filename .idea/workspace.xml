@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fd399fdf-eefa-4699-a82d-1d5a7d2f9098" name="Default Changelist" comment="">
+    <list default="true" id="fd399fdf-eefa-4699-a82d-1d5a7d2f9098" name="Default Changelist" comment="Create group works but actually">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Design/CampusConnect/MyUserPrincipal.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Design/CampusConnect/MyUserPrincipal.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Design/CampusConnect/controller/GroupController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Design/CampusConnect/controller/GroupController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Design/CampusConnect/controller/RESTController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Design/CampusConnect/controller/RESTController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/Profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/Profile.html" afterDir="false" />
     </list>
     <list id="96724625-1a73-4359-8d03-9d315e3caf76" name="Chat automatically connects and uses your username." comment="" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -54,7 +50,7 @@
       </usages-collector>
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="1" />
+          <entry key="project.closed" value="2" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.opened" value="1" />
         </counts>
@@ -63,15 +59,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Design/CampusConnect/controller/FeedController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
-              <caret line="46" column="91" selection-start-line="46" selection-start-column="57" selection-end-line="46" selection-end-column="91" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/templates/Profile.html">
           <provider selected="true" editor-type-id="text-editor">
@@ -142,8 +129,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/Design/CampusConnect/controller/GroupController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="497">
-              <caret line="50" column="5" lean-forward="true" selection-start-line="50" selection-start-column="5" selection-end-line="50" selection-end-column="5" />
+            <state relative-caret-position="705">
+              <caret line="60" lean-forward="true" selection-start-line="60" selection-end-line="60" />
             </state>
           </provider>
         </entry>
@@ -286,52 +273,7 @@
             <path>
               <item name="Campus-Connect" type="b2602c69:ProjectViewProjectNode" />
               <item name="Campus-Connect" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Campus-Connect" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Campus-Connect" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Campus-Connect" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Campus-Connect" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Campus-Connect" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Campus-Connect" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="CampusConnect" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Campus-Connect" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Campus-Connect" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="CampusConnect" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Campus-Connect" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Campus-Connect" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Campus-Connect" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Campus-Connect" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name=".idea" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -344,7 +286,7 @@
   <component name="PropertiesComponent">
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///Users/alex/IdeaProjects/Campus-Connect/src/main/java/Design/CampusConnect/controller/LoginViewController.java" />
     <property name="TODO_SCOPE" value="All Places" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543539137298" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543539626243" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -496,6 +438,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2532189" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -506,7 +449,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32603937" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4985694" visible="true" weight="0.28674698" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4985694" weight="0.28674698" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3997114" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -756,9 +699,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="177">
           <caret line="15" column="29" selection-start-line="15" selection-start-column="29" selection-end-line="15" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -963,8 +903,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Design/CampusConnect/controller/GroupController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="497">
-          <caret line="50" column="5" lean-forward="true" selection-start-line="50" selection-start-column="5" selection-end-line="50" selection-end-column="5" />
+        <state relative-caret-position="705">
+          <caret line="60" lean-forward="true" selection-start-line="60" selection-end-line="60" />
         </state>
       </provider>
     </entry>
