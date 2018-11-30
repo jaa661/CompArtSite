@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.security.Principal;
+import java.util.Comparator;
+import java.util.Map;
 
 
 @Controller
@@ -30,6 +32,11 @@ public class MessageController {
     @Autowired
     PostService postservice;
 
+    public Comparator<Map<String, String>> mapComparator = new Comparator<Map<String, String>>() {
+        public int compare(Map<String, String> m1, Map<String, String> m2) {
+            return m1.get("id").compareTo(m2.get("id"));
+        }
+    };
 
     @GetMapping("/messages")
     public String messages(Principal principal, Model model) {
@@ -47,6 +54,8 @@ public class MessageController {
         model.addAttribute("user", user);
         model.addAttribute("friend", Userservice.findById(userId));
         model.addAttribute("messages", service.getMessagesWith(user.getId(), userId));
+        model.addAttribute("mapComparator", mapComparator);
+
         System.out.println("hitting messages");
         return "messages";
     }
@@ -57,5 +66,7 @@ public class MessageController {
         int sendeeId = Userservice.findByName(sendee).getId();
         return messagesWith(principal, model, sendeeId);
     }
+
+
 
 }
