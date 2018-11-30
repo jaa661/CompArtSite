@@ -172,7 +172,7 @@
 
         <div class="column">
 
-            <p th:text="'All groups'"/>
+            <p th:text="'All other groups'"/>
             <div th:each="aGroup: ${allGroups}">
                 <form th:action="@{/group/join}" , method="post" enctype="application/x-www-form-urlencoded">
                     <a th:href="@{'/group/list/' + ${aGroup.id}}" th:text="${aGroup.name}"> Group

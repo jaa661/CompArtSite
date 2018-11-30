@@ -21,16 +21,16 @@ import java.util.Map;
 public class MessageController {
 
     @Autowired
-    MessageService service;
+    MessageService messageService;
 
     @Autowired
-    UserService Userservice;
+    UserService userService;
 
     @Autowired
-    GroupService Groupservice;
+    GroupService groupService;
 
     @Autowired
-    PostService postservice;
+    PostService postService;
 
     public Comparator<Map<String, String>> mapComparator = new Comparator<Map<String, String>>() {
         public int compare(Map<String, String> m1, Map<String, String> m2) {
@@ -40,20 +40,20 @@ public class MessageController {
 
     @GetMapping("/messages")
     public String messages(Principal principal, Model model) {
-        Student user = Userservice.findByName(principal.getName());
+        Student user = userService.findByName(principal.getName());
         model.addAttribute("user", user);
         //model.addAttribute("group", Groupservice.findById());
-        model.addAttribute("messages", service.getMessagesSentBy(user.getId()));
+        model.addAttribute("messages", messageService.getMessagesSentBy(user.getId()));
         System.out.println("hitting messages");
         return "messages";
     }
 
     @GetMapping("/messages/{userId}")
     public String messagesWith(Principal principal, Model model, @PathVariable int userId) {
-        Student user = Userservice.findByName(principal.getName());
+        Student user = userService.findByName(principal.getName());
         model.addAttribute("user", user);
-        model.addAttribute("friend", Userservice.findById(userId));
-        model.addAttribute("messages", service.getMessagesWith(user.getId(), userId));
+        model.addAttribute("friend", userService.findById(userId));
+        model.addAttribute("messages", messageService.getMessagesWith(user.getId(), userId));
         model.addAttribute("mapComparator", mapComparator);
 
         System.out.println("hitting messages");
@@ -62,8 +62,8 @@ public class MessageController {
 
     @RequestMapping(value = "/message/add")
     String addpost(String content, String sender, String sendee, Model model, Principal principal) {
-        service.sendMessage(content, sender, sendee);
-        int sendeeId = Userservice.findByName(sendee).getId();
+        messageService.sendMessage(content, sender, sendee);
+        int sendeeId = userService.findByName(sendee).getId();
         return messagesWith(principal, model, sendeeId);
     }
 
