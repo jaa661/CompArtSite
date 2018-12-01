@@ -30,18 +30,21 @@
     padding: 14px 16px;
     text-decoration: none;
     font-size: 17px;
+    width: 200px;
 }
 
 /* Change the color of links on hover */
 .topnav a:hover {
     background-color: #ddd;
     color: black;
+
 }
 
 /* Add a color to the active/current link */
 .topnav a.active {
     background-color: #761497;
     color: white;
+    width: 200px;
 }
         #postbox {
             border-radius: 25px;
@@ -85,8 +88,8 @@
         /* The sidebar menu */
 .sidenav {
     height:100%;
-    top:48px;
-    width: 160px; /* Set the width of the sidebar */
+    top:50px;
+    width: 200px; /* Set the width of the sidebar */
     position: fixed; /* Fixed Sidebar (stay in place on scroll) */
     left: 0;
     background-color: #111; /* Black */
@@ -110,7 +113,7 @@
 
 /* Style page content */
 .main {
-    margin-left: 160px; /* Same as the width of the sidebar */
+    margin-left: 200px; /* Same as the width of the sidebar */
     padding: 0px 10px;
 }
 

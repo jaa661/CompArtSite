@@ -64,14 +64,21 @@ public class GroupController {
     }
 
     @RequestMapping(value = "/group/add")
-    String newGroup(int creatorId, String groupName, Model model, Principal principal) {
-        GroupService.studentCreateGroup(creatorId, groupName);
-        return "redirect:/user/groups"; //manageGroups(principal, model);
+    String newGroup(int creatorId, String groupName, Model model) {
+        boolean check = GroupService.studentCreateGroup(creatorId, groupName);
+        if(!check){
+            model.addAttribute("createGroupError", "Could not create group");
+        }
+        return "redirect:/user/groups";
     }
 
     @RequestMapping(value = "/group/join", method = RequestMethod.POST) //  method = RequestMethod.POST,consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
-    String joinGroup(int newMemberId, int groupId, RedirectAttributes redirectAttributes) {
-        GroupService.studentJoinGroup(newMemberId, groupId);
+    String joinGroup(int newMemberId, int groupId, RedirectAttributes redirectAttributes, Model model) {
+        boolean check = GroupService.studentJoinGroup(newMemberId, groupId);
+        if(!check) {
+            model.addAttribute("error", "Could not join group");
+            return "redirect:/user/groups";
+        }
         redirectAttributes.addAttribute("groupId", groupId);
         return "redirect:/group/list/{groupId}";
     }

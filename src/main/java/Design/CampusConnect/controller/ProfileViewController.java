@@ -32,7 +32,7 @@ public class ProfileViewController {
         model.addAttribute("myGroups", groupService.getGroupsStudentBelongsToById(student.getId()));
         model.addAttribute("myPosts", postService.getPostsByStudentId(student.getId()));
         System.out.println("hitting prof");
-        return "Profile";
+        return "profile";
     }
 
     @RequestMapping("/adduser")

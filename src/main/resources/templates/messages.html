@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" xmlns:form="http://www.w3.org/1999/xhtml">
 <head>
-    <title>WebSocket Chat</title>
+    <title>Campus Connect</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="/styles.css" type="text/css" media="all">
@@ -52,12 +52,12 @@
 
 /* Add a color to the active/current link */
 .topnav a.active {
-    background-color: #4CAF50;
+    background-color: #761497;
     color: white;
 }
         #postbox {
             border-radius: 25px;
-            border: 2px solid #73AD21;
+            border: 2px solid #761497;
             <!--padding: 20px;-->
             width: 100%;
             height: 150px;
@@ -80,7 +80,7 @@
             width: 40%;
             top: 48px;
             left: 0px;
-            border: 3px solid green;
+            border: 3px #761497;
             overflow:hidden;
            }
 
@@ -148,8 +148,9 @@
 </div>
 
 <div class="sidenav">
-    <a th:href="@{'/user/' + ${user.id}}" th:text="${user.username}"></a>
-    <a th:href="@{'/user/groups'}">Groups</a>
+    <a th:href="@{'/Profile'}" th:text="${user.username}"></a>
+    <!--<a th:href="@{'/user/' + ${user.id}}" th:text="${user.username}"></a>-->
+    <a th:href="@{'/user/groups'}">Manage Groups</a>
     <a th:href="@{'/messages'}">Messages</a>
 </div>
 
@@ -158,20 +159,8 @@
     <div class="row">
         <!-- First COlUMN. -->
 
-
-        <!--<div class="column">-->
-        <!--<div class="card">-->
-        <!--<h3 th:text="${user.username}"></h3>-->
-        <!--<div class="fakeimg">Image</div><br>-->
-        <!--<div class="fakeimg">Image</div><br>-->
-        <!--<div class="fakeimg">Image</div>-->
-        <!--</div>-->
-        <!--</div>-->
-        <!--&lt;!&ndash; SECOND COLUMN &ndash;&gt;-->
-
-
         <div class="col">
-            <div id="postbox">
+            <div class="card" id="postbox">
                 <p>Post Something ...</p>
                 <form th:action="@{/message/add}" method="post">
                     <input type = "hidden" name = "sender" th:value = "${user.username}" />
@@ -198,11 +187,10 @@
 
         </div>
         <!-- Third COlUMN -->
-
-
         <div class="column">
             <p>column for chat</p>
         </div>
+
     </div>
 </div>
 </body>
