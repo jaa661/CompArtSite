@@ -38,14 +38,27 @@ public class GroupController {
         return "groupPage";
     }
 
+    @RequestMapping(value = "/group/users/{groupId}") ///{groupId}")
+    public String getUsers(Principal principal, Model model, @PathVariable int groupId) {
+//        model.addAttribute("user", UserService.findByName(principal.getName()));
+//        model.addAttribute("feed", PostService.getPostsByGroupId(groupId));
+        model.addAttribute("users", GroupService.getStudentsInGroupById(groupId));
+//        model.addAttribute("groupName", GroupService.GetNameById(groupId));
+//        model.addAttribute("groupId", groupId);
+        System.out.println("users");
+        return "membersInGroup";
+    }
+
     @RequestMapping(value = "/user/groups")
     public String manageGroups(Principal principal, Model model) {
         model.addAttribute("user", UserService.findByName(principal.getName()));
         model.addAttribute("username", principal.getName());
         Student student = UserService.findByName(principal.getName());
         System.out.println(GroupService.getGroupsStudentBelongsToById(student.getId()));
+//        model.addAttribute("userId", student.getId());
+        System.out.println(student.getId());
 
-        model.addAttribute("allGroups", GroupService.getAllGroupsUserIsNotIn(student.getId()));
+        model.addAttribute("allGroups", GroupService.getAllGroups());
         model.addAttribute("myGroups", GroupService.getGroupsStudentBelongsToById(student.getId()));
         System.out.println("hitting manage groups");
         return "ManageGroups";

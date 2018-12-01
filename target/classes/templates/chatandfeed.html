@@ -136,9 +136,11 @@
 </style>
 <body>
 <div class="topnav">
-    <a class="active" href="/home">Home</a>
+    <a class = "active" >CAMPUS CONNECT</a>
+    <a href="/home">Home</a>
     <a href="/Profile">Profile</a>
     <a href="/feed">Feed</a>
+    <a href="/ws">Chat</a>
     <a href="/logout">Sign out</a>
 </div>
 
@@ -170,7 +172,7 @@
                 <p>Post Something ...</p>
                 <form th:action="@{/post/add}" method="post">
                     <input type = "hidden" name = "poster" th:value = "${user.id}" />
-                    <input type = "hidden" name = "group" value = "86" />
+                    <input type = "hidden" name = "group" th:value = "1" />
                     <input type = "text" name = "content" />
                     <br>
                     <input type="submit" value="post"/>

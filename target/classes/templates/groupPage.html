@@ -136,7 +136,8 @@
 </style>
 <body>
 <div class="topnav">
-    <a class="active" href="/home">Home</a>
+    <a class = "active" >CAMPUS CONNECT</a>
+    <a href="/home">Home</a>
     <a href="/Profile">Profile</a>
     <a href="/feed">Feed</a>
     <a href="/ws">Chat</a>
@@ -144,7 +145,8 @@
 
 <div class="sidenav">
     <p><a th:href="@{'/group/list/' + ${groupId}}" th:text="${groupName}">view</a></p>
-    <!--<a th:href="@{'/user/groups'}">Groups</a>-->
+    <p><a th:href="@{'/group/users/' + ${groupId}}" >MEMBERS</a></p>
+    <!--<a th:href="@{${g/users" th:text="${groupName}">MEMBERS</a>&ndash;&gt;-->
     <!--<a href="#">Clients</a>-->
     <!--<a href="#">Contact</a>-->
 </div>
@@ -180,7 +182,10 @@
 
             <p th:text="'Feed'" />
             <div th:each="post : ${feed}" id="postbox">
+                <!--id="postbox"-->
                 <p><a th:href="@{'/user/' + ${post.postedBy}}" th:text="${post.postedByUser.username}">User ...</a></p>
+                <!--<p th:text="| ${user.username}|"/>-->
+                <!--<h1 th:inline="text| ${user.username}|" ></h1>-->
                 <!--<p><a th:href="@{'/group/list/' + ${post.postedIn}}" th:text="${post.postedInGroup.name}">view</a></p>-->
                 <p th:text="${post.content}">Text ...</p>
             </div>
@@ -189,7 +194,7 @@
 
 
         <!--<div class="column">-->
-            <!--<p>column for chat</p>-->
+        <!--<p>column for chat</p>-->
         <!--</div>-->
     </div>
 </div>
