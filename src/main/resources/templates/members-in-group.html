@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:form="http://www.w3.org/1999/xhtml">
+<head>
+    <title>WebSocket Chat</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="/styles.css" type="text/css" media="all">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="/postcode.js"></script>
+
+</head>
+<body>
+<div class="topnav">
+    <a class="active">CAMPUS CONNECT</a>
+    <a href="/home">Home</a>
+    <a href="/Profile">Profile</a>
+    <a href="/feed">Feed</a>
+    <a href="/ws">Chat</a>
+</div>
+
+<div class="sidenav">
+    <p><a th:href="@{'/group/list/' + ${groupId}}">BACK TO GROUP</a></p>
+    <!--<a th:href="@{'/user/' + ${user.id}}" th:text="${user.username}"></a>-->
+    <!--<a th:href="@{'/user/groups'}">Groups</a>-->
+    <!--<a th:href="@{'/messages'}">Messages</a>-->
+</div>
+
+<div class="main">
+
+    <div class="row">
+
+        <div class="col-sm">
+
+            <p th:text="'Members: '"/>
+            <div class="card" th:each="user : ${users}" id="postbox">
+                <p><a th:href="@{'/user/' + ${user.id}}" th:text="${user.username}">User ...</a></p>
+                <!--th:text="${groupName}">view</a></p>-->
+                <!--<p> th:text="${user.username}"</p>-->
+                <!--<p th:text="| ${user.username}|"/>-->
+                <!--/user/{studentId}"-->
+                <!--&lt;!&ndash;<p><a th:href="@{'/group/list/' + ${post.postedIn}}" th:text="${post.postedInGroup.name}">view</a></p>&ndash;&gt;-->
+                <!--<p th:text="${post.content}">Text ...</p>-->
+            </div>
+        </div>
+        <div class="col-sm"></div>
+    </div>
+</div>
+</body>
+</html>

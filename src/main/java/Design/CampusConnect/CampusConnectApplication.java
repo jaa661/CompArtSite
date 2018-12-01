@@ -32,8 +32,7 @@ import org.springframework.messaging.simp.stomp.StompFrameHandler;
 @SpringBootApplication
 public class CampusConnectApplication {
 
-	static public class MyStompSessionHandler
-			extends StompSessionHandlerAdapter
+	static public class MyStompSessionHandler extends StompSessionHandlerAdapter
 	{
 		private String userId;
 

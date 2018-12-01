@@ -20,51 +20,37 @@
 </div>
 
 <div class="sidenav">
-    <a th:href="@{'/user/' + ${user.id}}" th:text="${user.username}"></a>
+    <a th:href="@{'/Profile'}" th:text="${user.username}"></a>
     <a th:href="@{'/user/groups'}">Groups</a>
     <a th:href="@{'/messages'}">Messages</a>
 </div>
-<div class="main">
 
+<div class="main">
     <div class="row">
         <!-- First COlUMN. -->
         <div class="col">
-            <div class="page-header">
-                <h1 th:inline="text">Welcome</h1>
-                <span th:text="|Hello ${user.username}|"/>
-
+            <div class="card" id="postbox">
+                <p>Post Something ...</p>
+                <form th:action="@{/post/add}" method="post">
+                    <input type="hidden" name="poster" th:value="${user.id}"/>
+                    <input type="hidden" name="group" th:value="1"/>
+                    <input type="text" name="content"/>
+                    <br>
+                    <input class="btn btn-outline-secondary btn-sm" type="submit" value="post"/>
+                </form>
             </div>
 
-            <p th:text="'Groups that you are a part of'"/>
-            <div th:each="aGroup: ${myGroups}">
-                <p><a th:href="@{'/group/list/' + ${aGroup.id}}" th:text="${aGroup.name}"> Group
-                </a></p>
+            <p th:text="'Feed'"/>
+            <div class="card" th:each="post : ${#lists.sort(feed)}" id="postbox">
+                <p><a th:href="@{'/user/' + ${post.postedBy}}" th:text="${post.postedByUser.username}">User ...</a></p>
+                <p><a th:href="@{'/group/list/' + ${post.postedIn}}" th:text="${post.postedInGroup.name}">view</a></p>
+                <p th:text="${post.content}">Text ...</p>
             </div>
-
-            </p>
-
         </div>
-
         <div class="col">
-            <!--Posts that you have posted-->
-            <p th:text=" 'user posts' "/>
-            <div th:each="post : ${#lists.sort(myPosts)}" id="postbox" class="card">
-                <!--<p><a th:href="@{'/user/' + ${post.postedBy}}" th:text="${post.postedByUser.username}">User ...</a></p>-->
-                <p th:text="${post.content}">Text ... posted in
-                    <a th:href="@{'/group/list/' + ${post.postedIn}}" th:text="${post.postedInGroup.name}">view</a>
-                </p>
-            </div>
+            <p>column for chat</p>
         </div>
-        <p>
-        <div class="col">
-            <form th:action="@{/logout}" method="post">
-                <input type="submit" value="Sign Out"/>
-            </form>
-        </div>
-        </p>
-        <p>
     </div>
-
 </div>
 </body>
 </html>

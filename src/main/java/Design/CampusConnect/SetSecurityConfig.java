@@ -39,13 +39,13 @@ public class SetSecurityConfig extends WebSecurityConfigurerAdapter {
         return new BCryptPasswordEncoder();
     }
 
-        @Override
+    @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .csrf().disable()
                 .authorizeRequests()
                 // Please remove the "/**" when in release mode.
-                .antMatchers( "/register", "/api/**").permitAll()
+                .antMatchers("/register", "/api/**","/resources/**", "/css/**").permitAll()
                 .antMatchers("/profile", "/socket", "/chat/**", "/app/**", "/topic/**", "/feed", "/home").authenticated()
                 .anyRequest().authenticated()
                 .and()
@@ -57,6 +57,9 @@ public class SetSecurityConfig extends WebSecurityConfigurerAdapter {
                 .logout()
                 .permitAll();
 
-        }
+    }
+
+
+
 
 }

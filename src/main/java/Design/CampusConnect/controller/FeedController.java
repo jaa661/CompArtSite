@@ -32,7 +32,7 @@ public class FeedController {
         model.addAttribute("user", Userservice.findByName(principal.getName()));
         //model.addAttribute("group", Groupservice.findById());
         model.addAttribute("feed", service.getAllPosts());
-        return "chatandfeed";
+        return "chat-and-feed";
     }
     @RequestMapping(value = "/oldfeed")
     public String oldfeed(Model model, Principal principal) {

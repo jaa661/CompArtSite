@@ -1,17 +1,3 @@
-<!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" xmlns:form="http://www.w3.org/1999/xhtml">
-<head>
-    <title>WebSocket Chat</title>
-    <!-- <link href="/webjars/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-     <script src="/webjars/jquery/3.3.1-1/jquery.min.js"></script>
-     <script src="/webjars/sockjs-client/0.3.4/sockjs.min.js"></script>
-     <script src="/webjars/stomp-websocket/2.3.3-1/stomp.min.js"></script>
-     <script src="/chatcode.js"></script>-->
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <script src="/postcode.js"></script>
-
-</head>
-<style>
 .space-bottom5 { margin-bottom: 5px; }
 .space-bottom10 { margin-bottom: 10px; }
 .space-bottom15 { margin-bottom: 15px; }
@@ -19,7 +5,7 @@
 .space-bottom30 { margin-bottom: 30px; }
 .main {
     height:100%;
-    top:48px;
+    top:50px;
     width: 100%;
     position: fixed; /* Fixed Sidebar (stay in place on scroll) */
     overflow-x: hidden; /* Disable horizontal scroll */
@@ -54,12 +40,12 @@
 
 /* Add a color to the active/current link */
 .topnav a.active {
-    background-color: #4CAF50;
+    background-color: #761497;
     color: white;
 }
         #postbox {
             border-radius: 25px;
-            border: 2px solid #73AD21;
+            border: 2px solid #761497;
             <!--padding: 20px;-->
             width: 100%;
             height: 150px;
@@ -133,61 +119,3 @@
     .sidenav {padding-top: 15px;}
     .sidenav a {font-size: 18px;}
 }
-</style>
-<body>
-<div class="topnav">
-    <a class = "active" >CAMPUS CONNECT</a>
-    <a href="/home">Home</a>
-    <a href="/Profile">Profile</a>
-    <a href="/feed">Feed</a>
-    <a href="/ws">Chat</a>
-</div>
-
-<div class="sidenav">
-    <p><a th:href="@{'/group/list/' + ${groupId}}">BACK TO GROUP</a></p>
-    <!--<a th:href="@{'/user/' + ${user.id}}" th:text="${user.username}"></a>-->
-    <!--<a th:href="@{'/user/groups'}">Groups</a>-->
-    <!--<a th:href="@{'/messages'}">Messages</a>-->
-    <!--<a href="#">Contact</a>-->
-</div>
-
-<div class="main">
-
-    <div class="row">
-        <!-- First COlUMN. -->
-
-
-        <!--<div class="column">-->
-        <!--<div class="card">-->
-        <!--<h3 th:text="${user.username}"></h3>-->
-        <!--<div class="fakeimg">Image</div><br>-->
-        <!--<div class="fakeimg">Image</div><br>-->
-        <!--<div class="fakeimg">Image</div>-->
-        <!--</div>-->
-        <!--</div>-->
-        <!--&lt;!&ndash; SECOND COLUMN &ndash;&gt;-->
-
-
-        <div class="column">
-
-            <p th:text="'Members: '" />
-            <div th:each="user : ${users}" id="postbox">
-                <p><a th:href="@{'/user/' + ${user.id}}" th:text="${user.username}">User ...</a></p>
-                <!--th:text="${groupName}">view</a></p>-->
-                <!--<p> th:text="${user.username}"</p>-->
-                <!--<p th:text="| ${user.username}|"/>-->
-                <!--/user/{studentId}"-->
-                <!--&lt;!&ndash;<p><a th:href="@{'/group/list/' + ${post.postedIn}}" th:text="${post.postedInGroup.name}">view</a></p>&ndash;&gt;-->
-                <!--<p th:text="${post.content}">Text ...</p>-->
-            </div>
-        </div>
-        <!-- Third COlUMN -->
-
-
-        <!--<div class="column">-->
-        <!--<p>column for chat</p>-->
-        <!--</div>-->
-    </div>
-</div>
-</body>
-</html>

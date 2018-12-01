@@ -34,8 +34,7 @@ public class GroupController {
         model.addAttribute("feed", PostService.getPostsByGroupId(groupId));
         model.addAttribute("groupName", GroupService.GetNameById(groupId));
         model.addAttribute("groupId", groupId);
-
-        return "groupPage";
+        return "group-page";
     }
 
     @RequestMapping(value = "/group/users/{groupId}") ///{groupId}")
@@ -46,7 +45,7 @@ public class GroupController {
 //        model.addAttribute("groupName", GroupService.GetNameById(groupId));
 //        model.addAttribute("groupId", groupId);
         System.out.println("users");
-        return "membersInGroup";
+        return "members-in-group";
     }
 
     @RequestMapping(value = "/user/groups")
@@ -58,10 +57,10 @@ public class GroupController {
 //        model.addAttribute("userId", student.getId());
         System.out.println(student.getId());
 
-        model.addAttribute("allGroups", GroupService.getAllGroups());
+        model.addAttribute("allGroups", GroupService.getAllGroupsUserIsNotIn(student.getId()));
         model.addAttribute("myGroups", GroupService.getGroupsStudentBelongsToById(student.getId()));
         System.out.println("hitting manage groups");
-        return "ManageGroups";
+        return "manage-groups";
     }
 
     @RequestMapping(value = "/group/add")
