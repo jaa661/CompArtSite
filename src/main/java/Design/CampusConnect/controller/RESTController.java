@@ -55,7 +55,7 @@ public class RESTController {
     }
 
     @RequestMapping(value = "/group/add", method = RequestMethod.POST,consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
-    Group newGroup( int creatorId, String groupName) {
+    boolean newGroup( int creatorId, String groupName) {
         return GroupService.studentCreateGroup(creatorId, groupName);
     }
 

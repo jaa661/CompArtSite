@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" xmlns:form="http://www.w3.org/1999/xhtml">
 <head>
-    <title>WebSocket Chat</title>
+    <title>Campus Connect</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" i
           ntegrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="/styles.css" type="text/css" media="all">
@@ -20,14 +20,9 @@
 </div>
 
 <div class="sidenav">
-    <p><a th:href="@{'/group/list/' + ${groupId}}" th:text="${groupName}">view</a></p>
-    <p><a th:href="@{'/group/users/' + ${groupId}}">MEMBERS</a></p>
-
-    <form th:action="@{'/group/leave'}" , method="post" enctype="application/x-www-form-urlencoded">
-        <input type="hidden" name="newMemberId" th:value="${user.id}"/>
-        <input type="hidden" name="groupId" th:value="${groupId}"/>
-        <input class="btn btn-outline-secondary btn-sm" type="submit" value="Leave"/>
-    </form>
+    <p><a th:href="@{'/Profile'}" th:text="${user.username}"></a></p>
+    <p><a th:href="@{'/group/list/' + ${groupId}}" th:text="${groupName}">View</a></p>
+    <p><a th:href="@{'/group/users/' + ${groupId}}">Members</a></p>
     <!--<a th:href="@{${g/users" th:text="${groupName}">MEMBERS</a>&ndash;&gt;-->
 
 </div>

@@ -57,9 +57,12 @@ public class GroupService {
         return repository.save(group);
     }
 
-    public Group studentCreateGroup(int creatorId, String groupName) {
+    public boolean studentCreateGroup(int creatorId, String groupName) {
         Group group = new Group();
         Student toUpdate = studentrepository.findById(creatorId);
+        if(toUpdate == null){
+            return false;
+        }
         System.out.println(toUpdate);
         System.out.println("creating new group created by: " + toUpdate.getUsername());
 
@@ -72,12 +75,17 @@ public class GroupService {
         studentrepository.save(toUpdate);
         System.out.println(studentrepository.findById(toUpdate.getId()));
         System.out.println(group);
-        return group;
+        return true;
     }
 
-    public void studentJoinGroup(int newMemberId, int groupId) {
+    public boolean studentJoinGroup(int newMemberId, int groupId) {
+
         Student studentToUpdate = studentrepository.findById(newMemberId);
         Group groupToUpdate = repository.findById(groupId);
+
+        if(studentToUpdate == null || groupToUpdate == null){
+            return false;
+        }
 
         System.out.println(studentToUpdate);
         System.out.println("user: " + studentToUpdate.getUsername()
@@ -98,6 +106,7 @@ public class GroupService {
         repository.save(groupToUpdate);
 
         System.out.println("user: " + studentToUpdate.getUsername() + " joined: " + groupToUpdate.getName());
+        return true;
     }
 
     public void studentJoinGroup(int newMemeberId, String groupName) {

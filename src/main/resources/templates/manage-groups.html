@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" xmlns:form="http://www.w3.org/1999/xhtml">
 <head>
-    <title>WebSocket Chat</title>
+    <title>Campus Connect</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="/styles.css" type="text/css" media="all">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
@@ -17,7 +17,8 @@
 </div>
 
 <div class="sidenav">
-    <a th:href="@{'/user/' + ${user.id}}" th:text="${user.username}"></a>
+    <a th:href="@{'/Profile'}" th:text="${user.username}"></a>
+    <!--<a th:href="@{'/user/' + ${user.id}}" th:text="${user.username}"></a>-->
     <a th:href="@{'/user/groups'}">Groups</a>
     <a th:href="@{'/messages'}">Messages</a>
 </div>
@@ -33,6 +34,8 @@
                 <div><label> Group Name : <input type="text" name="groupName"/> </label></div>
                 <div><input class="btn btn-outline-secondary btn-sm" type="submit" value="Create"/></div>
             </form>
+
+            <!--<div th:if="${createGroupError}"> Could not create group</div>-->
 
             <p th:text="'Groups that you are a part of'"/>
             <div th:each="aGroup: ${myGroups}">

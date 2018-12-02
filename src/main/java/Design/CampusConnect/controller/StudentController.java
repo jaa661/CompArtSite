@@ -26,21 +26,14 @@ public class StudentController {
 
     @RequestMapping("/user/{studentId}")
     public String profile(Principal principal, Model model, @PathVariable int studentId) {
-
+        model.addAttribute("user", userService.findByName(principal.getName()));
+        model.addAttribute("username", principal.getName());
         System.out.println("hitting user "+studentId);
-        model.addAttribute("user", userService.findById(studentId));
-        model.addAttribute("username", userService.findById(studentId).getUsername());
+        model.addAttribute("visitedStudentUsername", userService.findById(studentId).getUsername());
 
         model.addAttribute("myGroups", groupService.getGroupsStudentBelongsToById(studentId));
         model.addAttribute("myPosts", postService.getPostsByStudentId(studentId));
-        return "Profile";
+        return "student-profile-view";
     }
 
-//    @RequestMapping("/user/groups")
-//    public String mygroups(Principal principal, Model model, @PathVariable int studentId) {
-//        model.addAttribute("user", service.findById(studentId));
-//        model.addAttribute("username", service.findById(studentId).getUsername());
-//        System.out.println("hitting user "+studentId);
-//        return "Profile";
-//    }
 }
