@@ -24,6 +24,17 @@ public class UserDto {
     private String password;
     private String matchingPassword;
 
+    public boolean isConfirmed() {
+        return confirmed;
+    }
+
+    public void setConfirmed(boolean confirmed) {
+        this.confirmed = confirmed;
+    }
+
+    @NotNull
+    private boolean confirmed;
+
     @NotNull
     @NotEmpty
     private String email;
@@ -88,6 +99,7 @@ public class UserDto {
                 ", username='" + userName+ '\'' +
                 ", matchingPassword='" + matchingPassword + '\'' +
                 ", email='" + email + '\'' +
+                ", confirmed='" + confirmed + '\'' +
                 '}';
     }
 }

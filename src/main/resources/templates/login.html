@@ -142,6 +142,7 @@
         <div class="card text-center" style="position:fixed; top: 30%; left: 30%;">
             <div class="card-header">
                 Welcome to Campus Connect
+                <div th:if="${error}" th:text="${error}"> </div>
                 <div th:if="${param.error}">
                     Invalid username and password.
                 </div>

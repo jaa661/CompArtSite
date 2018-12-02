@@ -1,11 +1,16 @@
 package Design.CampusConnect.controller;
 
+import Design.CampusConnect.Email.email;
 import Design.CampusConnect.Error.UserAlreadyExistException;
 import Design.CampusConnect.Pojos.UserDto;
 import Design.CampusConnect.entity.Student;
 import Design.CampusConnect.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.FileSystemXmlApplicationContext;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -35,6 +40,9 @@ public class RegisterViewController {
         return modelAndView;
     }
 
+    @Autowired
+    @Qualifier("CampusConnectMailSender")
+    public email mailSender;
 
     @RequestMapping(value = "/register", method = RequestMethod.POST)
     public ModelAndView registerUserAccount(
@@ -42,7 +50,8 @@ public class RegisterViewController {
             @ModelAttribute("user") @Valid UserDto accountDto,
             BindingResult result,
             WebRequest request,
-            Errors errors) {
+            Errors errors, Model model) {
+
         System.out.println("hitting Post Register");
 
         Student registered = new Student();
@@ -50,6 +59,17 @@ public class RegisterViewController {
         if (!result.hasErrors()) {
             System.out.println("attempting to create user account with no errors");
             registered = createUserAccount(accountDto, result);
+
+
+            String from = "confirmcampusconnect@gmail.com";
+            String to = accountDto.getEmail();
+            String subject = "Confirm Account!";
+            String body = "Click Here: http://campusconnect.ddns.net/confirm/" + accountDto.getUserName();
+
+            mailSender.sendMail(from, to, subject, body);
+            ModelAndView x = new ModelAndView("login", "user", accountDto);
+            x.addObject("error", "Check your email and confirm to login!");
+            return x;
         }
         if (registered == null) {
             result.rejectValue("email", "message.regError");

@@ -11,7 +11,7 @@ public class Student {
     public Student() {
     }
 
-    public Student(String firstName, String lastName, String password, String email) {
+    public Student(String firstName, String lastName, String password, String email, boolean confirmed) {
         this.username = "";
         this.firstName = firstName;
         this.lastName = lastName;
@@ -19,6 +19,7 @@ public class Student {
         this.email = email;
 //        this.groups = new ArrayList<>();
         this.groups = new HashSet<>();
+        this.confirmed = confirmed;
     }
 
     @Id
@@ -35,6 +36,16 @@ public class Student {
     private String password;
 
     private String email;
+
+    public boolean isConfirmed() {
+        return confirmed;
+    }
+
+    public void setConfirmed(boolean confirmed) {
+        this.confirmed = confirmed;
+    }
+
+    private boolean confirmed;
 
     @ElementCollection(fetch = FetchType.EAGER, targetClass=Integer.class)
     private Set<Integer> groups = new HashSet<>();
@@ -110,7 +121,8 @@ public class Student {
                 ", lastName='" + lastName + '\'' +
                 ", password='" + password + '\'' +
                 ", email='" + email + '\'' +
-                ", groups=" + groups +
+                ", groups='" + groups + '\'' +
+                ", confirmed='" + confirmed + '\'' +
                 '}';
     }
 }

@@ -22,6 +22,12 @@
 <div class="sidenav">
     <p><a th:href="@{'/group/list/' + ${groupId}}" th:text="${groupName}">view</a></p>
     <p><a th:href="@{'/group/users/' + ${groupId}}">MEMBERS</a></p>
+
+    <form th:action="@{'/group/leave'}" , method="post" enctype="application/x-www-form-urlencoded">
+        <input type="hidden" name="newMemberId" th:value="${user.id}"/>
+        <input type="hidden" name="groupId" th:value="${groupId}"/>
+        <input class="btn btn-outline-secondary btn-sm" type="submit" value="Leave"/>
+    </form>
     <!--<a th:href="@{${g/users" th:text="${groupName}">MEMBERS</a>&ndash;&gt;-->
 
 </div>

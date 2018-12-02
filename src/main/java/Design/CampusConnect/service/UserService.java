@@ -36,6 +36,12 @@ public class UserService implements IUserService {
         return check;
     }
 
+    public void confirmAccount(String accountID){
+        Student account = findByName(accountID);
+        account.setConfirmed(true);
+        repository.save(account);
+    }
+
     @Override
     public Student registerNewUserAccount(final UserDto accountDto) {
 //        if (emailExist(accountDto.getEmail())) {

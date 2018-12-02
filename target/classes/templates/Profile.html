@@ -1,87 +1,79 @@
-<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:form="http://www.w3.org/1999/xhtml">
 <head>
-    <style>
-        ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-            background-color: #333;
-        }
+    <title>WebSocket Chat</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="/styles.css" type="text/css" media="all">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="/postcode.js"></script>
 
-        li {
-            float: left;
-        }
-
-        li a {
-            display: block;
-            color: white;
-            text-align: center;
-            padding: 14px 16px;
-            text-decoration: none;
-        }
-
-        li a:hover {
-            background-color: #111;
-        }
-    </style>
 </head>
 <body>
-<ul>
-    <li><a class="active" href="/home">Home</a></li>
-    <li><a href="/Profile">Profile</a></li>
-    <li><a href="/feed">Feed</a></li>
-    <li><a href="/ws">Chat</a></li>
-</ul>
-<div class="box">
-    <div class="page-header">
-        <h1 th:inline="text">Welcome</h1>
-        <span th:text="|Hello ${username}|"/>
+<div class="topnav">
+    <a class="active">CAMPUS CONNECT</a>
+    <a href="/home">Home</a>
+    <a href="/Profile">Profile</a>
+    <a href="/feed">Feed</a>
+    <a href="/ws">Chat</a>
+    <a href="/logout">Sign out</a>
+</div>
 
-    </div>
+<div class="sidenav">
+    <a th:href="@{'/user/' + ${user.id}}" th:text="${user.username}"></a>
+    <a th:href="@{'/user/groups'}">Groups</a>
+    <a th:href="@{'/messages'}">Messages</a>
+</div>
+<div class="main">
 
-    <p th:text="'Groups that you can are a part of'"/>
-    <div th:each="aGroup: ${myGroups}">
-        <p><a  th:href="@{'/group/list/' + ${aGroup.id}}" th:text="${aGroup.name}"> Group
-        </a></p>
-    </div>
+    <div class="row">
+        <!-- First COlUMN. -->
+        <div class="col">
+            <div class="page-header">
+                <h1 th:inline="text">Welcome</h1>
+                <span th:text="|Hello ${user.username}|"/>
 
-    </p>
+            </div>
 
-    <p th:text="'Groups that you can join'"/>
-        <div th:each="aGroup: ${allGroups}">
-            <form th:action="@{/group/join}", method="post">
-            <p><a  th:href="@{'/group/list/' + ${aGroup.id}}" th:text="${aGroup.name}"> Group
-                <input type = "hidden" name = "username" value = "${username}" />
-                <input type="submit" value="Join"/>
-            </a></p>
-            </form>
+            <p th:text="'Groups that you are a part of'"/>
+            <div th:each="aGroup: ${myGroups}">
+                <p><a th:href="@{'/group/list/' + ${aGroup.id}}" th:text="${aGroup.name}"> Group
+                </a></p>
+            </div>
+
+            </p>
 
         </div>
 
-    </p>
-
-    <p>
-    <form th:action="@{/logout}" method="post">
-        <input type="submit" value="Sign Out"/>
-    </form>    </p>
-    <p>
-
-    <form th:action="@{/login}" method="post">
-        <input type="submit" value="Sign in"/>
-    </form>    </p>
-
-    <form th:action="@{/register}" method="post">
-        <input type="submit" value="Register"/>
-    </form>    </p>
-
-    <form th:action="@{/group/add}" method="post">
-        Create  a new group
-        <div><label> Group Name : <input type="text" name="name"/> </label></div>
-        <input type = "hidden" name = "creatorId" value = "${userId}" />
-        <div><input type="submit" value="Create" /></div>
-    </form>
+        <div class="col">
+            <!--Posts that you have posted-->
+            <p th:text=" 'user posts' "/>
+            <div th:each="post : ${#lists.sort(myPosts)}" id="postbox" class="card">
+                <!--<p><a th:href="@{'/user/' + ${post.postedBy}}" th:text="${post.postedByUser.username}">User ...</a></p>-->
+                <p th:text="${post.content}">Text ... posted in
+                    <a th:href="@{'/group/list/' + ${post.postedIn}}" th:text="${post.postedInGroup.name}">view</a>
+                </p>
+            </div>
+        </div>
+        <p>
+        <div class="col">
+            <form th:action="@{/logout}" method="post">
+                <input type="submit" value="Sign Out"/>
+            </form>
+        </div>
+        </p>
+        <p>
+    </div>
 
 </div>
 </body>
 </html>
+<script th:inline="javascript">
+/*<![CDATA[*/
+
+    var usrnme = /*[[${user.username}]]*/ 'default';
+   //console.log(usrnme);
+
+/*]]>*/
+
+</script>

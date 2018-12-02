@@ -27,13 +27,16 @@ public class MyUserDetailsService implements UserDetailsService {
         System.out.println("Searching for user: " + username);
         Student student = StudentRepository.findByUsername(username);
         System.out.println(student);
+        if (student.isConfirmed()==false){
+            throw new UsernameNotFoundException(username+": Email not confirmed yet!");
+        }
+
         if (student == null) {
             throw new UsernameNotFoundException(username);
         }
         //return new MyUserPrincipal(student);
         String password = student.getPassword();
-        List<GrantedAuthority> auth = AuthorityUtils
-                .commaSeparatedStringToAuthorityList("ROLE_USER");
+        List<GrantedAuthority> auth = AuthorityUtils .commaSeparatedStringToAuthorityList("ROLE_USER");
         return new org.springframework.security.core.userdetails.User(username, password, auth);
     }
 }

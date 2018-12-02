@@ -1,79 +1,53 @@
-
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
-      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>Welcome</title>
-
-    <style type="text/css">
-		body{ font: 14px sans-serif; text-align: center; }
-		.box{
-			border: 3px solid green;
-			width: 1000px;
-			margin: auto;
-		}
-		.browser {
-			width:20%;
-			margin:auto;
-			padding: 10px;
-		}
-        ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-            background-color: #333;
-        }
-
-        li {
-            float: left;
-        }
-
-        li a {
-            display: block;
-            color: white;
-            text-align: center;
-            padding: 14px 16px;
-            text-decoration: none;
-        }
-
-        li a:hover {
-            background-color: #111;
-        }
-    </style>
+    <title>WebSocket Chat</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="/styles.css" type="text/css" media="all">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="/postcode.js"></script>
 </head>
+
 <body>
-<ul>
-    <li><a class = "active" >CAMPUS CONNECT</a></li>
-    <li><a class="active" href="/home">Home</a></li>
-    <li><a href="/Profile">Profile</a></li>
-    <li><a href="/feed">Feed</a></li>
-    <li><a href="/ws">Chat</a></li>
-    <li><a href="/logout">Sign out</a></li>
+<div class="topnav">
+    <a class="active">CAMPUS CONNECT</a>
+    <a href="/home">Home</a>
+    <a href="/Profile">Profile</a>
+    <a href="/feed">Feed</a>
+    <a href="/ws">Chat</a>
+    <a href="/logout">Sign out</a>
+</div>
+<div class="main">
+    <div class="row">
+        <div class="card text-center" style="position:fixed; top: 30%; left: 30%;">
+            <div class="page-header">
+                <h1 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h1>
+            </div>
 
-</ul>
-<div class="box">
-    <div class="page-header">
-        <h1 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h1>
+            <p>
+            <form th:action="@{/logout}" method="get">
+                <input type="submit" value="Sign Out"/>
+            </form>
+            </p>
+            <p>
+
+            <form th:action="@{/login}" method="get">
+                <input type="submit" value="Sign in"/>
+            </form>
+            </p>
+
+            <form th:action="@{/register}" method="get">
+                <input type="submit" value="register"/>
+            </form>
+            </p>
+
+            <form th:action="@{/Profile}" method="get">
+                <input type="submit" value="profile"/>
+            </form>
+            </p>
+
+        </div>
     </div>
-
-    <p>
-    <form th:action="@{/logout}" method="get">
-        <input type="submit" value="Sign Out"/>
-    </form>    </p>
-    <p>
-
-    <form th:action="@{/login}" method="get">
-        <input type="submit" value="Sign in"/>
-    </form>    </p>
-
-    <form th:action="@{/register}" method="get">
-        <input type="submit" value="register"/>
-    </form>    </p>
-
-    <form th:action="@{/Profile}" method="get">
-        <input type="submit" value="profile"/>
-    </form>    </p>
-
 </div>
 </body>

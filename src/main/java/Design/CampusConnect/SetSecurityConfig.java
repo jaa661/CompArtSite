@@ -45,7 +45,7 @@ public class SetSecurityConfig extends WebSecurityConfigurerAdapter {
                 .csrf().disable()
                 .authorizeRequests()
                 // Please remove the "/**" when in release mode.
-                .antMatchers("/register", "/api/**","/resources/**", "/css/**").permitAll()
+                .antMatchers("/register", "/api/**","/resources/**", "/css/**", "/confirm/**").permitAll()
                 .antMatchers("/profile", "/socket", "/chat/**", "/app/**", "/topic/**", "/feed", "/home").authenticated()
                 .anyRequest().authenticated()
                 .and()
