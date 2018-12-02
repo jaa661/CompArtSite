@@ -57,7 +57,7 @@ public class MessageController {
         model.addAttribute("mapComparator", mapComparator);
 
         System.out.println("hitting messages");
-        return "messages";
+        return "messagesID";
     }
 
     @RequestMapping(value = "/message/add")

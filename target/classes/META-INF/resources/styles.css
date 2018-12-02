@@ -1,15 +1,3 @@
-<!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" xmlns:form="http://www.w3.org/1999/xhtml">
-<head>
-    <title>Campus Connect</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="/styles.css" type="text/css" media="all">
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <script src="/postcode.js"></script>
-
-</head>
-<style>
 .space-bottom5 { margin-bottom: 5px; }
 .space-bottom10 { margin-bottom: 10px; }
 .space-bottom15 { margin-bottom: 15px; }
@@ -62,12 +50,6 @@
             width: 100%;
             height: 150px;
         }
-        #messagefrom {
-            align: right;
-        }
-        #messageto {
-            align: left;
-        }
         .row {
             top: 100px;
             left: 120px;
@@ -80,7 +62,7 @@
             width: 40%;
             top: 48px;
             left: 0px;
-            border: 3px #761497;
+            border: 3px solid green;
             overflow:hidden;
            }
 
@@ -137,69 +119,3 @@
     .sidenav {padding-top: 15px;}
     .sidenav a {font-size: 18px;}
 }
-</style>
-<body>
-<div class="topnav">
-    <a class = "active" >CAMPUS CONNECT</a>
-    <a href="/home">Home</a>
-    <a href="/Profile">Profile</a>
-    <a href="/feed">Feed</a>
-    <a href="/logout">Sign out</a>
-</div>
-
-<div class="sidenav">
-    <a th:href="@{'/Profile'}" th:text="${user.username}"></a>
-    <!--<a th:href="@{'/user/' + ${user.id}}" th:text="${user.username}"></a>-->
-    <a th:href="@{'/user/groups'}">Manage Groups</a>
-    <a th:href="@{'/messages'}">Messages</a>
-</div>
-
-<div class="main">
-
-    <div class="row">
-        <!-- First COlUMN. -->
-
-        <div class="col">
-            <div class="card" id="postbox">
-                <p>Post Something ...</p>
-                <form th:action="@{/message/add}" method="post">
-                    <input type = "hidden" name = "sender" th:value = "${user.username}" />
-                    <input type = "text" name = "sendee" value = "send to..."/>
-                    <input type = "text" name = "content" value = "text..."/>
-                    <br>
-                    <input type="submit" value="post"/>
-                </form>
-            </div>
-
-            <p th:text="'Feed'" />
-            <!--<div th:each="msg : ${messages}" id="postbox">-->
-                <!--<p th:text="${msg.sentBy.username} + ':' + ${msg.content} ">User ...</p>-->
-            <!--</div>-->
-            <span  th:each="msg : ${#lists.sort(messages)}">
-            <span th:if="${msg.sentBy.username == user.username}">
-                  <p th:text="${msg.sentBy.username} + ':' + ${msg.content} " align="left">User ...</p>
-             </span>
-                <span th:if="${msg.sentBy.username != user.username}">
-                  <p  th:text="${msg.sentBy.username} + ':' + ${msg.content} " align="right">User ...</p>
-             </span>
-            </span>
-
-
-        </div>
-        <!-- Third COlUMN -->
-        <div class="column">
-            <p>column for chat</p>
-        </div>
-
-    </div>
-</div>
-</body>
-</html>
-<script th:inline="javascript">
-/*<![CDATA[*/
-
-    var usrnme = /*[[${user.username}]]*/ 'default';
-   //console.log(usrnme);
-
-/*]]>*/
-</script>

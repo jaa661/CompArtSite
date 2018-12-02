@@ -2,11 +2,9 @@
 <html xmlns:th="http://www.thymeleaf.org" xmlns:form="http://www.w3.org/1999/xhtml">
 <head>
     <title>WebSocket Chat</title>
-    <!-- <link href="/webjars/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-     <script src="/webjars/jquery/3.3.1-1/jquery.min.js"></script>
-     <script src="/webjars/sockjs-client/0.3.4/sockjs.min.js"></script>
-     <script src="/webjars/stomp-websocket/2.3.3-1/stomp.min.js"></script>
-     <script src="/chatcode.js"></script>-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="/styles.css" type="text/css" media="all">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script src="/postcode.js"></script>
 
@@ -19,7 +17,7 @@
 .space-bottom30 { margin-bottom: 30px; }
 .main {
     height:100%;
-    top:48px;
+    top:50px;
     width: 100%;
     position: fixed; /* Fixed Sidebar (stay in place on scroll) */
     overflow-x: hidden; /* Disable horizontal scroll */
@@ -60,24 +58,30 @@
         #postbox {
             border-radius: 25px;
             border: 2px solid #73AD21;
-            padding: 20px;
-            width: 200px;
+            <!--padding: 20px;-->
+            width: 100%;
             height: 150px;
+        }
+        #messagefrom {
+            align: right;
+        }
+        #messageto {
+            align: left;
         }
         .row {
             top: 100px;
-            left: 140px;
+            left: 120px;
             width:100%;
-            height:100%;
+            height:110%;
 
            }
         .column {
             float: left;
             width: 40%;
             top: 48px;
-            left: 150px;
+            left: 0px;
             border: 3px solid green;
-
+            overflow:hidden;
            }
 
         .row:after {
@@ -133,7 +137,6 @@
     .sidenav {padding-top: 15px;}
     .sidenav a {font-size: 18px;}
 }
-
 </style>
 <body>
 <div class="topnav">
@@ -149,50 +152,57 @@
     <a th:href="@{'/user/groups'}">Groups</a>
     <a th:href="@{'/messages'}">Messages</a>
 </div>
+
 <div class="main">
 
     <div class="row">
         <!-- First COlUMN. -->
-        <div class="column">
 
-            <form th:action="@{/group/add}" method="post" enctype="application/x-www-form-urlencoded">
-                Create a new group
-                <input type="hidden" name="creatorId" th:value="${user.id}"/>
-                <div><label> Group Name : <input type="text" name="groupName"/> </label></div>
-                <div><input type="submit" value="Create"/></div>
-            </form>
 
-            <p th:text="'Groups that you are a part of'"/>
-            <div th:each="aGroup: ${myGroups}">
-                <p><a th:href="@{'/group/list/' + ${aGroup.id}}" th:text="${aGroup.name}"> Group
-                </a></p>
-            </div>
+        <!--<div class="column">-->
+        <!--<div class="card">-->
+        <!--<h3 th:text="${user.username}"></h3>-->
+        <!--<div class="fakeimg">Image</div><br>-->
+        <!--<div class="fakeimg">Image</div><br>-->
+        <!--<div class="fakeimg">Image</div>-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--&lt;!&ndash; SECOND COLUMN &ndash;&gt;-->
 
-            </p>
-        </div>
 
-        <div class="column">
-
-            <p th:text="'All other groups'"/>
-            <div th:each="aGroup: ${allGroups}">
-                <form th:action="@{/group/join}" , method="post" enctype="application/x-www-form-urlencoded">
-                    <a th:href="@{'/group/list/' + ${aGroup.id}}" th:text="${aGroup.name}"> Group
-                    </a>
-                    <input type="hidden" name="newMemberId" th:value="${user.id}"/>
-                    <input type="hidden" name="groupId" th:value="${aGroup.id}"/>
-                    <input type="submit" value="Join"/>
+        <div class="col">
+            <div id="postbox">
+                <p>Post Something ...</p>
+                <form th:action="@{/message/add}" method="post">
+                    <input type = "hidden" name = "sender" th:value = "${user.username}" />
+                    <input type = "hidden" name = "sendee" th:value = "${friend.username}"/>
+                    <input type = "text" name = "content" value = "text..."/>
+                    <br>
+                    <input type="submit" value="post"/>
                 </form>
-
             </div>
-            </p>
-        </div>
 
-        <p>
-        <form th:action="@{/logout}" method="post">
-            <input type="submit" value="Sign Out"/>
-        </form>
-        </p>
-        <p>
+            <p th:text="'Feed'" />
+            <!--<div th:each="msg : ${messages}" id="postbox">-->
+            <!--<p th:text="${msg.sentBy.username} + ':' + ${msg.content} ">User ...</p>-->
+            <!--</div>-->
+            <span  th:each="msg : ${#lists.sort(messages)}">
+            <span th:if="${msg.sentBy.username == user.username}">
+                  <p th:text="${msg.sentBy.username} + ':' + ${msg.content} " align="left">User ...</p>
+             </span>
+                <span th:if="${msg.sentBy.username != user.username}">
+                  <p  th:text="${msg.sentBy.username} + ':' + ${msg.content} " align="right">User ...</p>
+             </span>
+            </span>
+
+
+        </div>
+        <!-- Third COlUMN -->
+
+
+        <div class="column">
+            <p>column for chat</p>
+        </div>
     </div>
 </div>
 </body>
@@ -204,5 +214,4 @@
    //console.log(usrnme);
 
 /*]]>*/
-
 </script>

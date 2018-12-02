@@ -175,8 +175,8 @@
                 <p>Post Something ...</p>
                 <form th:action="@{/message/add}" method="post">
                     <input type = "hidden" name = "sender" th:value = "${user.username}" />
-                    <input type = "text" name = "sendee" />
-                    <input type = "text" name = "content" />
+                    <input type = "text" name = "sendee" value = "send to..."/>
+                    <input type = "text" name = "content" value = "text..."/>
                     <br>
                     <input type="submit" value="post"/>
                 </form>
