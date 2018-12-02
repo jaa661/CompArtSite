@@ -22,8 +22,8 @@
 <div class="sidenav">
     <!--<a th:href="@{'/Profile'}" th:text="${user.username}"></a>-->
     <a th:href="@{'/user/' + ${user.id}}" th:text="${user.username}"></a>
-    <a th:href="@{'/user/groups'}">Groups</a>
     <a th:href="@{'/messages'}">Messages</a>
+    <a th:href="@{'/user/groups'}">manage groups</a>
 </div>
 <div class="main">
 
