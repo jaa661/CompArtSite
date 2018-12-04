@@ -40,7 +40,15 @@
             <p th:text="'Groups that you are a part of'"/>
             <div th:each="aGroup: ${myGroups}">
                 <p><a th:href="@{'/group/list/' + ${aGroup.id}}" th:text="${aGroup.name}"> Group
-                </a></p>
+
+
+                <form th:action="@{/group/leave}" , method="post" enctype="application/x-www-form-urlencoded">
+                    <!--<a th:href="@{'/group/list/' + ${aGroup.id}}" th:text="${aGroup.name}"> Group-->
+                    <!--</a>-->
+                    <input type="hidden" name="newMemberId" th:value="${user.id}"/>
+                    <input type="hidden" name="groupId" th:value="${aGroup.id}"/>
+                    <input class="btn btn-outline-secondary btn-sm" type="submit" value="Leave Group"/>
+                </form></a></p>
             </div>
 
             </p>

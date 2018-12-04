@@ -15,6 +15,10 @@ public class Group {
 
     private String name;
 
+    @Override
+    public String toString() {
+        return name;
+    }
 
     @Column(name = "students_in_group")
     @ElementCollection(targetClass=Integer.class)

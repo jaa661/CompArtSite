@@ -109,6 +109,40 @@ public class GroupService {
         return true;
     }
 
+
+
+
+    public void studentLeaveGroup(int newMemberId, int groupId) {
+        Student studentToUpdate = studentrepository.findById(newMemberId);
+        Group groupToUpdate = repository.findById(groupId);
+
+        System.out.println(studentToUpdate);
+        System.out.println("user: " + studentToUpdate.getUsername()
+                + " is attempting to leave group " + groupToUpdate.getName());
+
+        studentToUpdate.getGroups().remove(groupId);
+        studentrepository.save(studentToUpdate);
+
+        groupToUpdate.getStudentsInGroup().remove(newMemberId);
+//        if(groups == null){
+//            groups = new HashSet<>();
+//            groups.r(newMemberId);
+//        }else{
+//            groups.add(newMemberId);
+//        }
+        System.out.println(groupToUpdate);
+//        groupToUpdate.setStudentsInGroup(groups);
+        repository.save(groupToUpdate);
+
+        System.out.println("user: " + studentToUpdate.getUsername() + " left: " + groupToUpdate.getName());
+    }
+
+
+
+
+
+
+
     public void studentJoinGroup(int newMemeberId, String groupName) {
         Group myNewGroup = repository.findByName(groupName);
 
@@ -170,6 +204,19 @@ public class GroupService {
         System.out.println("Groups student has are: " + studentGroupsIds);
         return groups;
     }
+
+    public Boolean checkGroupStudentIn(int studentId, int grpId){
+        Boolean inGroup = Boolean.FALSE;
+        Student student = studentrepository.findById(studentId);
+        Iterable<Integer> studentGroupsIds = student.getGroups();
+        ArrayList<Group> groups = new ArrayList<>();
+        for(Integer groupId:studentGroupsIds){
+            if (groupId == grpId) {inGroup = Boolean.TRUE;}
+        }
+        System.out.println("Groups student has are: " + studentGroupsIds);
+        return inGroup;
+    }
+
 
 //     public void getStudentsInGroupByName(String groupName);
 
