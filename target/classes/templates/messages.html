@@ -161,6 +161,7 @@
 
         <div class="col">
             <div class="card" id="postbox">
+                <div th:if="${error}" th:text="${error}"> </div>
                 <p>Post Something ...</p>
                 <form th:action="@{/message/add}" method="post">
                     <input type = "hidden" name = "sender" th:value = "${user.username}" />

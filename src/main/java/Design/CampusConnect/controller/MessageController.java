@@ -11,6 +11,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 import java.security.Principal;
 import java.util.Comparator;
@@ -62,9 +63,15 @@ public class MessageController {
 
     @RequestMapping(value = "/message/add")
     String addpost(String content, String sender, String sendee, Model model, Principal principal) {
-        messageService.sendMessage(content, sender, sendee);
-        int sendeeId = userService.findByName(sendee).getId();
-        return messagesWith(principal, model, sendeeId);
+        if (userService.exists(sendee)){
+            messageService.sendMessage(content, sender, sendee);
+            int sendeeId = userService.findByName(sendee).getId();
+            return messagesWith(principal, model, sendeeId);
+        }
+        else{
+        model.addAttribute("error", "no such user :(");
+        return messages(principal, model);
+        }
     }
 
 
