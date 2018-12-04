@@ -57,4 +57,10 @@ public class MessageService {
         System.out.println("Fetching all messages sent by "+ myId+" and "+ theirId);
         return  messageRepository.findByPostedWith(myId,theirId);
     }
+
+    public Iterable<Message> getMessagesRecent(int myId){
+
+        System.out.println("Fetching all messages sent by/to "+ myId);
+        return  messageRepository.findByRecent(myId);
+    }
 }

@@ -22,6 +22,15 @@
 <div class="sidenav">
     <p><a th:href="@{'/group/list/' + ${groupId}}" th:text="${groupName}">view</a></p>
     <p><a th:href="@{'/group/users/' + ${groupId}}">MEMBERS</a></p>
+    <form th:action="@{/group/join}" , method="post" enctype="application/x-www-form-urlencoded">
+        <!--<a th:href="@{'/group/list/' + ${aGroup.id}}" th:text="${aGroup.name}"> Group-->
+        <!--</a>-->
+        <input type="hidden" name="newMemberId" th:value="${user.id}"/>
+        <input type="hidden" name="groupId" th:value="${groupId}"/>
+        <input class="btn btn-outline-secondary btn-sm" type="submit" value="Join Group"/>
+    </form>
+
+
     <!--<a th:href="@{${g/users" th:text="${groupName}">MEMBERS</a>&ndash;&gt;-->
 
 </div>
@@ -31,16 +40,16 @@
     <div class="row">
         <!-- First COlUMN. -->
         <div class="col">
-            <div class="card" id="postbox">
-                <p>Post Something ...</p>
-                <form th:action="@{/group/post/add}" method="post">
-                    <input type="hidden" name="poster" th:value="${user.id}"/>
-                    <input type="hidden" name="group" th:value="${groupId}"/>
-                    <input type="text" name="content"/>
-                    <br>
-                    <input class="btn btn-outline-secondary btn-sm" type="submit" value="post"/>
-                </form>
-            </div>
+            <!--<div class="card" id="postbox">-->
+                <!--<p>Post Something ...</p>-->
+                <!--<form th:action="@{/group/post/add}" method="post">-->
+                    <!--<input type="hidden" name="poster" th:value="${user.id}"/>-->
+                    <!--<input type="hidden" name="group" th:value="${groupId}"/>-->
+                    <!--<input type="text" name="content"/>-->
+                    <!--<br>-->
+                    <!--<input class="btn btn-outline-secondary btn-sm" type="submit" value="post"/>-->
+                <!--</form>-->
+            <!--</div>-->
             <p th:text="'Feed'"/>
             <div class="card" th:each="post : ${#lists.sort(feed)}" id="postbox">
                 <p><a th:href="@{'/user/' + ${post.postedBy}}" th:text="${post.postedByUser.username}">User ...</a></p>
@@ -50,7 +59,7 @@
                 <p th:text="${post.content}">Text ...</p>
             </div>
         </div>
-        <div class="col">bla</div>
+        <div class="col"></div>
     </div>
 </div>
 </body>

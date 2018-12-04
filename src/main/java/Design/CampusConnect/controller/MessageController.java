@@ -43,7 +43,7 @@ public class MessageController {
         Student user = userService.findByName(principal.getName());
         model.addAttribute("user", user);
         //model.addAttribute("group", Groupservice.findById());
-        model.addAttribute("messages", messageService.getMessagesSentBy(user.getId()));
+        model.addAttribute("messages", messageService.getMessagesRecent(user.getId()));
         System.out.println("hitting messages");
         return "messages";
     }

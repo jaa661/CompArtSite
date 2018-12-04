@@ -272,6 +272,7 @@ padding: 0px 10px;
         <div class="card text-center" style="position:fixed; top: 30%; left: 30%;">
             <div class="card-header">
                 <h3>Register</h3>
+                <div th:if="${error}" th:text="${error}"> </div>
                 <form autocomplete="off" th:action="@{/register}" method="post">
                     <div>
                         <label>First Name: </label>

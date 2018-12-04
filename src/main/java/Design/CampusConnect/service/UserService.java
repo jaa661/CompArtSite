@@ -73,6 +73,13 @@ public class UserService implements IUserService {
         System.out.println(repository.findByUsername(name));
         return repository.findByUsername(name);
     }
+
+    public boolean exists(String name) {
+        System.out.println("looking for "+ name);
+        System.out.println(repository.findByUsername(name));
+        return (repository.findByUsername(name)!=null);
+    }
+
     public Student findById(int Id) {
         return repository.findById(Id);
     }

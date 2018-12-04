@@ -19,4 +19,7 @@ public interface MessageRepo extends JpaRepository<Message, Integer> {
     @Query("SELECT p FROM Message p WHERE (p.sentBId = :myId AND p.sentTId = :theirId) OR (p.sentBId = :theirId AND p.sentTId = :myId)")
     List<Message> findByPostedWith(@Param("myId") int myId, @Param("theirId") int theirId);
 
+    @Query("SELECT p FROM Message p WHERE (p.sentBId = :myId ) OR (p.sentTId = :myId)")
+    List<Message> findByRecent(@Param("myId") int myId);
+
 }

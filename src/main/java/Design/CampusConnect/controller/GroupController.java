@@ -5,7 +5,6 @@ import Design.CampusConnect.entity.Student;
 import Design.CampusConnect.service.GroupService;
 import Design.CampusConnect.service.PostService;
 import Design.CampusConnect.service.UserService;
-import com.sun.org.apache.xpath.internal.operations.Bool;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;

@@ -54,6 +54,11 @@ public class RegisterViewController {
 
         System.out.println("hitting Post Register");
 
+        if (service.exists(accountDto.getUserName())){
+            ModelAndView x = new ModelAndView("register", "user", accountDto);
+            x.addObject("error", "Username taken :(");
+            return x;
+        }
         Student registered = new Student();
         System.out.println("new student");
         if (!result.hasErrors()) {
@@ -70,9 +75,6 @@ public class RegisterViewController {
             ModelAndView x = new ModelAndView("login", "user", accountDto);
             x.addObject("error", "Check your email and confirm to login!");
             return x;
-        }
-        if (registered == null) {
-            result.rejectValue("email", "message.regError");
         }
         if (result.hasErrors()) {
             return new ModelAndView("register", "user", accountDto);
