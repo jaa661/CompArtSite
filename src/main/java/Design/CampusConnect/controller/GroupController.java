@@ -57,8 +57,15 @@ public class GroupController {
     }
 
     @PostMapping("/user/group/search/")
-    public String search(String groupName){
-        return "redirect:/group/list/" + GroupService.findGroupByName(groupName).getId();
+    public String search(Principal principal, String groupName, Model model) {
+        System.out.println("hitting manage groups");
+
+        Group ganggang =  GroupService.findGroupByName(groupName);
+        if (ganggang!=null){
+            return "redirect:/group/list/" +ganggang.getId();
+        }
+        model.addAttribute("search_error", "Could not find " + groupName);
+        return manageGroups(principal, model);
     }
 
     @RequestMapping(value = "/group/users/{groupId}") ///{groupId}")
