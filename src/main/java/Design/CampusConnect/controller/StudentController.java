@@ -26,7 +26,7 @@ public class StudentController {
 
     @RequestMapping("/user/{studentId}")
     public String profile(Principal principal, Model model, @PathVariable int studentId) {
-        model.addAttribute("user", userService.findByName(principal.getName()));
+        model.addAttribute("user", userService.findById(studentId));
         model.addAttribute("username", principal.getName());
         System.out.println("hitting user "+studentId);
         model.addAttribute("visitedStudentUsername", userService.findById(studentId).getUsername());

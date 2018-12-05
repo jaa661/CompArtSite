@@ -9,13 +9,21 @@
     <script src="/postcode.js"></script>
 
 </head>
-
+<style>
+#postbox {
+            border-radius: 25px;
+            border: 2px solid #761497;
+            <!--padding: 20px;-->
+            width: 100%;
+            height: 225px;
+        }
+</style>
 <body>
 <div class="topnav">
     <a class="active" href="/home">CAMPUS CONNECT</a>
     <a href="/Profile">Profile</a>
     <a href="/feed">Feed</a>
-    <a href="/ws">Chat</a>
+    <a href="/logout">Sign out</a>
 </div>
 
 <div class="sidenav">
@@ -37,23 +45,23 @@
     <div class="row">
         <!-- First COlUMN. -->
         <div class="col">
-            <div class="card" id="postbox">
+            <div class="whitecard" id="postbox">
                 <p>Post Something ...</p>
                 <form th:action="@{/group/post/add}" method="post">
                     <input type="hidden" name="poster" th:value="${user.id}"/>
                     <input type="hidden" name="group" th:value="${groupId}"/>
-                    <input type="text" name="content"/>
+                    <textarea name = "content" rows="3" cols="30" placeholder = "text..."></textarea>
                     <br>
                     <input class="btn btn-outline-secondary btn-sm" type="submit" value="post"/>
                 </form>
             </div>
-            <p th:text="'Feed'"/>
-            <div class="card" th:each="post : ${#lists.sort(feed)}" id="postbox">
+            <!--<p th:text="'Feed'"/>-->
+            <div class="card" th:each="post : ${#lists.sort(feed)}" >
                 <p><a th:href="@{'/user/' + ${post.postedBy}}" th:text="${post.postedByUser.username}">User ...</a></p>
                 <!--<p th:text="| ${user.username}|"/>-->
                 <!--<h1 th:inline="text| ${user.username}|" ></h1>-->
                 <!--<p><a th:href="@{'/group/list/' + ${post.postedIn}}" th:text="${post.postedInGroup.name}">view</a></p>-->
-                <p th:text="${post.content}">Text ...</p>
+                <p th:text="${post.content}" class="posttext">Text ...</p>
             </div>
         </div>
         <div class="col"></div>

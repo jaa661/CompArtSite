@@ -14,7 +14,7 @@
     <a class="active" href="/home">CAMPUS CONNECT</a>
     <a href="/Profile">Profile</a>
     <a href="/feed">Feed</a>
-    <a href="/ws">Chat</a>
+    <!--<a href="/ws">Chat</a>-->
     <a href="/logout">Sign out</a>
 </div>
 
@@ -47,7 +47,7 @@
 
         <div class="col">
             <!--Posts that you have posted-->
-            <p th:text=" 'user posts' "/>
+            <!--<p th:text=" 'user posts' "/>-->
             <div th:each="post : ${#lists.sort(myPosts)}" id="postbox" class="card">
                 <!--<p><a th:href="@{'/user/' + ${post.postedBy}}" th:text="${post.postedByUser.username}">User ...</a></p>-->
                 <p th:text="${post.content}">Text ... posted in
@@ -57,9 +57,9 @@
         </div>
         <p>
         <div class="col">
-            <form th:action="@{/logout}" method="post">
-                <input type="submit" value="Sign Out"/>
-            </form>
+            <!--<form th:action="@{/logout}" method="post">-->
+                <!--<input type="submit" value="Sign Out"/>-->
+            <!--</form>-->
         </div>
         </p>
         <p>
