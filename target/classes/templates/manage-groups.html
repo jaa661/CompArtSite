@@ -59,6 +59,7 @@
 
             <p th:text="'All other groups'" />
             <form th:action="@{/user/group/search/}" method="post" enctype="application/x-www-form-urlencoded">
+                <div th:if="${search_error}" th:text="${search_error}"> </div>
                 <input type="text" name="groupName" placeholder="Search...">
             </form>
             <div th:each="aGroup: ${allGroups}">

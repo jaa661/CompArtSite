@@ -53,6 +53,7 @@
                 <!--<p th:text="${post.content}">Text ...-->
                     <!--<a th:href="@{'/group/list/' + ${post.postedIn}}" th:text="${post.postedInGroup.name}">view</a>-->
                 <!--</p>-->
+                <a th:href="@{'/group/list/' + ${post.postedIn}}" th:text="${post.postedInGroup.name}">view</a>
                 <p th:text="${post.content}" class="posttext">Text ...</p>
                 <div th:if="${post.hasImage} == true">
                     <img th:src="@{~/getImageFromPost/} + ${post.id}" class="posttext"/>
