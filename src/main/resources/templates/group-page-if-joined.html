@@ -51,6 +51,7 @@
                 <form th:action="@{/group/post/add}" method="post" enctype="multipart/form-data">
                     <input type="hidden" name="poster" th:value="${user.id}"/>
                     <input type="hidden" name="group" th:value="${groupId}"/>
+
                     <textarea name = "content" rows="3" cols="30" placeholder = "text..."></textarea>
                     <input type="file" name="file"/>
                     <br>

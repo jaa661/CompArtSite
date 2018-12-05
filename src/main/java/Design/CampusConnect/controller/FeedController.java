@@ -84,7 +84,7 @@ public class FeedController {
     //@Autowired
     //private SessionFactory sessionFactory;
 
-    @RequestMapping(value = "/group/post/add", method = RequestMethod.POST, consumes =  {"multipart/form-data", MediaType.APPLICATION_FORM_URLENCODED_VALUE})
+    @RequestMapping(value = "/group/post/add", method = RequestMethod.POST, consumes = {"multipart/form-data", MediaType.APPLICATION_FORM_URLENCODED_VALUE})
     String addPostToGroup(@RequestPart("file")
             MultipartFile multipart, String content, int poster, int group, Model model, Principal principal, RedirectAttributes redirectAttributes) {
         System.out.println(content + poster );
