@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" xmlns:form="http://www.w3.org/1999/xhtml">
 <head>
-    <title>WebSocket Chat</title>
+    <title>Campus Connect</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="/styles.css" type="text/css" media="all">
@@ -10,57 +10,12 @@
 
 </head>
 <style>
-.space-bottom5 { margin-bottom: 5px; }
-.space-bottom10 { margin-bottom: 10px; }
-.space-bottom15 { margin-bottom: 15px; }
-.space-bottom20 { margin-bottom: 20px; }
-.space-bottom30 { margin-bottom: 30px; }
-.main {
-    height:100%;
-    top:50px;
-    width: 100%;
-    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
-    overflow-x: hidden; /* Disable horizontal scroll */
-    padding-top: 20px;
-}
-         /* Add a black background color to the top navigation */
-.topnav {
-    background-color: #333;
-    overflow: hidden;
-    width: 100%; /* Set the width of the sidebar */
-    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
-    z-index: 0; /* Stay on top */
-    top: 0; /* Stay at the top */
-    left: 0;
-}
 
-/* Style the links inside the navigation bar */
-.topnav a {
-    float: left;
-    color: #f2f2f2;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
-}
-
-/* Change the color of links on hover */
-.topnav a:hover {
-    background-color: #ddd;
-    color: black;
-}
-
-/* Add a color to the active/current link */
-.topnav a.active {
-    background-color: #4CAF50;
-    color: white;
-}
         #postbox {
             border-radius: 25px;
-            border: 2px solid #73AD21;
-            <!--padding: 20px;-->
+            border: 2px solid #761497;
             width: 100%;
-            height: 150px;
+            height: 175px;
         }
         #messagefrom {
             align: right;
@@ -68,75 +23,13 @@
         #messageto {
             align: left;
         }
-        .row {
-            top: 100px;
-            left: 120px;
-            width:100%;
-            height:110%;
-
-           }
-        .column {
+        .col{
             float: left;
-            width: 40%;
-            top: 48px;
+            width: 60%;
+            height:100%;
             left: 0px;
-            border: 3px solid green;
-            overflow:hidden;
            }
 
-        .row:after {
-            content: "";
-            display: table;
-            clear: both;
-        }
-        .card {
-         background-color: white;
-        padding: 20px;
-         margin-top: 20px;
-        }
-        .fakeimg {
-        background-color: #aaa;
-        width: 50%;
-        padding: 20px;
-        }
-
-        /* The sidebar menu */
-.sidenav {
-    height:100%;
-    top:48px;
-    width: 160px; /* Set the width of the sidebar */
-    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
-    left: 0;
-    background-color: #111; /* Black */
-    overflow-x: hidden; /* Disable horizontal scroll */
-    padding-top: 20px;
-}
-
-/* The navigation menu links */
-.sidenav a {
-    padding: 6px 8px 6px 16px;
-    text-decoration: none;
-    font-size: 25px;
-    color: #818181;
-    display: block;
-}
-
-/* When you mouse over the navigation links, change their color */
-.sidenav a:hover {
-    color: #f1f1f1;
-}
-
-/* Style page content */
-.main {
-    margin-left: 160px; /* Same as the width of the sidebar */
-    padding: 0px 10px;
-}
-
-/* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
-@media screen and (max-height: 450px) {
-    .sidenav {padding-top: 15px;}
-    .sidenav a {font-size: 18px;}
-}
 </style>
 <body>
 <div class="topnav">
@@ -154,57 +47,32 @@
 </div>
 
 <div class="main">
+    <!-- First COlUMN. -->
 
-    <div class="row">
-        <!-- First COlUMN. -->
+    <div class="col">
+        <div id="postbox" class="whitecard">
+            <p>Your Message</p>
+            <form th:action="@{/message/add}" method="post">
+                <input type = "hidden" name = "sender" th:value = "${user.username}" />
+                <input type = "hidden" name = "sendee" th:value = "${friend.username}"/>
+                    <textarea name = "content" rows="3" cols="30" placeholder = "text..."></textarea>
+                <br>
+                <input type="submit" value="post"/>
+            </form>
+        </div>
 
-
-        <!--<div class="column">-->
-        <!--<div class="card">-->
-        <!--<h3 th:text="${user.username}"></h3>-->
-        <!--<div class="fakeimg">Image</div><br>-->
-        <!--<div class="fakeimg">Image</div><br>-->
-        <!--<div class="fakeimg">Image</div>-->
+        <!--<div th:each="msg : ${messages}" id="postbox">-->
+        <!--<p th:text="${msg.sentBy.username} + ':' + ${msg.content} ">User ...</p>-->
         <!--</div>-->
-        <!--</div>-->
-        <!--&lt;!&ndash; SECOND COLUMN &ndash;&gt;-->
-
-
-        <div class="col">
-            <div id="postbox">
-                <p>Post Something ...</p>
-                <form th:action="@{/message/add}" method="post">
-                    <input type = "hidden" name = "sender" th:value = "${user.username}" />
-                    <input type = "hidden" name = "sendee" th:value = "${friend.username}"/>
-                    <input type = "text" name = "content" value = "text..."/>
-                    <br>
-                    <input type="submit" value="post"/>
-                </form>
-            </div>
-
-            <p th:text="'Feed'" />
-            <!--<div th:each="msg : ${messages}" id="postbox">-->
-            <!--<p th:text="${msg.sentBy.username} + ':' + ${msg.content} ">User ...</p>-->
-            <!--</div>-->
-            <span  th:each="msg : ${#lists.sort(messages)}">
+        <span  th:each="msg : ${#lists.sort(messages)}">
             <span th:if="${msg.sentBy.username == user.username}">
-                  <p th:text="${msg.sentBy.username} + ':' + ${msg.content} " align="left">User ...</p>
+                  <p th:utext="${#strings.replace( #strings.escapeXml( msg.content ),T(java.lang.System).getProperty('line.separator'),'&lt;br /&gt;')}" class="messageto">User ...</p>
              </span>
                 <span th:if="${msg.sentBy.username != user.username}">
-                  <p  th:text="${msg.sentBy.username} + ':' + ${msg.content} " align="right">User ...</p>
+                  <p th:utext=" ${msg.sentBy.username} + ':' + ${#strings.replace( #strings.escapeXml( msg.content ),T(java.lang.System).getProperty('line.separator'),'&lt;br /&gt;')}" class="messagefrom">User ...</p>
              </span>
-            </span>
-
-
-        </div>
-        <!-- Third COlUMN -->
-
-
-        <div class="column">
-            <p>column for chat</p>
-        </div>
+        </span>
     </div>
-</div>
 </body>
 </html>
 <script th:inline="javascript">

@@ -75,10 +75,15 @@
             clear: both;
         }
         .card {
-         background-color: white;
+         background-color: #d9d9d9;
         padding: 20px;
          margin-top: 20px;
         }
+        .whitecard {
+         background-color: white;
+         padding: 20px;
+         margin-top: 20px;
+         }
         .fakeimg {
         background-color: #aaa;
         width: 50%;
@@ -122,4 +127,32 @@
 @media screen and (max-height: 450px) {
     .sidenav {padding-top: 15px;}
     .sidenav a {font-size: 18px;}
+}
+
+.messagefrom{
+  display:inline-block;
+  clear: both;
+  padding: 10px;
+  border-radius: 20px;
+  margin-bottom: 2px;
+  font-family: Helvetica, Arial, sans-serif;
+  background: #eee;
+   float: left;
+}
+
+
+.messageto{
+  display:inline-block;
+  clear: both;
+  padding: 10px;
+  border-radius: 20px;
+  margin-bottom: 2px;
+  font-family: Helvetica, Arial, sans-serif;
+  float: right;
+  background: #0084ff;
+  color: #fff;
+}
+
+.posttext{
+    white-space: pre;
 }

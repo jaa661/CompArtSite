@@ -14,9 +14,8 @@
         #postbox {
             border-radius: 25px;
             border: 2px solid #761497;
-            <!--padding: 20px;-->
             width: 100%;
-            height: 200px;
+            height: 225px;
         }
         #messagefrom {
             align: right;
@@ -29,10 +28,22 @@
             width: 60%;
             height:100%;
             left: 0px;
-            border: 3px solid green;
            }
 
 </style>
+<script type="text/javascript"
+        src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<script>
+    $(document).ready(
+            function() {
+                setInterval(function() {
+                    var randomnumber = Math.floor(Math.random() * 100);
+                    $('#show').text(
+                            'I am getting refreshed every 3 seconds..! Random Number ==> '
+                                    + randomnumber);
+                }, 3000);
+            });
+</script>
 <body>
 <div class="topnav">
     <a class = "active" href="/home">CAMPUS CONNECT</a>
@@ -50,33 +61,35 @@
 
 <div class="main">
      <!-- First COlUMN. -->
-
         <div class="col">
-            <div class="card" id="postbox">
+            <div  id="postbox" class = "whitecard">
                 <div th:if="${error}" th:text="${error}"> </div>
-                <p>Post Something ...</p>
+                <p>Your message</p>
                 <form th:action="@{/message/add}" method="post">
                     <input type = "hidden" name = "sender" th:value = "${user.username}" />
                     <input type = "text" name = "sendee" placeholder = "send to..."/>
                     <br>
-                    <input type = "textarea" name = "content" rows="3" cols="30" placeholder = "text..."/>
+
+                    <textarea name = "content" rows="3" cols="30" placeholder = "text..."></textarea>
+
                     <br>
                     <input type="submit" value="post"/>
                 </form>
             </div>
 
-            <p th:text="'Feed'" />
             <!--<div th:each="msg : ${messages}" id="postbox">-->
                 <!--<p th:text="${msg.sentBy.username} + ':' + ${msg.content} ">User ...</p>-->
             <!--</div>-->
+            <!--<span  th:each="msg : ${#lists.sort(messages)}">-->
+
             <span  th:each="msg : ${#lists.sort(messages)}">
             <span th:if="${msg.sentBy.username == user.username}">
-                  <p th:text="${msg.sentBy.username} + ':' + ${msg.content} " align="left">User ...</p>
+                  <p th:utext="${#strings.replace( #strings.escapeXml( msg.content ),T(java.lang.System).getProperty('line.separator'),'&lt;br /&gt;')}" class="messageto">User ...</p>
              </span>
                 <span th:if="${msg.sentBy.username != user.username}">
-                  <p  th:text="${msg.sentBy.username} + ':' + ${msg.content} " align="right">User ...</p>
+                  <p th:utext=" ${msg.sentBy.username} + ':' + ${#strings.replace( #strings.escapeXml( msg.content ),T(java.lang.System).getProperty('line.separator'),'&lt;br /&gt;')}" class="messagefrom">User ...</p>
              </span>
-            </span>
+             </span>
 
 
         </div>

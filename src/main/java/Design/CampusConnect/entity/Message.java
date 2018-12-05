@@ -20,6 +20,8 @@ public class Message implements Comparable<Message>{
     private int sentBId;
 
     private int sentTId;
+
+    @Column(columnDefinition="TEXT")
     private String content;
 
     private Date postTime;
@@ -84,10 +86,10 @@ public class Message implements Comparable<Message>{
     @Override
     public int compareTo(Message other) {
         if(other.getId()<=this.id) {
-            return 1;
+            return -1;
         }
         else{
-            return -1;
+            return 1;
         }
     }
 }

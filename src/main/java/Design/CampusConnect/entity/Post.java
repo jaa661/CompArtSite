@@ -23,8 +23,8 @@ public class Post implements Comparable<Post>{
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Group postedInGroup;
 
+    @Column(columnDefinition="TEXT")
     private String content;
-
 
     public Integer getId() {
         return id;
