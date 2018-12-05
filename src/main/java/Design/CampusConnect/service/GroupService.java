@@ -169,6 +169,11 @@ public class GroupService {
         return students;
     }
 
+    public Group findGroupByName(String name){
+        //Iterable<Group> allGroups = repository.findAll()
+        return repository.findByName(name);
+    }
+
     public Iterable<Group> getAllGroupsUserIsNotIn(int studentId){
         Iterable<Group> allGroups = repository.findAll();
         Iterable<Group> studentGroups = getGroupsStudentBelongsToById(studentId);

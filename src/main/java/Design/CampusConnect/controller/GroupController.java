@@ -9,9 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -45,8 +43,10 @@ public class GroupController {
         else return "group-page-if-not-joined";
     }
 
-
-
+    @PostMapping("/user/group/search/")
+    public String search(String groupName){
+        return "redirect:/group/list/" + GroupService.findGroupByName(groupName).getId();
+    }
 
     @RequestMapping(value = "/group/users/{groupId}") ///{groupId}")
     public String getUsers(Principal principal, Model model, @PathVariable int groupId) {
@@ -58,7 +58,6 @@ public class GroupController {
         System.out.println("users");
         return "members-in-group";
     }
-
 
     @RequestMapping(value = "/user/groups")
     public String manageGroups(Principal principal, Model model) {
