@@ -23,6 +23,6 @@ public class HomeViewController {
     @RequestMapping("/")
     public String index() {
         System.out.println("hitting index");
-        return "home";
+         return "redirect:/Profile";
     }
 }

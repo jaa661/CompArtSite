@@ -87,7 +87,11 @@
                   <p th:utext="${#strings.replace( #strings.escapeXml( msg.content ),T(java.lang.System).getProperty('line.separator'),'&lt;br /&gt;')}" class="messageto">User ...</p>
              </span>
                 <span th:if="${msg.sentBy.username != user.username}">
-                  <p th:utext=" ${msg.sentBy.username} + ':' + ${#strings.replace( #strings.escapeXml( msg.content ),T(java.lang.System).getProperty('line.separator'),'&lt;br /&gt;')}" class="messagefrom">User ...</p>
+                    <span class="messagefrom">
+                  <a th:utext="${msg.sentBy.username + ':'}" th:href="@{'/messages/' + ${msg.sentBy.id}}">User ...</a>
+                        <p th:utext="${#strings.replace( #strings.escapeXml( msg.content ),T(java.lang.System).getProperty('line.separator'),'&lt;br /&gt;')}" >User ...</p>
+
+                    </span>
              </span>
              </span>
 

@@ -53,7 +53,7 @@ public class SetSecurityConfig extends WebSecurityConfigurerAdapter {
                 .formLogin()
                 .loginPage("/login")
                 .permitAll()
-                .successForwardUrl("/home")
+                .successForwardUrl("/")
                 .and()
                 .logout()
                 .permitAll();
