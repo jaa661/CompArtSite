@@ -11,8 +11,7 @@
 </head>
 <body>
 <div class="topnav">
-    <a class="active">CAMPUS CONNECT    </a>
-    <a href="/home">Home</a>
+    <a class="active" href="/home">CAMPUS CONNECT    </a>
     <a href="/Profile">Profile</a>
     <a href="/feed">Feed</a>
     <!--<a href="/ws">Chat</a>-->
@@ -21,8 +20,9 @@
 
 <div class="sidenav">
     <a th:href="@{'/Profile'}" th:text="${user.username}"></a>
-    <a th:href="@{'/user/groups'}">Manage Groups</a>
-    <a th:href="@{'/messages'}">Chat</a>
+    <!--<a th:href="@{'/user/' + ${user.id}}" th:text="${user.username}"></a>-->
+    <a th:href="@{'/user/groups'}">Groups</a>
+    <a th:href="@{'/messages'}">Messages</a>
 </div>
 
 <div class="main">
