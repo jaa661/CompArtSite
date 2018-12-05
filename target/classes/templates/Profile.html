@@ -14,6 +14,7 @@
     <a class="active" href="/home">CAMPUS CONNECT</a>
     <a href="/Profile">Profile</a>
     <a href="/feed">Feed</a>
+    <a href="/ws">Live Chat</a>
     <!--<a href="/ws">Chat</a>-->
     <a href="/logout">Sign out</a>
 </div>
@@ -53,6 +54,7 @@
                 <!--<p th:text="${post.content}">Text ...-->
                     <!--<a th:href="@{'/group/list/' + ${post.postedIn}}" th:text="${post.postedInGroup.name}">view</a>-->
                 <!--</p>-->
+                <a th:href="@{'/group/list/' + ${post.postedIn}}" th:text="${post.postedInGroup.name}">view</a>
                 <p th:text="${post.content}" class="posttext">Text ...</p>
                 <div th:if="${post.hasImage} == true">
                     <img th:src="@{~/getImageFromPost/} + ${post.id}" class="posttext"/>
