@@ -6,6 +6,8 @@ import Design.CampusConnect.repo.PostRepo;
 import Design.CampusConnect.repo.StudentRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.sql.Blob;
 import java.util.ArrayList;
 
 @Service
@@ -19,7 +21,7 @@ public class PostService {
     @Autowired
     private GroupRepo groupRepository;
 
-    public Post makePost(final Post newPost) {
+    /*public Post makePost(final Post newPost) {
         Post post = new Post();
 
         post.setContent(newPost.getContent());
@@ -28,13 +30,17 @@ public class PostService {
 
         System.out.println(post);
         return postRepository.save(post);
-    }
-    public Post makePost(String content, int posterId, int groupId) {
+    }*/
+    public Post makePost(String content, Blob b, boolean hasImage, int posterId, int groupId) {
         Post post = new Post();
 
         post.setPostedByUser(studentRepository.findById(posterId));
+
         post.setPostedInGroup(groupRepository.findById(groupId));
         post.setContent(content);
+
+        post.setImg(b);
+        post.setHasImage(hasImage);
         post.setPostedBy(posterId);
         post.setPostedIn(groupId);
 
@@ -59,5 +65,11 @@ public class PostService {
 
         System.out.println("Fetching all posts in a given studentId");
         return postRepository.findByPostedBy(studentId);
+    }
+
+    public Post getPostById(int postid){
+
+        System.out.println("Fetching all posts in a given studentId");
+        return postRepository.findPostById(postid);
     }
 }

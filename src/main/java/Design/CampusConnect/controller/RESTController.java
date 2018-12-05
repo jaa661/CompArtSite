@@ -12,6 +12,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
+import java.sql.Blob;
+
 @RestController
 @RequestMapping(path="/api") // This means URL's start with /demo (after Application path)
 public class RESTController {
@@ -50,8 +52,17 @@ public class RESTController {
     }
 
     @RequestMapping(value = "/post/add", method = RequestMethod.POST,consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
-    Post newPost(String content, int poster, int group) {
-        return PostService.makePost(content, poster, group);
+    Post newPost(String content, Blob b, int poster, int group) {
+        boolean hasImage = false;
+        try {
+            if (b.length()>0){
+                hasImage = true;
+                System.out.println("Has Image!");
+            }
+        } catch (Exception e){
+            System.out.println("Error making blob!");
+        }
+        return PostService.makePost(content, b, hasImage, poster, group);
     }
 
     @RequestMapping(value = "/group/add", method = RequestMethod.POST,consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)

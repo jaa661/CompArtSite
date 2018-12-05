@@ -4,15 +4,21 @@ import Design.CampusConnect.entity.Post;
 import Design.CampusConnect.service.GroupService;
 import Design.CampusConnect.service.PostService;
 import Design.CampusConnect.service.UserService;
+import org.hibernate.Hibernate;
+import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.orm.jpa.JpaProperties;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import javax.validation.Valid;
+import java.io.IOException;
 import java.security.Principal;
+import java.sql.Blob;
 
 @Controller
 public class FeedController {
@@ -42,18 +48,46 @@ public class FeedController {
         model.addAttribute("feed", service.getAllPosts());
         return "mainfeed";
     }
-    @RequestMapping(value = "/post/add")
-    String addpost(String content, int poster, int group, Model model, Principal principal) {
+    @RequestMapping(value = "/post/add", method = RequestMethod.POST, consumes =  {"multipart/form-data", MediaType.APPLICATION_FORM_URLENCODED_VALUE})
+    String addpost(@RequestPart("file")
+                           MultipartFile multipart, String content, int poster, int group, Model model, Principal principal) {
         System.out.println(content + poster );
-        service.makePost(content, poster, group);
+        Blob blob = null;
+        boolean hasImage = false;
 
+
+        try {
+            if (multipart.getBytes().length>0){
+                hasImage = true;
+            }
+            blob = new javax.sql.rowset.serial.SerialBlob(multipart.getBytes()); // hibernate method for create blob
+        } catch (Exception e){
+            System.out.println("Error making blob!");
+        }
+        service.makePost(content, blob, hasImage, poster, group);
         return sidebyside(model, principal);
     }
 
-    @RequestMapping(value = "/group/post/add")
-    String addPostToGroup(String content, int poster, int group, Model model, Principal principal, RedirectAttributes redirectAttributes) {
+    //@Autowired
+    //private SessionFactory sessionFactory;
+
+    @RequestMapping(value = "/group/post/add", method = RequestMethod.POST, consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
+    String addPostToGroup(@RequestPart("file")
+            MultipartFile multipart, String content, int poster, int group, Model model, Principal principal, RedirectAttributes redirectAttributes) {
         System.out.println(content + poster );
-        service.makePost(content, poster, group);
+        Blob blob = null;
+        boolean hasImage = false;
+
+
+        try {
+            if (multipart.getBytes().length>0){
+                hasImage = true;
+            }
+            blob = new javax.sql.rowset.serial.SerialBlob(multipart.getBytes()); // hibernate method for create blob
+        } catch (Exception e){
+            System.out.println("Error making blob!");
+        }
+        service.makePost(content, blob, hasImage, poster, group);
         redirectAttributes.addAttribute("groupId",group );
         return "redirect:/group/list/{groupId}";
     }

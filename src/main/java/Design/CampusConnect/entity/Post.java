@@ -1,6 +1,7 @@
 package Design.CampusConnect.entity;
 
 import javax.persistence.*;
+import java.sql.Blob;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,6 +13,26 @@ public class Post implements Comparable<Post>{
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     private Integer id;
+
+    public Blob getImg() {
+        return Img;
+    }
+
+    public void setImg(Blob img) {
+        Img = img;
+    }
+
+    private Blob Img;
+
+    public boolean isHasImage() {
+        return hasImage;
+    }
+
+    public void setHasImage(boolean hasImage) {
+        this.hasImage = hasImage;
+    }
+
+    private boolean hasImage;
 
     private Integer postedBy;
 

@@ -17,4 +17,8 @@ public interface PostRepo extends JpaRepository<Post, Integer> {
     // PostedBy is the StudentId the Post is posted by
     @Query("SELECT p FROM Post p WHERE p.postedBy = :studentId")
     List<Post> findByPostedBy(@Param("studentId") int studentId);
+
+    // PostedBy is the StudentId the Post is posted by
+    @Query("SELECT p FROM Post p WHERE p.id = :postId")
+    Post findPostById(@Param("postId") int postId);
 }
