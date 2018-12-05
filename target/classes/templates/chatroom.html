@@ -1,14 +1,27 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:form="http://www.w3.org/1999/xhtml"
+      xmlns:white-space="http://www.w3.org/1999/xhtml">
 <head>
     <title>Campus Connect</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" i
-          ntegrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link href="/webjars/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="/styles.css" type="text/css" media="all">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script src="/webjars/jquery/3.3.1-1/jquery.min.js"></script>
     <script src="/webjars/sockjs-client/0.3.4/sockjs.min.js"></script>
     <script src="/webjars/stomp-websocket/2.3.3-1/stomp.min.js"></script>
+    <script src="/postcode.js"></script>
     <script src="/chatcode.js"></script>
+    <style>
+#postbox {
+            border-radius: 25px;
+            border: 2px solid #761497;
+            <!--padding: 20px;-->
+            width: 100%;
+            height: 225px;
+        }
+
+    </style>
 
 </head>
 <style>
@@ -40,66 +53,90 @@
         li a:hover {
             background-color: #111;
         }
+
 </style>
 <body>
-<ul>
-    <li><a class = "active" >CAMPUS CONNECT</a></li>
-    <li><a class="active" href="/home">Home</a></li>
-    <li><a href="/Profile">Profile</a></li>
-    <li><a href="/feed">Feed</a></li>
-    <li><a href="/ws">Chat</a></li>
-    <li><a href="/logout">Sign out</a></li>
-</ul>
-<input type="hidden" id="jsonBom" value='${username}'/>
-<div id="main-content" class="container">
+<div class="topnav">
+    <a class="active" href="/home">CAMPUS CONNECT </a>
+    <a href="/Profile">Profile</a>
+    <a href="/feed">Feed</a>
+    <a href="/ws">Live Chat</a>
+    <!--<a href="/ws">Chat</a>-->
+    <a href="/logout">Sign out</a>
+</div>
+
+<div class="sidenav">
+
+</div>
+
+<div class="main" style="padding-top:15px;">
     <div class="row">
-        <div class="col-md-12 space-bottom10">
-            <form class="form-inline">
-                <div class="form-group">
-                    <label for="chatid">Chatroom ID:</label>
-                    <input type="text" id="chatid" class="form-control"
-                           placeholder="enter your chatroom id">
+        <!-- First COlUMN. -->
+        <div class="col">
+
+            <input type="hidden" id="jsonBom" value='${username}'/>
+            <div id="main" class="container">
+                <div class="row">
+                    <div class="col-md-12 space-bottom10">
+                        <form class="form-inline">
+                            <div class="form-group">
+                                <label for="chatid">Chatroom ID:</label>
+                                <input type="text" id="chatid" class="form-control"
+                                       placeholder="enter your chatroom id">
+                            </div>
+                            <button id="enterClick"
+                                    class="btn btn-default"
+                                    type="submit">enter
+                            </button>
+                            <button id="leaveClick"
+                                    class="btn btn-default"
+                                    type="submit"
+                                    disabled="disabled">leave
+                            </button>
+                        </form>
+                    </div>
                 </div>
-                <button id="enterClick"
-                        class="btn btn-default"
-                        type="submit">enter</button>
-                <button id="leaveClick"
-                        class="btn btn-default"
-                        type="submit"
-                        disabled="disabled">leave</button>
-            </form>
-        </div>
-    </div>
-    <div class="row space-bottom10">
-        <form>
-            <div class="col-md-6">
-                <input type="text"
-                       id="text"
-                       class="form-control"
-                       placeholder="enter message ...">
+                <div class="row space-bottom10">
+                    <form>
+                        <div class="col-md-6">
+                            <input type="text"
+                                   id="text"
+                                   style="width:300px;"
+                                   class="form-control"
+                                   placeholder="enter message ...">
+                        </div>
+                        <div class="col-md-4">
+                            <button id="send"
+                                    class="btn btn-default"
+                                    type="submit">Send
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <table id="conversation" class="table table-striped">
+                            <thead>
+                            <tr>
+                                <th width="20%">From</th>
+                                <th width="60%">Message</th>
+                                <th width="20%">Time</th>
+                            </tr>
+                            </thead>
+                            <tbody id="messages">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
-            <div class="col-md-4">
-                <button id="send"
-                        class="btn btn-default"
-                        type="submit">Send</button>
-            </div>
-        </form>
-    </div>
-    <div class="row">
-        <div class="col-md-12">
-            <table id="conversation" class="table table-striped">
-                <thead>
-                <tr>
-                    <th width="20%">From</th>
-                    <th width="60%">Message</th>
-                    <th width="20%">Time</th>
-                </tr>
-                </thead>
-                <tbody id="messages">
-                </tbody>
-            </table>
         </div>
+        <div class="col">
+
+        </div>
+        <br>
+
     </div>
+</div>
 </div>
 </body>
 </html>
@@ -110,4 +147,5 @@
    //console.log(usrnme);
 
 /*]]>*/
+
 </script>
