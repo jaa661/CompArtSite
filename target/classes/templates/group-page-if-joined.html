@@ -29,7 +29,7 @@
 
 <div class="sidenav">
     <p><a th:href="@{'/group/list/' + ${groupId}}" th:text="${groupName}">view</a></p>
-    <p><a th:href="@{'/group/users/' + ${groupId}}">MEMBERS</a></p>
+    <p><a th:href="@{'/group/users/' + ${groupId}}">Members</a></p>
     <form th:action="@{/group/leave}" , method="post" enctype="application/x-www-form-urlencoded">
         <!--<a th:href="@{'/group/list/' + ${aGroup.id}}" th:text="${aGroup.name}"> Group-->
         <!--</a>-->
