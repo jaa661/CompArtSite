@@ -217,6 +217,11 @@ public class GroupService {
         return inGroup;
     }
 
+    public boolean exists(String name) {
+        System.out.println("looking for "+ name);
+        System.out.println(repository.findByName(name));
+        return (repository.findByName(name)!=null);
+    }
 
 //     public void getStudentsInGroupByName(String groupName);
 

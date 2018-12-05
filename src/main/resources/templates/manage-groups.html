@@ -27,7 +27,7 @@
     <div class="row">
         <!-- First COlUMN. -->
         <div class="col">
-
+            <div th:if="${error}" th:text="${error}"> </div>
             <form th:action="@{/group/add}" method="post" enctype="application/x-www-form-urlencoded">
                 Create a new group
                 <input type="hidden" name="creatorId" th:value="${user.id}"/>

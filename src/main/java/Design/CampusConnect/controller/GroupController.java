@@ -12,6 +12,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.security.Principal;
@@ -75,13 +76,18 @@ public class GroupController {
     }
 
     @RequestMapping(value = "/group/add")
-    String newGroup(int creatorId, String groupName, Model model) {
-        boolean check = GroupService.studentCreateGroup(creatorId, groupName);
-        if(!check){
-            model.addAttribute("createGroupError", "Could not create group");
+    String newGroup(Principal principal, int creatorId, String groupName, Model model) {
+
+        if (GroupService.exists(groupName)){
+            model.addAttribute("error", "Group already exists :(");
+            return manageGroups(principal, model);
         }
-        return "redirect:/user/groups";
+        else{
+            GroupService.studentCreateGroup(creatorId, groupName);
+            return "redirect:/user/groups";
+        }
     }
+
 
     @RequestMapping(value = "/group/join", method = RequestMethod.POST) //  method = RequestMethod.POST,consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
     String joinGroup(int newMemberId, int groupId, RedirectAttributes redirectAttributes, Model model) {
