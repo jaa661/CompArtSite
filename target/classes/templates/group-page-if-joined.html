@@ -41,16 +41,18 @@
 
 </div>
 
+
 <div class="main">
     <div class="row">
         <!-- First COlUMN. -->
         <div class="col">
             <div class="whitecard" id="postbox">
                 <p>Post Something ...</p>
-                <form th:action="@{/group/post/add}" method="post">
+                <form th:action="@{/group/post/add}" method="post" enctype="multipart/form-data">
                     <input type="hidden" name="poster" th:value="${user.id}"/>
                     <input type="hidden" name="group" th:value="${groupId}"/>
                     <textarea name = "content" rows="3" cols="30" placeholder = "text..."></textarea>
+                    <input type="file" name="file"/>
                     <br>
                     <input class="btn btn-outline-secondary btn-sm" type="submit" value="post"/>
                 </form>
@@ -62,6 +64,9 @@
                 <!--<h1 th:inline="text| ${user.username}|" ></h1>-->
                 <!--<p><a th:href="@{'/group/list/' + ${post.postedIn}}" th:text="${post.postedInGroup.name}">view</a></p>-->
                 <p th:text="${post.content}" class="posttext">Text ...</p>
+                <div th:if="${post.hasImage} == true">
+                    <img th:src="@{~/getImageFromPost/} + ${post.id}" class="posttext"/>
+                </div>
             </div>
         </div>
         <div class="col"></div>

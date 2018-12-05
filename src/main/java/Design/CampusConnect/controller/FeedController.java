@@ -19,6 +19,7 @@ import javax.validation.Valid;
 import java.io.IOException;
 import java.security.Principal;
 import java.sql.Blob;
+import java.util.List;
 
 @Controller
 public class FeedController {
@@ -37,7 +38,19 @@ public class FeedController {
     public String sidebyside(Model model, Principal principal) {
         model.addAttribute("user", Userservice.findByName(principal.getName()));
         //model.addAttribute("group", Groupservice.findById());
-        model.addAttribute("feed", service.getAllPosts());
+        List<Post> allPosts = service.getAllPosts();
+        int offset = 0;
+        int limit = offset+100;
+        if(allPosts.size()<100){
+            offset = 0;
+            limit = offset+allPosts.size();
+//            limit = offset+2;
+        }else{
+            offset = 0;
+            limit = offset+100;
+        }
+        List<Post> myPosts = allPosts.subList(offset, limit);
+        model.addAttribute("feed", myPosts);
         return "chat-and-feed";
     }
     @RequestMapping(value = "/oldfeed")
@@ -71,7 +84,7 @@ public class FeedController {
     //@Autowired
     //private SessionFactory sessionFactory;
 
-    @RequestMapping(value = "/group/post/add", method = RequestMethod.POST, consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
+    @RequestMapping(value = "/group/post/add", method = RequestMethod.POST, consumes =  {"multipart/form-data", MediaType.APPLICATION_FORM_URLENCODED_VALUE})
     String addPostToGroup(@RequestPart("file")
             MultipartFile multipart, String content, int poster, int group, Model model, Principal principal, RedirectAttributes redirectAttributes) {
         System.out.println(content + poster );

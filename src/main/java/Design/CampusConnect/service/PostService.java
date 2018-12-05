@@ -5,10 +5,13 @@ import Design.CampusConnect.repo.GroupRepo;
 import Design.CampusConnect.repo.PostRepo;
 import Design.CampusConnect.repo.StudentRepo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Slice;
 import org.springframework.stereotype.Service;
 
 import java.sql.Blob;
 import java.util.ArrayList;
+import java.util.List;
 
 @Service
 public class PostService {
@@ -48,24 +51,40 @@ public class PostService {
         return postRepository.save(post);
     }
 
-    public Iterable<Post> getAllPosts(){
+    public List<Post> getAllPosts(){
 
         System.out.println("Fetching all posts");
         return postRepository.findAll();
 
     }
 
-    public Iterable<Post> getPostsByGroupId(int groupId){
+    public List<Post> getPostsByGroupId(int groupId){
 
         System.out.println("Fetching all posts in a given groupId");
         return  postRepository.findByPostedIn(groupId);
     }
 
-    public Iterable<Post> getPostsByStudentId(int studentId){
+    public List<Post> getPostsByStudentId(int studentId){
 
         System.out.println("Fetching all posts in a given studentId");
         return postRepository.findByPostedBy(studentId);
     }
+
+//    public Iterable<Post> getPostsByStudentIdAt(int studentId, int index){
+//
+//        System.out.println("Fetching all posts in a given studentId");
+//        return postRepository.findByPostedByAt(studentId, index);
+//    }
+
+//    public Iterable<Post> getPostsByStudentIdAt(int studentId, Pageable page){
+//
+//        System.out.println("Fetching all posts in a given studentId but pages");
+//        //System.out.println(postRepository.findByPostedByAt(studentId, page));
+//        System.out.println("success");
+//        Slice<Post> slicePost = postRepository.findByPostedByAt2(studentId, page);
+//        List<Post> listPost = slicePost.getContent();
+//        return postRepository.findByPostedByAt(studentId, page);
+//    }
 
     public Post getPostById(int postid){
 

@@ -1,6 +1,7 @@
 package Design.CampusConnect.controller;
 
 import Design.CampusConnect.entity.Group;
+import Design.CampusConnect.entity.Post;
 import Design.CampusConnect.entity.Student;
 import Design.CampusConnect.service.GroupService;
 import Design.CampusConnect.service.PostService;
@@ -16,6 +17,7 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.security.Principal;
+import java.util.List;
 
 @Controller
 public class GroupController {
@@ -35,7 +37,18 @@ public class GroupController {
         int userId = user.getId();
         System.out.println("user is" +  userId);
         model.addAttribute("user", UserService.findByName(principal.getName()));
-        model.addAttribute("feed", PostService.getPostsByGroupId(groupId));
+        List<Post> allPosts = PostService.getPostsByGroupId(groupId);
+        int offset = 0;
+        int limit = offset+100;
+        if(allPosts.size()<100){
+            offset = 0;
+            limit = offset+allPosts.size();
+        }else{
+            offset = 0;
+            limit = offset+100;
+        }
+        List<Post> myPosts = allPosts.subList(offset, limit);
+        model.addAttribute("feed", myPosts);
         model.addAttribute("groupName", GroupService.GetNameById(groupId));
         model.addAttribute("groupId", groupId);
 //        model.addAttribute("inGrp", GroupService.checkGroupStudentIn( userId,groupId));
